@@ -1,0 +1,107 @@
+/* ============================================================
+   出雲漢方クリニック デザインリニューアル案 - スマホ版（style-sp.css）
+   ・style-pc.css の後に読み込むこと（上書きするため）
+   ・タブレット〜スマホの画面幅で PC 版レイアウトを調整
+   ・読み込み例：
+       <link rel="stylesheet" href="style-pc.css">
+       <link rel="stylesheet" href="style-sp.css">
+     もしくは media 属性で振り分け：
+       <link rel="stylesheet" href="style-sp.css" media="screen and (max-width:980px)">
+   ============================================================ */
+
+/* ===== タブレット〜（〜980px）：2カラムを1カラムへ ===== */
+@media screen and (max-width:980px){
+  #contents{grid-template-columns:1fr; gap:32px; padding:36px 20px 60px;}
+  #sideMenu{grid-column:1; position:static;}
+  /* サイドメニューを横並びカードに（縦長を防ぐ） */
+  #sideMenu .banner > ul{flex-direction:row; flex-wrap:wrap; gap:12px;}
+  #sideMenu .banner li{flex:1 1 calc(50% - 6px);}
+  #sideMenu .banner li > p{flex-basis:100%;}
+  #sideMenu .sidemenu_bottom li:first-child{flex-basis:100%;}
+  #header{grid-template-columns:auto 1fr; grid-template-areas:"brand week" "brand text" "brand addr"; row-gap:2px;}
+  #searchform{display:none;}
+  #gNav #nav > li > a{padding:12px 14px; font-size:13.5px;}
+  #main article > section{padding:28px 26px;}
+}
+
+/* ===== スマホ（〜560px）：1カラム・ナビ折返し・固定フッター表示 ===== */
+@media screen and (max-width:560px){
+  body{font-size:15px; padding-bottom:58px;}
+
+  /* ヘッダー：ブランド＋診療科目のみ中央表示 */
+  #header{grid-template-columns:1fr; grid-template-areas:"brand" "text"; text-align:center; justify-items:center; padding:14px 16px; column-gap:0;}
+  .header_address, .header_week{display:none;}
+  #header .h1_text{font-size:19px;}
+  #header .cliniclogo_img{width:44px;}
+
+  /* グローバルナビはハンバーガー＋スライドインドロワー（#sidr）に切替 */
+  #gNav{display:none;}
+  #mobile{display:block;}
+  #sidr{display:block;}
+
+  /* 予約ボタン帯：全幅で押しやすく */
+  #wv_headbtn{text-align:center; padding:16px 16px 0;}
+  #wv_headbtn .wv_headbtn_1{display:flex;}
+  #wv_headbtn .wv_headbtn_1 li{flex:1;}
+  #wv_headbtn .wv_headbtn_1 li a{width:100%; justify-content:center; padding:12px 18px;}
+
+  /* 本文レイアウト */
+  #contents{padding:26px 14px 48px; gap:26px;}
+  #main article > section{padding:22px 18px; border-radius:14px; margin:0 0 20px;}
+  #sp_footer{display:block;}
+
+  /* 見出し */
+  #main h2{font-size:21px; margin-bottom:18px; padding-bottom:12px;}
+  #main h3{font-size:16.5px; padding:8px 13px;}
+  #main h4{font-size:15.5px;}
+
+  /* 本文・ボタン */
+  #main p{font-size:14.5px;}
+  #main .big-button{width:100%; min-width:0; padding:14px 18px; font-size:14.5px;}
+
+  /* 画像・地図埋め込みのはみ出し防止 */
+  #main .subpagecontents iframe{max-width:100%;}
+  #main .subpagecontents iframe:not(.iframe-youtube){width:100% !important; height:300px;}
+
+  /* 目次：1カラム */
+  #main .block_index{padding:16px 18px;}
+  #main .block_index ul{grid-template-columns:1fr;}
+
+  /* TOPバナー（LINE・提携）2カラム維持しつつ余白縮小 */
+  .topSec1620 .banner ul{gap:12px;}
+
+  /* お知らせ */
+  .infoSec dt{font-size:14.5px;}
+
+  /* 診療時間テーブル：8列を縮小して収める */
+  .timeSec table.tablepress{font-size:11.5px;}
+  .timeSec table.tablepress th, .timeSec table.tablepress td{padding:9px 3px;}
+  .timeSec table.tablepress td.column-1{font-size:10.5px; white-space:normal; padding:9px 5px; line-height:1.5;}
+  /* 本文中の汎用テーブル（医師略歴など）のはみ出し防止 */
+  #main .subpagecontents table{max-width:100%;}
+
+  /* サイドメニュー：見出し級リンクを大きく */
+  #sideMenu .backhome a{padding:13px;}
+
+  /* フッター */
+  #footer{padding:36px 18px 26px;}
+  .footer_sitename{font-size:20px;}
+  .footer_youso{font-size:12.5px;}
+
+  /* 院長ブログ */
+  #main p.column_list_item{padding:18px 18px;}
+  #main .column_title a{font-size:17px;}
+  #blog_prev_next ul{flex-direction:column;}
+  #blog_prev_next li.blog_next{margin-left:0;}
+  #blog_prev_next li a{display:block; text-align:center;}
+}
+
+/* ===== 小型スマホ（〜380px）：さらに微調整 ===== */
+@media screen and (max-width:380px){
+  #main article > section{padding:20px 14px;}
+  #sidr{width:262px;}
+  .timeSec table.tablepress{font-size:10.5px;}
+  .timeSec table.tablepress th, .timeSec table.tablepress td{padding:8px 2px;}
+  #sideMenu .banner > ul{flex-direction:column;}
+  #sideMenu .banner li{flex:1 1 auto;}
+}

@@ -1,0 +1,322 @@
+/* ============================================================
+   出雲漢方クリニック デザインリニューアル案 - PC版（style-pc.css）
+   ・サイトのHTML構造（WordPress/Weveryテーマの出力）はそのまま
+   ・既存テーマCSSを読み込まず、この新CSSのみで見た目を再構築
+   ・配色は既存どおり #677A4D（緑）/ #415E40（濃緑）
+   ・スマホ向けの上書きは style-sp.css に分離
+   ============================================================ */
+:root{
+  --green:#677A4D; --green-d:#415E40;
+  --tint:rgba(103,122,77,.08); --tint2:rgba(103,122,77,.16);
+  --ink:#3a3a36; --mut:#6f6f68; --line:#e7e8e1;
+  --bg:#fbfbf8; --soft:#f4f5ef; --white:#fff;
+  --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+  --gothic:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,Meiryo,sans-serif;
+  --shadow:0 6px 24px rgba(60,70,45,.08);
+  --shadow-sm:0 2px 10px rgba(60,70,45,.06);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{ text-align: left; margin:0; background:var(--bg); color:var(--ink); font-family:var(--gothic); line-height:1.9; font-size:16px; -webkit-font-smoothing:antialiased;}
+img{max-width:100%; height:auto;}
+a{color:var(--green-d); text-decoration:none;}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover{text-decoration:underline;}
+
+/* 不要・空要素やモバイル専用UIを非表示 */
+#mov_intro, #top_contents, #bottom_contents,
+#header_add, #side_add, #footer_add, #add_footer_data,
+.header_tel, #header > div[style*="clear"],
+#contents > .banner.smart_phone, .banner.smart_phone{display:none !important;}
+/* ハンバーガー／ドロワーはPC・タブレットでは非表示（スマホ幅でSP CSSが表示） */
+#mobile, #sidr{display:none;}
+body.drawer-open{overflow:hidden;}
+
+/* ===== ヘッダー ===== */
+#header{
+  display:grid; grid-template-columns:auto 1fr auto;
+  grid-template-areas:"brand text week" "brand addr search";
+  align-items:center; column-gap:24px; row-gap:2px;
+  max-width:1160px; margin:0 auto; padding:16px 24px;
+  background:rgba(255,255,255,.95);
+}
+#header h1{grid-area:brand; margin:0; display:flex; align-items:center;}
+#header h1 a{display:flex; align-items:center; gap:14px;}
+#header .cliniclogo_img{width:52px; height:auto; border-radius:8px; display:block;}
+#header .h1_text{font-family:var(--serif); font-size:22px; font-weight:600; color:var(--green-d); line-height:1.3;}
+.header_text{grid-area:text; align-self:end;}
+.header_text p{margin:0; font-size:12.5px; color:var(--mut); letter-spacing:.02em;}
+.header_address{grid-area:addr; align-self:start;}
+.header_address p{margin:0; font-size:12px; color:var(--mut);}
+.header_week{grid-area:week; justify-self:end; text-align:right;}
+.header_week p{margin:0; font-size:12px; color:var(--green-d); font-weight:600; line-height:1.5;}
+.header_week a{font-weight:600;}
+#searchform{grid-area:search; justify-self:end; margin:0;}
+#page_search{display:flex; align-items:center; background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:2px 4px 2px 14px;}
+#page_search .screen-reader-text{display:none;}
+#s{border:none; background:transparent; outline:none; font-size:13px; padding:6px 4px; width:150px; color:var(--ink);}
+#searchsubmit{width:30px; height:30px; opacity:.6; cursor:pointer;}
+
+/* ===== グローバルナビ ===== */
+#gNav{position:sticky; top:0; z-index:50; background:var(--green); box-shadow:0 2px 10px rgba(0,0,0,.08);}
+#gNav #nav{display:flex; flex-wrap:wrap; justify-content:center; list-style:none; margin:0 auto; padding:0; max-width:1160px;}
+#gNav #nav > li{margin:0;}
+#gNav #nav > li > a{display:block; padding:15px 22px; color:#fff; font-size:14.5px; transition:.2s;}
+#gNav #nav > li > a:hover{background:rgba(255,255,255,.16); text-decoration:none;}
+#gNav #nav > li.current-menu-item > a{background:var(--green-d); font-weight:700;}
+
+/* ===== 予約ボタン帯 ===== */
+#wv_headbtn{ display: none; }
+#wv_headbtn .wv_headbtn_1{list-style:none; margin:0; padding:0; display:inline-flex; gap:10px;}
+#wv_headbtn .wv_headbtn_1 li a{display:inline-flex; align-items:center; gap:6px; background:var(--green); color:#fff; padding:11px 26px; border-radius:999px; font-weight:700; font-size:14.5px; box-shadow:0 4px 12px rgba(103,122,77,.3); transition:.2s;}
+#wv_headbtn .wv_headbtn_1 li a:hover{background:var(--green-d); text-decoration:none; transform:translateY(-1px);}
+
+/* ===== ヒーロー（スライダー） ===== */
+#images{max-width:1160px; }
+#images .metaslider{border-radius:16px; overflow:hidden; box-shadow:var(--shadow);}
+.slider-wrapper .ribbon{display:none;}
+#metaslider_133{position:relative; width:100%; aspect-ratio: 1280/632; overflow:hidden; background:var(--soft);}
+/* 本番 nivoSlider 準拠：フェード切替（animSpeed 800ms）/ 自動送り（pauseTime 3000ms）/ ドットナビ（controlNav）/ 矢印なし */
+#metaslider_133 > a{position:absolute; inset:0; opacity:0; transition:opacity .8s ease; z-index:1;}
+#metaslider_133 > a.is-active{opacity:1; z-index:2;}
+/* JS未実行時のフォールバック：1枚目を表示 */
+#metaslider_133:not(.slider-ready) > a:first-child{opacity:1;}
+#metaslider_133 > a img{width:100%; height:100%; object-fit:cover; display:block;}
+/* 下部の微グラデーション（ドットの視認性確保） */
+#metaslider_133::after{content:""; position:absolute; left:0; right:0; bottom:0; height:64px; background:linear-gradient(transparent, rgba(0,0,0,.28)); z-index:4; pointer-events:none;}
+/* ドットナビ */
+#metaslider_133 .hero-dots{position:absolute; left:0; right:0; bottom:15px; z-index:6; display:flex; justify-content:center; gap:9px; margin:0; padding:0; list-style:none;}
+#metaslider_133 .hero-dots button{width:11px; height:11px; padding:0; border:2px solid rgba(255,255,255,.9); border-radius:50%; background:transparent; cursor:pointer; transition:transform .2s, background .2s; box-shadow:0 1px 3px rgba(0,0,0,.35);}
+#metaslider_133 .hero-dots button:hover{background:rgba(255,255,255,.6);}
+#metaslider_133 .hero-dots button.is-active{background:#fff; transform:scale(1.2);}
+
+/* ===== コンテンツ全体レイアウト（メイン＋サイド） ===== */
+#contents{max-width:1160px; margin:0 auto; padding:48px 24px 70px; display:grid; grid-template-columns:minmax(0,1fr) 296px; gap:40px;}
+/* 横autoマージンはグリッドのstretchを無効化し中身（絶対配置スライド）で幅0に潰れるため打ち消す */
+#images{grid-column:1 / -1; justify-self:stretch; margin-left:0; margin-right:0; max-width:none;}
+#main{grid-column:1; min-width:0;}
+#sideMenu{grid-column:2;}
+
+/* ===== セクション＝カード ===== */
+#main article{display:block;}
+#main article > section{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:34px 36px; margin:0 0 28px; box-shadow:var(--shadow-sm);}
+/* バナーのみのセクションは枠なし */
+#main article > section.topSec1620, #main article > section.topSec1438{background:none; border:none; box-shadow:none; padding:0; margin:0 0 28px;}
+
+/* 見出し */
+#main h2{font-family:var(--serif); font-size:25px; font-weight:600; color:var(--green-d); margin:0 0 22px; padding:0 0 14px; position:relative; line-height:1.4; border-bottom:1px solid var(--line);}
+#main h2::after{content:""; position:absolute; left:0; bottom:-1px; width:64px; height:3px; background:var(--green); border-radius:3px;}
+#main h3{font-size:18px; font-weight:600; color:var(--green-d); margin:26px 0 10px; padding:9px 16px; background:var(--tint); border-left:4px solid var(--green); border-radius:0 8px 8px 0;}
+#main h4{font-size:16px; font-weight:600; color:var(--green-d); margin:28px 0 12px; padding:0 0 8px 22px; position:relative; line-height:1.6; border-bottom:2px dotted var(--green);}
+#main h4::before{content:""; position:absolute; left:3px; top:.45em; width:10px; height:10px; background:var(--green); border-radius:2px; transform:rotate(45deg);}
+#main p{font-size:15px; margin:0 0 12px; color:var(--ink);}
+#main p strong{color:var(--green-d);}
+
+/* 強調ボックス */
+#main .block-emphasis{background:var(--tint); border:1px solid var(--tint2); border-left:4px solid var(--green); border-radius:0 10px 10px 0; padding:18px 22px; margin:0 0 22px;}
+#main .block-emphasis p{margin:0 0 8px; font-size:14.5px; color:var(--mut);}
+#main .block-emphasis p:last-child{margin-bottom:0;}
+#main .block-emphasis p strong{color:var(--green-d); font-size:16px;}
+
+/* big-button */
+#main .big-button{display:block; width:fit-content; min-width:280px; text-align:center; margin:26px auto 6px; padding:14px 44px; background:var(--green); color:#fff !important; border-radius:999px; font-weight:700; font-size:15px; box-shadow:0 4px 14px rgba(103,122,77,.32); transition:.2s;}
+#main .big-button:hover{background:var(--green-d); text-decoration:none; transform:translateY(-2px);}
+#main p:has(> .big-button){margin:0;}
+
+/* バナー（LINE・提携鍼灸院） */
+.topSec1620 .banner ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+.topSec1620 .banner li{margin:0;}
+.topSec1620 .banner a{display:block; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--line); transition:.2s;}
+.topSec1620 .banner a:hover{transform:translateY(-3px); box-shadow:var(--shadow); text-decoration:none;}
+.topSec1620 .banner img{width:100%; display:block;}
+
+/* お知らせ（dl/dt/dd） */
+.infoSec dl{margin:0;}
+.infoSec dt{font-size:15.5px; color:var(--ink); font-weight:600; padding:18px 0 4px; border-top:1px solid var(--line); line-height:1.6;}
+.infoSec dt:first-of-type{border-top:none; padding-top:0;}
+.infoSec .info_date{color:var(--green); font-size:13px; font-weight:600; margin-left:6px;}
+.infoSec dd{margin:0 0 6px; font-size:14px; color:var(--mut);}
+.infoSec dd p{font-size:14px; color:var(--mut); margin:0 0 6px;}
+.infoSec dd a{font-weight:600;}
+
+/* 交通案内 */
+.mapSec .simplemap{border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--line); margin:0 0 18px;}
+.mapSec .simplemap iframe{display:block; width:100%;}
+.mapSec_clinicadnum{font-size:13px; color:var(--mut);}
+.mapSec_clinicaddress{font-family:var(--serif); font-size:19px; color:var(--green-d);}
+.mapSec_clinictraffic{font-size:14px; color:var(--mut);}
+.mapSec_tomappage a{font-weight:700;}
+
+/* 診療時間テーブル */
+.timeSec table.tablepress{width:100%; border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); font-size:14px; margin:0 0 16px;}
+.timeSec table.tablepress th, .timeSec table.tablepress td{padding:13px 8px; text-align:center; border-bottom:1px solid var(--line); border-right:1px solid var(--line);}
+.timeSec table.tablepress thead th{background:var(--green); color:#fff; font-weight:600;}
+.timeSec table.tablepress td.column-1{background:var(--soft); text-align:left; font-weight:600; color:var(--green-d); font-size:13px; white-space:nowrap;}
+.timeSec table.tablepress tr:last-child td{border-bottom:none;}
+.timeSec table.tablepress td:last-child, .timeSec table.tablepress th:last-child{border-right:none;}
+.timeSec .meditimenote{font-size:12.5px; color:var(--mut); line-height:1.8;}
+.timeSec p{font-size:13px; color:var(--mut);}
+
+/* 紹介先・施設基準など */
+.top2Sec ul{list-style:none; margin:8px 0 0; padding:0;}
+.top2Sec li{position:relative; padding:9px 0 9px 22px; font-size:14.5px; border-bottom:1px dotted var(--line);}
+.top2Sec li:last-child{border-bottom:none;}
+.top2Sec li::before{content:""; position:absolute; left:2px; top:17px; width:8px; height:8px; border-radius:50%; background:var(--green);}
+
+/* ===== サイドメニュー ===== */
+#sideMenu{align-self:start; position:sticky; top:72px;}
+#sideMenu .backhome{margin:0 0 16px;}
+#sideMenu .backhome a{display:block; text-align:center; background:var(--green-d); color:#fff; padding:11px; border-radius:10px; font-weight:700; font-size:14px;}
+#sideMenu .backhome a:hover{text-decoration:none; opacity:.92;}
+#sideMenu .banner{margin:0 0 22px;}
+#sideMenu .banner > ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;}
+#sideMenu .banner li{margin:0;}
+#sideMenu .banner li > p{margin:0; font-size:13px; font-weight:700; color:var(--green-d); padding:6px 2px; border-bottom:2px solid var(--tint2);}
+#sideMenu .banner a{display:block; border-radius:10px; overflow:hidden; box-shadow:var(--shadow-sm); transition:.2s;}
+#sideMenu .banner a:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
+#sideMenu .banner img{width:100%; display:block;}
+#sideMenu .sidemenu_bottom ul{ gap:10px;}
+#sideMenu .sidemenu_bottom li:first-child{grid-column:1 / -1;}
+
+/* ===== ページトップ ===== */
+.pagetop{text-align:center; padding:10px 0 40px;}
+.pagetop a{display:inline-block; color:var(--green-d); font-size:13px; font-weight:600;}
+
+/* ===== フッター ===== */
+#footer{background:#3c4438; color:#cfd3c7; padding:50px 24px 30px;}
+#footer_area{max-width:1160px; margin:0 auto;}
+.footer_sitename{font-family:var(--serif); font-size:23px; margin:0 0 14px;}
+.footer_sitename a{color:#fff;}
+.footer_youso{font-size:13.5px; line-height:2; color:#aeb3a4; margin:0;}
+.footer_youso a{color:#dfe3d6;}
+.address{display:block; text-align:center; margin-top:24px; border-top:1px solid rgba(255,255,255,.12); padding-top:18px; font-size:12px; color:#8f9485; font-style:normal;}
+
+/* ============================================================
+   サブページ共通（オンライン診療など下層ページ）
+   ・TOPと同じ #main article > section のカード装飾を踏襲
+   ============================================================ */
+/* パンくず */
+#breadcrumbs{margin:0 0 18px; font-size:12.5px; color:var(--mut);}
+#breadcrumbs a{color:var(--green-d); font-weight:600;}
+
+/* ページ見出し画像 */
+#main .mb-3{margin:0 0 24px;}
+#main .article-thumbnail{width:100%; border-radius:14px; box-shadow:var(--shadow-sm); display:block;}
+
+/* 本文ラッパー */
+#main .subpagecontents{margin:0;}
+
+/* 本文中のリスト（チェックリスト風） */
+#main .subpagecontents ul{list-style:none; margin:0 0 16px; padding:0;}
+#main .subpagecontents ul li{position:relative; padding:8px 0 8px 26px; font-size:15px; border-bottom:1px dotted var(--line);}
+#main .subpagecontents ul li:last-child{border-bottom:none;}
+#main .subpagecontents ul li::before{content:""; position:absolute; left:4px; top:15px; width:10px; height:6px; border-left:2px solid var(--green); border-bottom:2px solid var(--green); transform:rotate(-45deg);}
+
+/* 目次（block_index） */
+#main .block_index{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin:28px 0;}
+#main .block_index > strong{display:block; font-family:var(--serif); font-size:18px; color:var(--green-d); padding-bottom:10px; margin-bottom:8px; border-bottom:1px solid var(--line);}
+#main .block_index ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr; column-gap:24px;}
+#main .block_index ul li{position:relative; margin:0; padding:0; border-bottom:1px dotted var(--line);}
+#main .block_index ul li::before{content:""; position:absolute; left:4px; top:50%; margin-top:-3px; width:6px; height:6px; border:none; background:var(--green); border-radius:50%; transform:none;}
+#main .block_index a{display:block; padding:9px 6px 9px 20px; color:var(--ink); font-size:14.5px;}
+#main .block_index a:hover{color:var(--green-d); text-decoration:none;}
+
+/* YouTube 埋め込み（レスポンシブ16:9） */
+#main .iframe-youtube{width:100% !important; aspect-ratio:16/9; height:auto !important; border:0; border-radius:12px; box-shadow:var(--shadow-sm); display:block; margin:6px 0 12px;}
+
+/* ===== スマホ固定フッター（PCでは非表示・SP版で表示） ===== */
+#sp_footer{position:fixed; bottom:0; left:0; right:0; z-index:60; background:var(--green); box-shadow:0 -2px 12px rgba(0,0,0,.15); display:none;}
+#sp_footer ul{display:flex; list-style:none; margin:0; padding:0;}
+#sp_footer li{flex:1;}
+#sp_footer li + li{border-left:1px solid rgba(255,255,255,.25);}
+#sp_footer li a{display:flex; flex-direction:column; align-items:center; gap:2px; padding:9px 4px; color:#fff; font-size:11px; font-weight:600;}
+#sp_footer li a:hover{text-decoration:none;}
+#sp_footer .material-icons{font-size:22px;}
+#sp_footer .spf_word{font-size:11px;}
+
+/* ============ 院長ブログ（一覧 / 記事） ============ */
+/* 一覧 */
+#main .column h2{margin-bottom:6px;}
+#main .column .subpagecontents{display:block;}
+#main p.column_list_item{position:relative; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:22px 26px; margin:0 0 18px; box-shadow:var(--shadow-sm); transition:.2s;}
+#main p.column_list_item:hover{box-shadow:var(--shadow); transform:translateY(-2px);}
+#main .column_title{display:block; margin:0 0 6px;}
+#main .column_title a{font-family:var(--serif); font-size:19px; font-weight:600; color:var(--green-d); line-height:1.5;}
+#main .column_title a:hover{text-decoration:underline;}
+#main .column_time{display:inline-block; font-size:12.5px; font-weight:600; color:var(--green); background:var(--soft); border-radius:999px; padding:3px 12px; margin:0 0 10px;}
+#main .column_description{display:block; font-size:14.5px; color:var(--mut); line-height:1.85;}
+#main .column_description a{font-weight:600; color:var(--green-d); white-space:nowrap;}
+#main .column_description a:hover{text-decoration:underline;}
+
+/* ページネーション */
+#wp_page_numbers{margin:30px 0 6px;}
+#wp_page_numbers ul{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; list-style:none; margin:0; padding:0;}
+#wp_page_numbers li{margin:0;}
+#wp_page_numbers li a{display:flex; align-items:center; justify-content:center; min-width:40px; height:40px; padding:0 12px; border:1px solid var(--line); border-radius:10px; background:var(--white); color:var(--green-d); font-weight:600; font-size:14px; transition:.2s;}
+#wp_page_numbers li a:hover{background:var(--soft); text-decoration:none;}
+#wp_page_numbers li.active_page a{background:var(--green); border-color:var(--green); color:#fff;}
+
+/* 記事 */
+#main .blogSec h2{margin-bottom:8px;}
+#main .blogSec > .column_time{margin:0 0 22px;}
+#main .blogSec .subpagecontents p{margin:0 0 16px; font-size:15.5px;}
+
+/* 前後記事ナビ */
+#blog_prev_next{margin:34px 0 4px; border-top:1px solid var(--line); padding-top:20px;}
+#blog_prev_next ul{display:flex; justify-content:space-between; gap:12px; list-style:none; margin:0; padding:0;}
+#blog_prev_next li{margin:0;}
+#blog_prev_next li::before{display:none;}
+#blog_prev_next li a{display:inline-block; padding:10px 22px; border:1px solid var(--line); border-radius:999px; background:var(--white); color:var(--green-d); font-weight:600; font-size:14px; transition:.2s;}
+#blog_prev_next li a:hover{background:var(--green); border-color:var(--green); color:#fff; text-decoration:none;}
+#blog_prev_next li.blog_next{margin-left:auto;}
+
+/* ============================================================
+   モバイル：ハンバーガー & スライドインドロワー（#sidr / 右からスライド）
+   ・実サイトの sidr プラグイン挙動（side:right）を踏襲しつつリデザイン
+   ・表示制御は style-sp.css（≤560 で #mobile / #sidr を display:block）
+   ・開閉は menu.js が body.drawer-open を付け外しして制御
+   ============================================================ */
+/* オーバーレイ（menu.js が body 直下に生成） */
+#drawer-overlay{position:fixed; inset:0; background:rgba(30,36,24,.5); opacity:0; visibility:hidden; transition:opacity .3s ease; z-index:995;}
+body.drawer-open #drawer-overlay{opacity:1; visibility:visible;}
+
+/* ハンバーガーボタン（右上固定） */
+#mobile{position:fixed; top:10px; right:12px; z-index:980; margin:0;}
+#mobile .mobile_menu{display:flex; align-items:center; justify-content:center; width:46px; height:46px; background:var(--green); border-radius:12px; box-shadow:0 4px 12px rgba(60,70,45,.3); transition:.2s;}
+#mobile .mobile_menu:hover{background:var(--green-d); text-decoration:none;}
+#mobile .mobile_menu img{display:none;}
+#mobile .mobile_menu::after{font-family:'Material Icons'; content:"\e5d2"; color:#fff; font-size:28px; line-height:1;}
+body.drawer-open #mobile .mobile_menu::after{content:"\e5cd";}
+
+/* ドロワー本体 */
+#sidr{position:fixed; top:0; right:0; width:284px; max-width:84%; height:100%; background:var(--white); box-shadow:-8px 0 28px rgba(0,0,0,.18); z-index:1000; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; transform:translateX(100%); transition:transform .3s ease; padding:16px 18px 40px;}
+body.drawer-open #sidr{transform:translateX(0);}
+
+/* 閉じるボタン */
+#sidr .close{margin:0 0 8px; text-align:right;}
+#sidr .close a{display:inline-flex; align-items:center; gap:4px; font-size:13px; font-weight:600; color:var(--mut);}
+#sidr .close a:hover{text-decoration:none; color:var(--green-d);}
+#sidr .close a::before{font-family:'Material Icons'; content:"\e5cd"; font-size:20px;}
+
+/* HOME ボタン */
+#sidr .backhome{margin:0 0 16px;}
+#sidr .backhome a{display:block; text-align:center; background:var(--green-d); color:#fff; padding:11px; border-radius:10px; font-weight:700; font-size:14px;}
+#sidr .backhome a:hover{text-decoration:none; opacity:.92;}
+
+/* ナビメニュー */
+#sidr #menu-main_menu{list-style:none; margin:0 0 18px; padding:0; border-top:1px solid var(--line);}
+#sidr #menu-main_menu li{margin:0; border-bottom:1px solid var(--line);}
+#sidr #menu-main_menu li a{display:block; padding:14px 26px 14px 14px; color:var(--ink); font-size:14.5px; font-weight:600; position:relative;}
+#sidr #menu-main_menu li a::after{font-family:'Material Icons'; content:"\e5cc"; position:absolute; right:4px; top:50%; transform:translateY(-50%); color:var(--green); font-size:18px;}
+#sidr #menu-main_menu li a:hover{background:var(--soft); text-decoration:none;}
+#sidr #menu-main_menu li.current-menu-item > a{color:var(--green-d); background:var(--tint);}
+
+/* バナー類（LINE・予約・よくある質問・提携・ブログ・SNS） */
+#sidr .banner{margin:0 0 16px;}
+#sidr .banner ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px;}
+#sidr .banner li{margin:0;}
+#sidr .banner li > p{grid-column:1 / -1; margin:0; font-size:12.5px; font-weight:700; color:var(--green-d); padding:2px 0 4px; border-bottom:2px solid var(--tint2);}
+#sidr .banner a{display:block; border-radius:8px; overflow:hidden; box-shadow:var(--shadow-sm);}
+#sidr .banner a:hover{text-decoration:none; opacity:.92;}
+#sidr .banner img{width:100%; display:block;}
