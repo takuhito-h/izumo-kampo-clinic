@@ -1,0 +1,35 @@
+/* ============================================================
+   出雲漢方クリニック デザインリニューアル案 - スマホ版（style-sp.css）
+   ・style-pc.css の後に読み込むこと（上書きするため）
+   ・タブレット〜スマホの画面幅で PC 版レイアウトを調整
+   ・読み込み例：
+       <link rel="stylesheet" href="style-pc.css">
+       <link rel="stylesheet" href="style-sp.css">
+     もしくは media 属性で振り分け：
+       <link rel="stylesheet" href="style-sp.css" media="screen and (max-width:980px)">
+   ============================================================ */
+
+/* ===== タブレット〜（〜980px）：2カラムを1カラムへ ===== */
+@media screen and (max-width:980px){
+  #contents{grid-template-columns:1fr;}
+  #sideMenu{grid-column:1; position:static;}
+  #header{grid-template-columns:auto 1fr; grid-template-areas:"brand week" "brand text" "brand addr"; row-gap:2px;}
+  #searchform{display:none;}
+  #gNav #nav > li > a{padding:12px 14px; font-size:13.5px;}
+}
+
+/* ===== スマホ（〜560px）：1カラム・固定フッター表示 ===== */
+@media screen and (max-width:560px){
+  body{font-size:15px; padding-bottom:60px;}
+  #header{grid-template-columns:1fr; grid-template-areas:"brand" "text"; text-align:center; justify-items:center;}
+  .header_address, .header_week{display:none;}
+  #gNav{display:none;}
+  #wv_headbtn{text-align:center; padding-top:18px;}
+  #images{padding:0 14px;}
+  #metaslider_133{aspect-ratio:4/5;}
+  #contents{padding:30px 16px 50px;}
+  #main article > section{padding:24px 20px;}
+  #sp_footer{display:block;}
+  /* サブページ：目次を1カラムに */
+  #main .block_index ul{grid-template-columns:1fr;}
+}
