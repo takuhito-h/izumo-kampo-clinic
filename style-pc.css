@@ -17,9 +17,11 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--gothic); line-height:1.9; font-size:16px; -webkit-font-smoothing:antialiased;}
+body{ text-align: left; margin:0; background:var(--bg); color:var(--ink); font-family:var(--gothic); line-height:1.9; font-size:16px; -webkit-font-smoothing:antialiased;}
 img{max-width:100%; height:auto;}
 a{color:var(--green-d); text-decoration:none;}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
 a:hover{text-decoration:underline;}
 
 /* 不要・空要素やモバイル専用UIを非表示 */
