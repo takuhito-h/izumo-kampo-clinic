@@ -18,10 +18,15 @@
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{ text-align: left; margin:0; background:var(--bg); color:var(--ink); font-family:var(--gothic); line-height:1.9; font-size:16px; -webkit-font-smoothing:antialiased;}
+/* 本番テーマ css-php.css の `body{min-width:1010px}`（旧iPad対応）を打ち消し、
+   幅1010px未満（タブレット〜スマホ・小さいPCウィンドウ）の横スクロールを防止。
+   ※ overflow-x は position:sticky を阻害するため使わず、min-width の打ち消しのみで対処 */
+html, body{ min-width:0 !important; }
 img{max-width:100%; height:auto;}
 a{color:var(--green-d); text-decoration:none;}
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
+/* 本番 css-php.css の `a:link{color:#0081cd}`（青）に詳細度で勝てるよう、:link/:visited にも色を明示 */
+a:link { color:var(--green-d); text-decoration: none; }
+a:visited { color:var(--green-d); text-decoration: none; }
 a:hover{text-decoration:underline;}
 
 /* 不要・空要素やモバイル専用UIを非表示 */
@@ -157,6 +162,21 @@ body.drawer-open{overflow:hidden;}
 .timeSec table.tablepress td:last-child, .timeSec table.tablepress th:last-child{border-right:none;}
 .timeSec .meditimenote{font-size:12.5px; color:var(--mut); line-height:1.8;}
 .timeSec p{font-size:13px; color:var(--mut);}
+/* 診療時間テーブル(.time_table)は .timeSec 外のページ（time.html=pageSec）でも
+   本番tablepress既定の水色ヘッダーにならないよう、ブランド緑へ統一 */
+#main table.time_table{border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); margin:0 0 16px;}
+#main table.time_table thead th{background:var(--green); color:#fff; font-weight:600;}
+#main table.time_table td.column-1{background:var(--soft); color:var(--green-d); font-weight:600;}
+
+/* ===== 本文テーブル全般（医師略歴など） ===== */
+/* tablepress（診療時間）は専用 .timeSec スタイルを使うため :not(.tablepress) で除外 */
+#main table:not(.tablepress){width:100%; border-collapse:collapse; background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); font-size:14.5px; margin:0 0 20px;}
+#main table:not(.tablepress) th, #main table:not(.tablepress) td{padding:12px 16px; text-align:left; vertical-align:top; line-height:1.8; border-bottom:1px solid var(--line);}
+#main table:not(.tablepress) tr:last-child th, #main table:not(.tablepress) tr:last-child td{border-bottom:none;}
+/* 見出し行（thead th）：ブランド緑 */
+#main table:not(.tablepress) thead th{background:var(--green); color:#fff; font-weight:600;}
+/* 行見出し（tbody内の左列 th＝キー）：薄背景＋濃緑、内容幅に収める */
+#main table:not(.tablepress) tbody th{background:var(--soft); color:var(--green-d); font-weight:700; white-space:nowrap; width:1%; border-right:1px solid var(--line);}
 
 /* 紹介先・施設基準など */
 .top2Sec ul{list-style:none; margin:8px 0 0; padding:0;}
@@ -180,7 +200,8 @@ body.drawer-open{overflow:hidden;}
 #sideMenu .sidemenu_bottom li:first-child{grid-column:1 / -1;}
 
 /* ===== ページトップ ===== */
-.pagetop{text-align:center; padding:10px 0 40px;}
+/* css-php.css の `.pagetop{margin-top:45px}` を打ち消し、余分な上余白を除去 */
+.pagetop{margin:0; text-align:center; padding:10px 0 40px;}
 .pagetop a{display:inline-block; color:var(--green-d); font-size:13px; font-weight:600;}
 
 /* ===== フッター ===== */
@@ -314,7 +335,7 @@ body.drawer-open #sidr{transform:translateX(0);}
 
 /* バナー類（LINE・予約・よくある質問・提携・ブログ・SNS） */
 #sidr .banner{margin:0 0 16px;}
-#sidr .banner ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px;}
+#sidr .banner ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:minmax(0,1fr); gap:10px;}
 #sidr .banner li{margin:0;}
 #sidr .banner li > p{grid-column:1 / -1; margin:0; font-size:12.5px; font-weight:700; color:var(--green-d); padding:2px 0 4px; border-bottom:2px solid var(--tint2);}
 #sidr .banner a{display:block; border-radius:8px; overflow:hidden; box-shadow:var(--shadow-sm);}

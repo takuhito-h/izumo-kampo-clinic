@@ -1,0 +1,125 @@
+#weekly_set tbody td {
+	cursor: pointer;
+	}
+#weekly_set td.am {
+	background: #fff url('./images/am.gif') center center no-repeat;
+	}
+#weekly_set td.pm {
+	background: #fff url('./images/pm.gif') center center no-repeat;
+	}
+#weekly_set td.all {
+	background: #fff url('./images/all.gif') center center no-repeat;
+	}
+
+div.isp-calendar-frame {
+	width: 100%;
+	}
+
+table.isp-calendar-inner {
+	width: 100%;
+	}
+
+table.isp-calendar-inner div.move_button {
+	width: 23px;
+	height: 15px;
+	}
+table.isp-calendar-inner div.prv {
+	background: transparent url('./images/btn_prv.png') left center no-repeat;
+	cursor: pointer;
+	}
+table.isp-calendar-inner div.prv_off {
+	background: transparent url('./images/btn_prv_off.png') left center no-repeat;
+	}
+table.isp-calendar-inner div.nxt {
+	background: transparent url('./images/btn_nxt.png') right center no-repeat;
+	text-align: right;
+	cursor: pointer;
+	}
+table.isp-calendar-inner div.nxt_off {
+	background: transparent url('./images/btn_nxt_off.png') right center no-repeat;
+	text-align: right;
+	}
+
+/* 年月タイトル */
+table.isp-calendar-inner td.calendar-date-title {
+	font-weight: bold;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	}
+
+/* 線の色 */
+table.isp-business-calendar {
+	background-color: #909090;
+	width: 100%;
+	}
+
+/* カレンダー全般 */
+table.isp-business-calendar td {
+	padding: 3px;
+	text-align: center;
+	}
+
+/* ヘッダ */
+table.isp-business-calendar thead th {
+	background-color: #c0c0c0;
+	font-weight: bold;
+	padding: 3px 0px;
+	text-align: center;
+	}
+
+/* 営業日 */
+table.isp-business-calendar .business {
+	background-color: #ffffff;
+	}
+
+/* 本日 */
+table.isp-business-calendar .today {
+	background-color: #ddeeff;
+	}
+
+/* 全休 */
+table.isp-business-calendar .all {
+	background-color: #ffdddd;
+	}
+
+/* 午前休 */
+table.isp-business-calendar .am {
+	background-color: #ffffcc;
+	}
+
+/* 午後休 */
+table.isp-business-calendar .pm {
+	background-color: #ccffcc;
+	}
+
+/* 他月 */
+table.isp-business-calendar .space {
+	background-color: #eeeeee;
+	}
+
+p.calendar-information {
+	float: left;
+	margin: 0px;
+	padding: 5px 10px 5px 18px;
+	font-size: 0.8em;
+	}
+
+p.holiday_all {
+	background: transparent url('./images/mark_holiday.gif') left center no-repeat;
+	}
+p.holiday_am {
+	background: transparent url('./images/mark_am.gif') left center no-repeat;
+	}
+p.holiday_pm {
+	background: transparent url('./images/mark_pm.gif') left center no-repeat;
+	}
+
+/* 当月に戻るリンク */
+p.return_now {
+	clear: both;
+	float: right;
+	margin: 5px 0px;
+	padding: 0px;
+	font-size: 0.8em;
+	}
