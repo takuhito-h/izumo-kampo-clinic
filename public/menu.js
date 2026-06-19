@@ -8,69 +8,7 @@
    ・body.drawer-open を付け外しし、表示は CSS 側で制御
    ============================================================ */
 (function () {
-  /* ===== ヒーロースライダー（#metaslider_133）=====
-     本番 nivoSlider の設定を踏襲：fade / pauseTime 3000 / animSpeed 800(CSS) /
-     controlNav（ドット）/ directionNav なし / 自動送り / ホバーで一時停止 */
-  function initHero() {
-    if (window.__izumoUseProductionSlider) return;
-
-    var box = document.getElementById("metaslider_133");
-    if (!box) return;
-    var slides = [];
-    for (var k = 0; k < box.children.length; k++) {
-      if (box.children[k].tagName === "A") slides.push(box.children[k]);
-    }
-    if (slides.length === 0) return;
-    box.classList.add("slider-ready");
-
-    var i = 0;
-    var timer = null;
-
-    function render() {
-      for (var n = 0; n < slides.length; n++) {
-        slides[n].classList.toggle("is-active", n === i);
-        if (btns[n]) btns[n].classList.toggle("is-active", n === i);
-      }
-    }
-    function go(n) {
-      i = (n + slides.length) % slides.length;
-      render();
-    }
-    function start() {
-      if (slides.length > 1) timer = window.setInterval(function () { go(i + 1); }, 3000);
-    }
-    function stop() { window.clearInterval(timer); }
-    function reset() { stop(); start(); }
-
-    // ドットナビ（controlNav）
-    var btns = [];
-    if (slides.length > 1) {
-      var dots = document.createElement("ul");
-      dots.className = "hero-dots";
-      for (var d = 0; d < slides.length; d++) {
-        (function (idx) {
-          var li = document.createElement("li");
-          var b = document.createElement("button");
-          b.type = "button";
-          b.setAttribute("aria-label", idx + 1 + "枚目を表示");
-          b.addEventListener("click", function () { go(idx); reset(); });
-          li.appendChild(b);
-          dots.appendChild(li);
-          btns.push(b);
-        })(d);
-      }
-      box.appendChild(dots);
-    }
-
-    render();
-    start();
-    box.addEventListener("mouseenter", stop);
-    box.addEventListener("mouseleave", start);
-  }
-
   function init() {
-    initHero();
-
     var body = document.body;
     var sidr = document.getElementById("sidr");
     if (!sidr) return;
