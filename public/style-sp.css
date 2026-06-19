@@ -27,6 +27,8 @@
 /* ===== スマホ（〜560px）：1カラム・ナビ折返し・固定フッター表示 ===== */
 @media screen and (max-width:560px){
   body{font-size:15px; padding-bottom:58px;}
+  /* スマホはグローバルナビがハンバーガー化し上部固定バーが無いため、PC用のアンカーオフセットを解除 */
+  html{scroll-padding-top:0;}
 
   /* ヘッダー：ブランド＋診療科目のみ中央表示 */
   #header{grid-template-columns:1fr; grid-template-areas:"brand" "text"; text-align:center; justify-items:center; padding:14px 16px; column-gap:0;}
