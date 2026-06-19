@@ -57,6 +57,7 @@
   #main h2{font-size:21px; margin-bottom:18px; padding-bottom:12px;}
   #main h3{font-size:16.5px; padding:8px 13px;}
   #main h4{font-size:15.5px;}
+  #main h5{font-size:14.5px;}
 
   /* 本文・ボタン */
   #main p{font-size:14.5px;}
@@ -94,7 +95,7 @@
   .footer_youso{font-size:12.5px;}
 
   /* 院長ブログ */
-  #main p.column_list_item{padding:18px 18px;}
+  #main p.column_list_item{padding:18px 2px;}
   #main .column_title a{font-size:17px;}
   #blog_prev_next ul{flex-direction:column;}
   #blog_prev_next li.blog_next{margin-left:0;}

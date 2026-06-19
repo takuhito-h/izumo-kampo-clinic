@@ -48,6 +48,7 @@ body.drawer-open{overflow:hidden;}
 }
 #header h1{grid-area:brand; margin:0; display:flex; align-items:center;}
 #header h1 a{display:flex; align-items:center; gap:14px;}
+#header h1 a:hover{ text-decoration: none; }
 #header .cliniclogo_img{width:52px; height:auto; border-radius:8px; display:block;}
 #header .h1_text{font-family:var(--serif); font-size:22px; font-weight:600; color:var(--green-d); line-height:1.3;}
 .header_text{grid-area:text; align-self:end;}
@@ -115,6 +116,8 @@ body.drawer-open{overflow:hidden;}
 #main h3{font-size:18px; font-weight:600; color:var(--green-d); margin:26px 0 10px; padding:9px 16px; background:var(--tint); border-left:4px solid var(--green); border-radius:0 8px 8px 0;}
 #main h4{font-size:16px; font-weight:600; color:var(--green-d); margin:28px 0 12px; padding:0 0 8px 22px; position:relative; line-height:1.6; border-bottom:2px dotted var(--green);}
 #main h4::before{content:""; position:absolute; left:3px; top:.45em; width:10px; height:10px; background:var(--green); border-radius:2px; transform:rotate(45deg);}
+/* h5：h4の下位見出し。細い左バーのみのシンプルな装飾で階層を表現 */
+#main h5{font-size:15px; font-weight:700; color:var(--green-d); margin:22px 0 8px; padding:1px 0 1px 12px; border-left:3px solid var(--green); line-height:1.6;}
 #main p{font-size:15px; margin:0 0 12px; color:var(--ink);}
 #main p strong{color:var(--green-d);}
 
@@ -186,7 +189,7 @@ body.drawer-open{overflow:hidden;}
 
 /* ===== サイドメニュー ===== */
 #sideMenu{align-self:start; position:sticky; top:72px;}
-#sideMenu .backhome{margin:0 0 16px;}
+#sideMenu .backhome{ display: none; margin:0 0 16px;}
 #sideMenu .backhome a{display:block; text-align:center; background:var(--green-d); color:#fff; padding:11px; border-radius:10px; font-weight:700; font-size:14px;}
 #sideMenu .backhome a:hover{text-decoration:none; opacity:.92;}
 #sideMenu .banner{margin:0 0 22px;}
@@ -227,6 +230,16 @@ body.drawer-open{overflow:hidden;}
 
 /* 本文ラッパー */
 #main .subpagecontents{margin:0;}
+/* 本文中のテキストリンクは下線で「リンク」と分かるように（TOP含む #main 全体）。
+   ボタン・目次・パンくず・画像リンク・ブログ一覧見出しは除外 */
+#main a{text-decoration:underline; text-decoration-color:rgba(103,122,77,.5); text-decoration-thickness:1px; text-underline-offset:3px;}
+#main a:hover{text-decoration-color:var(--green); text-decoration-thickness:2px;}
+#main .big-button,
+#main .block_index a,
+#main #breadcrumbs a,
+#main .column_title a,
+#main .column_description a,
+#main a:has(img){text-decoration:none;}
 
 /* 本文中のリスト（チェックリスト風） */
 #main .subpagecontents ul{list-style:disc; margin:0 0 16px; padding:0 0 0 1.5em;}
@@ -238,9 +251,16 @@ body.drawer-open{overflow:hidden;}
 #main .block_index > strong{display:block; font-family:var(--serif); font-size:18px; color:var(--green-d); padding-bottom:10px; margin-bottom:8px; border-bottom:1px solid var(--line);}
 #main .block_index ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr; column-gap:24px;}
 #main .block_index ul li{position:relative; margin:0; padding:0; border-bottom:1px dotted var(--line);}
-#main .block_index ul li::before{content:""; position:absolute; left:4px; top:50%; margin-top:-3px; width:6px; height:6px; border:none; background:var(--green); border-radius:50%; transform:none;}
-#main .block_index a{display:block; padding:9px 6px 9px 20px; color:var(--ink); font-size:14.5px;}
+/* マーカーは li ではなく a に付け、入れ子があってもリンク行に揃うようにする */
+#main .block_index a{position:relative; display:block; padding:9px 6px 9px 20px; color:var(--ink); font-size:14.5px;}
+#main .block_index a::before{content:""; position:absolute; left:4px; top:50%; margin-top:-3px; width:6px; height:6px; background:var(--green); border-radius:50%;}
 #main .block_index a:hover{color:var(--green-d); text-decoration:none;}
+/* 入れ子の小見出し（kampo_diet 等）：インデント＋小さなダッシュ印、内側の区切り線は無し */
+#main .block_index ul ul{padding-left:20px;}
+#main .block_index ul ul li{border-bottom:none;}
+#main .block_index ul ul a{padding:6px 6px 6px 18px; font-size:13.5px; color:var(--mut);}
+#main .block_index ul ul a::before{width:7px; height:2px; margin-top:-1px; border-radius:1px; background:var(--mut);}
+#main .block_index ul ul a:hover{color:var(--green-d);}
 
 /* YouTube 埋め込み（レスポンシブ16:9） */
 #main .iframe-youtube{width:100% !important; aspect-ratio:16/9; height:auto !important; border:0; border-radius:12px; box-shadow:var(--shadow-sm); display:block; margin:6px 0 12px;}
@@ -259,8 +279,9 @@ body.drawer-open{overflow:hidden;}
 /* 一覧 */
 #main .column h2{margin-bottom:6px;}
 #main .column .subpagecontents{display:block;}
-#main p.column_list_item{position:relative; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:22px 26px; margin:0 0 18px; box-shadow:var(--shadow-sm); transition:.2s;}
-#main p.column_list_item:hover{box-shadow:var(--shadow); transform:translateY(-2px);}
+/* フラット：囲み枠（border/角丸/影）をやめ、記事間は下罫線のみで区切る */
+#main p.column_list_item{position:relative; padding:20px 4px; margin:0; border-bottom:1px solid var(--line); transition:background .2s;}
+#main p.column_list_item:last-child{border-bottom:none;}
 #main .column_title{display:block; margin:0 0 6px;}
 #main .column_title a{font-family:var(--serif); font-size:19px; font-weight:600; color:var(--green-d); line-height:1.5;}
 #main .column_title a:hover{text-decoration:underline;}
