@@ -30,11 +30,13 @@
   /* スマホはグローバルナビがハンバーガー化し上部固定バーが無いため、PC用のアンカーオフセットを解除 */
   html{scroll-padding-top:0;}
 
-  /* ヘッダー：ブランド＋診療科目のみ中央表示 */
-  #header{grid-template-columns:1fr; grid-template-areas:"brand" "text"; text-align:center; justify-items:center; padding:14px 16px; column-gap:0;}
+  /* ヘッダー：ブランド＋診療科目を左寄せ。右上の固定ハンバーガー(#mobile)分の
+     余白を右に確保し、ブランドとボタンの干渉（中央寄せ時に重なる不具合）を防ぐ。 */
+  #header{grid-template-columns:1fr; grid-template-areas:"brand" "text"; text-align:left; justify-items:start; padding:12px 56px 12px 18px; column-gap:0; row-gap:4px;}
   .header_address, .header_week{display:none;}
   #header .h1_text{font-size:19px;}
   #header .cliniclogo_img{width:44px;}
+  .header_text p{font-size:11px; line-height:1.45;}
 
   /* グローバルナビはハンバーガー＋スライドインドロワー（#sidr）に切替 */
   #gNav{display:none;}
