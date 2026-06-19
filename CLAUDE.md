@@ -5,12 +5,24 @@ HTML構造は本番テーマの出力をそのまま使い、**CSSのみ刷新**
 
 ## コマンド
 
-- `npm run dev` — 開発サーバ（Astro）
+- `npm run dev` — 開発サーバ（Astro、src を即時反映）
 - `npm run build` — 静的ビルド（出力先 `dist/`）
-- `npm run preview` — ビルド結果のプレビュー
+- `npm run preview` — ビルド済み `dist/` をローカル配信（http://localhost:4321）
+- `npm run serve` — `build` → `preview` を一括実行（ビルド後の確認用）
 - `npm run format` — Prettier 整形（`.astro` / `.js` / `astro.config.mjs`）
 
-ビルド設定: `output: "static"`, `build.format: "file"`, `trailingSlash: "never"` → URL は `/clinic.html` のような形式。
+ビルド設定: `output: "static"`, `build.format: "file"`, `trailingSlash: "never"` → URL は `/clinic.html` のような形式（トップは `/` = `index.html`）。
+
+### ビルド後にローカルで確認する
+
+ビルド時に `postbuild`（`scripts/relativize.mjs`）が走り、`dist/` 内の HTML の絶対パス（`/clinic.html`・`/wp-content/...`・`/` など）を**各ファイルの階層に応じた相対パス**（root は `./`、`blog/` 配下は `../`）へ自動変換する。
+
+そのため確認方法は2通り、どちらでも崩れない:
+
+- **ファイル直開き**: `dist/index.html` や `dist/blog/01.html` をブラウザで開く（file://）
+- **ローカルサーバ**: `npm run serve`（ビルド＋ http://localhost:4321 配信）/ `npm run build && npm run preview`
+
+※ ソース（`src/`・コンポーネント）側のリンクは**絶対パス（`/clinic.html` 等）のまま**にしておくこと。相対化は postbuild が出力に対してのみ行う。
 
 ## ディレクトリ構成
 

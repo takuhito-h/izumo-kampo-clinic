@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "postbuild": "node scripts/relativize.mjs",
     "preview": "astro preview",
+    "serve": "npm run build && astro preview",
     "format": "prettier --write \"src/**/*.{astro,js}\" \"*.mjs\""
   },
   "dependencies": {
