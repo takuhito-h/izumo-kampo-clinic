@@ -80,7 +80,7 @@ body.drawer-open{overflow:hidden;}
 
 /* ===== ヒーロー（スライダー） ===== */
 #images{max-width:1160px; }
-#images .metaslider{border-radius:16px; overflow:hidden; box-shadow:var(--shadow);}
+#images .metaslider{border-radius:16px; overflow:hidden; }
 .slider-wrapper .ribbon{display:none;}
 #metaslider_133{position:relative; width:100%; aspect-ratio: 1280/632; overflow:hidden; background:var(--soft);}
 /* 本番 nivoSlider 準拠：フェード切替（animSpeed 800ms）/ 自動送り（pauseTime 3000ms）/ ドットナビ（controlNav）/ 矢印なし */

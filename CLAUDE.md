@@ -37,6 +37,16 @@ HTML構造は本番テーマの出力をそのまま使い、**CSSのみ刷新**
 - `public/css-php.css` ・ `public/wp-content/**` ・ `public/wp-includes/**` は**本番WordPress由来CSSをダウンロードしたもの（編集禁止・vendored）**。本番の読み込みを再現するためのもので、調整は style-pc/sp.css 側で上書きする。
 - 読み込み順は BaseLayout 内で「本番CSS群 → style-pc/sp → 本番テーマCSS(wce-style)」。`style-pc.css` の冒頭にパレット（`--green:#677A4D` / `--green-d:#415E40` 等）を定義。
 
+## JavaScript
+
+`BaseLayout.astro` で本番WordPressと同じJSを読み込む（完全再現方針）。全て `is:inline`、同一オリジンJSは `public/` にDL済み・ローカルパス参照、jQuery等のCDNは `https:` 明示。
+
+- 読み込む: jQuery 3.4.1 / js.cookie / base.js・add0.js / droppy / backstretch / sidr / lightbox一式 / nivoSlider / calendar系、および本番のインライン初期化（droppy・navdrop・nivoSlider init・count-per-day・instagram・typekit 等）。
+- **除外**: GTM / gtag（GA4）= localhostから本番GAへ送信されるため。schema(ld+json) = ページ固有メタデータのため。
+- ヒーローは本番 nivoSlider が初期化（CSSフォールバックではなく実スライダーが回る）。
+- **モバイルドロワーは `public/menu.js`（リデザイン独自）を併用**。本番 sidr.js は `.mobile_menu` の `href` を source にパネル生成する設計で、移行済みの既存 `#sidr` では機能しないため、ドロワー開閉は menu.js が担う（sidr.js 自体は読み込み済み）。
+- `admin-ajax.php`（count-per-day / instagram）はローカルにバックエンドが無く404/CORSで失敗するが無害。
+
 ## 資産のローカル化
 
 - CSS・画像（`public/wp-content/uploads/**` 等）は本番からDL済みで**本番ドメインに依存しない**。本番はホットリンク保護があるため、画像参照はローカルパス（`/wp-content/...`）に統一する。
