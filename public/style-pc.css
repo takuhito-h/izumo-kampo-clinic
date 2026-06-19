@@ -16,7 +16,7 @@
   --shadow-sm:0 2px 10px rgba(60,70,45,.06);
 }
 *{box-sizing:border-box;}
-html{ scroll-behavior:smooth; scroll-padding-top:62px;}
+html{ scroll-behavior:smooth; }
 body{ text-align: left; margin:0; background:var(--bg); color:var(--ink); font-family:var(--gothic); line-height:1.9; font-size:16px; -webkit-font-smoothing:antialiased;}
 /* 本番テーマ css-php.css の `body{min-width:1010px}`（旧iPad対応）を打ち消し、
    幅1010px未満（タブレット〜スマホ・小さいPCウィンドウ）の横スクロールを防止。
@@ -58,11 +58,12 @@ body.drawer-open{overflow:hidden;}
 .header_week{grid-area:week; justify-self:end; text-align:right;}
 .header_week p{margin:0; font-size:12px; color:var(--green-d); font-weight:600; line-height:1.5;}
 .header_week a{font-weight:600;}
+.header_week a .material-icons{ display: none; }
 #searchform{grid-area:search; justify-self:end; margin:0;}
 #page_search{display:flex; align-items:center; background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:2px 4px 2px 14px;}
 #page_search .screen-reader-text{display:none;}
 #s{border:none; background:transparent; outline:none; font-size:13px; padding:6px 4px; width:150px; color:var(--ink);}
-#searchsubmit{width:30px; height:30px; opacity:.6; cursor:pointer;}
+#searchsubmit{ display: none; }
 
 /* ===== グローバルナビ ===== */
 #gNav{position:sticky; top:0; z-index:50; background:var(--green); box-shadow:0 2px 10px rgba(0,0,0,.08);}
@@ -79,8 +80,9 @@ body.drawer-open{overflow:hidden;}
 #wv_headbtn .wv_headbtn_1 li a:hover{background:var(--green-d); text-decoration:none; transform:translateY(-1px);}
 
 /* ===== ヒーロー（スライダー） ===== */
-#images{max-width:1160px; }
-#images .metaslider{border-radius:16px; overflow:hidden; }
+#images{ max-width:1112px !important; margin: 30px auto 0 !important; }
+#images .nivoSlider{ border-radius:16px; overflow:hidden; }
+#images .nivo-controlNav{ display: none; }
 .slider-wrapper .ribbon{display:none;}
 #metaslider_133{position:relative; width:100%; aspect-ratio: 1280/632; overflow:hidden; background:var(--soft);}
 /* 本番 nivoSlider 準拠：フェード切替（animSpeed 800ms）/ 自動送り（pauseTime 3000ms）/ ドットナビ（controlNav）/ 矢印なし */
@@ -98,7 +100,7 @@ body.drawer-open{overflow:hidden;}
 #metaslider_133 .hero-dots button.is-active{background:#fff; transform:scale(1.2);}
 
 /* ===== コンテンツ全体レイアウト（メイン＋サイド） ===== */
-#contents{max-width:1160px; margin:0 auto; padding:48px 24px 70px; display:grid; grid-template-columns:minmax(0,1fr) 296px; gap:40px;}
+#contents{max-width:1160px; margin:0 auto; padding:30px 24px 70px; display:grid; grid-template-columns:minmax(0,1fr) 296px; gap:40px;}
 /* 横autoマージンはグリッドのstretchを無効化し中身（絶対配置スライド）で幅0に潰れるため打ち消す */
 #images{grid-column:1 / -1; justify-self:stretch; margin-left:0; margin-right:0; max-width:none;}
 #main{grid-column:1; min-width:0;}
@@ -326,6 +328,7 @@ body.drawer-open #drawer-overlay{opacity:1; visibility:visible;}
 #mobile{position:fixed; top:10px; right:12px; z-index:980; margin:0;}
 #mobile .mobile_menu{display:flex; align-items:center; justify-content:center; width:46px; height:46px; background:var(--green); border-radius:12px; box-shadow:0 4px 12px rgba(60,70,45,.3); transition:.2s;}
 #mobile .mobile_menu:hover{background:var(--green-d); text-decoration:none;}
+#mobile .mobile_menu .material-icons { display: none;}
 #mobile .mobile_menu img{display:none;}
 #mobile .mobile_menu::after{font-family:'Material Icons'; content:"\e5d2"; color:#fff; font-size:28px; line-height:1;}
 body.drawer-open #mobile .mobile_menu::after{content:"\e5cd";}
