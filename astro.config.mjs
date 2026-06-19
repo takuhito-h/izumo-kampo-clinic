@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   output: "static",
   build: {
-    format: "file"
+    format: "file",
   },
-  trailingSlash: "never"
+  trailingSlash: "never",
 });

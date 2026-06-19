@@ -1,9 +1,365 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 
-const title = "出雲漢方クリニック｜デザインリニューアル案（HTML構造そのまま・CSSのみ刷新）";
-const content = "<input type=\"hidden\" id=\"telnum\" value=\"\">\n\n  <!-- Google Tag Manager (noscript) -->\n\n  <!-- End Google Tag Manager (noscript) -->\n  <div id=\"wrapper\" class=\"page_weveryhome\">\n    <div id=\"mobile\">\n      <a href=\"javascript:void(0)\" class=\"mobile_menu\"><img\n          src=\"https://izumo-kampo.clinic/wp-content/themes/theme/img/menu_bt.png\" alt=\"メニュー\" class=\"top_menu\"\n          width=\"100%\" height=\"auto\" /></a>\n    </div>\n\n    <header id=\"header\">\n\n      <h1> <a href=\"/top.html\"><span class=\"cliniclogo\"><img\n              src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png\" alt=\"出雲漢方クリニック\"\n              class=\"cliniclogo_img\" data-eio=\"j\"></span><span class=\"h1_text\">出雲漢方クリニック</span></a>\n      </h1>\n\n      <div class=\"header_text\">\n        <p>\n          【保険診療】 漢方内科 呼吸器内科・外科 アレルギー科 </p>\n      </div>\n\n      <div class=\"header_address\">\n        <p>島根県出雲市今市町736-11 出雲市駅から徒歩5分、全国オンライン診療受付中&nbsp;[<a href=\"https://izumo-kampo.clinic?p=23\">地図へ</a>]</p>\n      </div>\n\n      <div class=\"header_tel\">\n        <p class=\"tel\"><i class=\"material-icons\">local_phone</i></p>\n      </div>\n\n      <div class=\"header_week\">\n        <!-- <p>休診日　<br /><a href=\"?p=22\">診療時間はこちら</a></p> -->\n        <p>休診日：　土・日<br /><a href=\"https://izumo-kampo.clinic?p=22\">診療時間はこちら</a></p>\n      </div>\n      <div style=\"clear: both;\"></div>\n      <form role=\"search\" method=\"get\" id=\"searchform\" action=\"/top.html\">\n\n        <div id=\"page_search\"><label class=\"screen-reader-text\" for=\"s\"></label>\n\n          <input type=\"text\" value=\"\" name=\"s\" id=\"s\" placeholder=\"サイト内検索\" />\n\n          <input type=\"image\" src=\"https://izumo-kampo.clinic/wp-content/themes/theme/img/toolbar_find.png\"\n            id=\"searchsubmit\" value=\"検索\" />\n\n        </div>\n\n      </form>\n\n      <div id=\"header_add\">\n        <!-- ヘッダーに記載する内容（#header_add） -->\n\n      </div>\n\n      <!-- / #header -->\n    </header>\n\n    <div id=\"gNav\" class=\"\">\n      <ul id=\"nav\" class=\"menu\">\n        <li id=\"menu-item-125\"\n          class=\"menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-125\">\n          <a href=\"/top.html\" aria-current=\"page\">ホーム</a>\n        </li>\n        <li id=\"menu-item-2204\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2204\"><a\n            href=\"/clinic.html\">クリニックのご案内</a></li>\n        <li id=\"menu-item-30\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-30\"><a\n            href=\"/doctor.html\">医師のご紹介</a></li>\n        <li id=\"menu-item-1432\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1432\"><a\n            href=\"/kampo.html\">漢方治療について</a></li>\n        <li id=\"menu-item-1746\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1746\"><a\n            href=\"/online.html\">オンライン診療について</a></li>\n        <li id=\"menu-item-28\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-28\"><a\n            href=\"/time.html\">診療時間・アクセス</a></li>\n      </ul> <!-- / #gNav -->\n    </div>\n    <section id=\"wv_headbtn\">\n      <ul class=\"wv_headbtn_1\">\n        <li><a href=\"https://clinics-app.com/clinic/6200901c030daf257f78c01f/exclusive_reservation?method=online\"\n            target=\"_blank\" rel=\"nofollow\"><span class=\"spf_word\">診療を予約する</span></a></li>\n      </ul>\n    </section>\n\n    <!-- 動画 -->\n    <div id=\"mov_intro\">\n      <img class='ico_close' src='wp-content/themes/theme/img/ico_close.png' />\n      <div id='player'><!-- 動画プレーヤーの埋め込み --></div>\n    </div>\n\n    <div id=\"contents\">\n      <div id=\"images\" class=\"\">\n        <div style=\"width: 100%; margin: 0 auto;\"\n          class=\"ml-slider-3-9-0 metaslider metaslider-nivo metaslider-133 ml-slider\">\n\n          <div id=\"metaslider_container_133\">\n            <div class='slider-wrapper theme-default'>\n              <div class='ribbon'></div>\n              <div id='metaslider_133' class='nivoSlider'><a href=\"/clinic.html\"\n                  target=\"_self\"><img src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/11/1-2.jpg\" height=\"632\"\n                    width=\"1280\" title=\"1\" alt=\"\" class=\"slider-133 slide-1649\" data-eio=\"j\" /></a><a\n                  href=\"/clinic.html\" target=\"_self\"><img\n                    src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/11/2-3.jpg\" height=\"632\" width=\"1280\"\n                    title=\"2\" alt=\"\" class=\"slider-133 slide-1148\" data-eio=\"j\" /></a><a\n                  href=\"/online.html\" target=\"_self\"><img\n                    src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/11/2-2.jpg\" height=\"632\" width=\"1280\"\n                    title=\"2\" alt=\"\" class=\"slider-133 slide-1650\" data-eio=\"j\" /></a></div>\n            </div>\n\n          </div>\n        </div>\n      </div>\n\n      <div id=\"top_contents\">\n        <!-- コンテンツの上部に記載する内容（#top_contents） -->\n\n      </div>\n\n      <div id=\"main\" class=\"top_main\">\n\n        <article>\n\n          <!--スマホバナー-->\n\n          <div class=\"banner smart_phone\">\n            <ul>\n            </ul>\n          </div>\n          <!--//スマホバナー-->\n\n          <section class=\"top3Sec heightLine topSec1220\" id=\"topSecID1220\">\n            <h2>当クリニックの診療について</h2>\n            <div class=\"block-emphasis\">\n              <p><strong>ご予約について</strong></p>\n              <p>当院は完全予約制で診療を行っております。やむを得ず予約の変更やキャンセルをされる場合は、できるだけお早めにご連絡ください。</p>\n              <p>なお、無断キャンセルや直前キャンセルが繰り返され、他の患者様の診療機会に影響が生じる場合には、予約管理に伴う事務手数料（500円）をご負担いただくことがあります。</p>\n            </div>\n            <h3>発熱外来</h3>\n            <p>\n              発熱、風邪症状の相談を受け付けます。<strong>咳</strong>、<strong>鼻水</strong>、<strong>喉の痛み</strong>、<strong>ワクチン接種後</strong>の<strong>倦怠感や体調不良</strong>などをご相談ください。\n            </p>\n            <p>お近くの方は来院いただき、PCR検査も可能です。</p>\n            <h3>漢方外来</h3>\n            <p>\n              病院に行っても良くならない体の悩みをなんでもご相談ください。<strong>慢性の胃炎</strong>や<strong>下痢・便秘</strong>、<strong>頭痛や生理痛</strong>、<strong>むくみや冷え</strong>、<strong>アトピー</strong>、<strong>ニキビ</strong>など承っております。\n            </p>\n            <p>また<strong>コロナ後遺症</strong>のご相談も受け付けております。</p>\n            <h3>肥満外来</h3>\n            <p>食生活や生活習慣を指導し、漢方薬で肥満を解消します。</p>\n            <p>むくみタイプや筋肉質タイプなど、体質に合わせた漢方薬を処方します。</p>\n            <p>漢方薬は診察後に出雲市の郵便局からレターパックで郵送いたします（到着は翌日〜二日後）。薬局の営業時間内であれば、お近くの薬局にFAXすることも可能になってますのでご相談ください。</p>\n            <p><a onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/clinic');\"\n                class=\"big-button\" href=\"/clinic.html\" rel=\"noopener noreferrer\">クリニックについて詳しく知る</a>\n            </p>\n          </section>\n          <section class=\"top3Sec heightLine topSec1620\" id=\"topSecID1620\">\n            <div class=\"banner smart_phone\">\n              <ul>\n                <li><a href=\"https://lin.ee/J5alWzJ\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"><img\n                      decoding=\"async\" src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_line.png.webp\"\n                      alt=\"LINE公式アカウント問い合わせ\" /><br />\n                  </a></li>\n                <li><a\n                    onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/partnership-shinkyu');\"\n                    href=\"/partnership-shinkyu.html\"><img decoding=\"async\"\n                      src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/05/Twitter.png\" alt=\"提携鍼灸院について\"\n                      data-eio=\"j\"></a></li>\n              </ul>\n            </div>\n          </section>\n          <section class=\"top3Sec heightLine topSec117\" id=\"topSecID117\">\n            <h2>当院で行っている治療</h2>\n            <h3>内科系疾患</h3>\n            <h4>各種不調</h4>\n            <p>頭痛、倦怠感、めまい、肩痛、腰痛、胸やけ、下痢、疲れ、コロナ後遺症など</p>\n            <h4>肥満の悩み</h4>\n            <p>肥満、高血圧、肥満に伴う体調不良</p>\n            <p><a onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/kampo_diet');\"\n                class=\"big-button\" href=\"/kampo_diet.html\"\n                rel=\"noopener noreferrer\">肥満外来について詳しく知る</a></p>\n            <h4>アレルギー疾患</h4>\n            <p>花粉症、アトピー性皮膚炎、蕁麻疹、各種アレルギーなど</p>\n            <p><a onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/kampo_allergy');\"\n                class=\"big-button\" href=\"https://izumo-kampo.clinic/kampo_allergy\"\n                rel=\"noopener noreferrer\">アレルギー・花粉症治療を詳しく知る</a></p>\n            <h3>呼吸器系疾患</h3>\n            <p>風邪、鼻水、咳、たん、息が苦しい、胸痛、いびき、禁煙したいなど</p>\n            <h3>女性（更年期・思春期）疾患</h3>\n            <p>不安、心配性、冷え、むくみ、のぼせ、イライラ、気候性頭痛、肩こり、月経痛、腹痛、便秘、ニキビ、シミ、やる気が出ないなど</p>\n            <p><a onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/kampo');\"\n                class=\"big-button\" href=\"/kampo.html\" rel=\"noopener noreferrer\">漢方治療について詳しく知る</a>\n            </p>\n          </section>\n\n          <section class=\"infoSec heightLine\" id=\"infoSecID\">\n\n            <h2>お知らせ</h2>\n            <dl>\n              <!-- <dl> -->\n              <dt class=\"news_column\"><strong>院長ブログを更新しました。</strong><span class=\"info_date\">　[2026.05.29更新]</span></dt>\n              <dd class=\"news_column\"><a\n                  href=\"/blog/01.html\">開院4周年、そして地域への新たな一歩</a>\n              </dd>\n              <dt class=\"news_column\"><strong>院長ブログを更新しました。</strong><span class=\"info_date\">　[2026.03.09更新]</span></dt>\n              <dd class=\"news_column\"><a\n                  href=\"/blog/02.html\">花粉症から慢性炎症を考える\n                  - 舌診からみるアレルギー疾患</a></dd>\n              <dt class=\"news_column\"><strong>院長ブログを更新しました。</strong><span class=\"info_date\">　[2026.02.04更新]</span></dt>\n              <dd class=\"news_column\"><a\n                  href=\"/blog/03.html\">GLP-1時代のダイエット医療を考える</a>\n              </dd>\n              <dt>\n                <strong>メディア掲載</strong>\n                <span class=\"info_date\">　[2022.09.10更新]</span>\n              </dt>\n              <dd>\n                <p><a onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/publication');\"\n                    href=\"https://izumo-kampo.clinic/publication\" rel=\"noopener noreferrer\">メディア掲載一覧</a></p>\n              </dd>\n            </dl>\n            <!-- / .infoSec -->\n          </section>\n\n          <section class=\"mapSec heightLine\" id=\"topMapID\">\n\n            <h2>交通案内</h2>\n            <div class=\"simplemap\">\n              <iframe\n                src=\"https://maps.google.com/maps?q=%E5%B3%B6%E6%A0%B9%E7%9C%8C%E5%87%BA%E9%9B%B2%E5%B8%82%E4%BB%8A%E5%B8%82%E7%94%BA736-11%E5%87%BA%E9%9B%B2%E6%BC%A2%E6%96%B9%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF&hl=ja&z=16&amp;output=embed\"\n                width=\"100%\" height=\"280px\" frameborder=\"0\" title=\"出雲漢方クリニック\" style=\"padding:0 !important;\"\n                allowfullscreen>\n              </iframe>\n            </div>\n            <p><span class=\"mapSec_clinicadnum\">〒693-0001<br /></span>\n              <span class=\"mapSec_clinicaddress\">島根県出雲市今市町736-11<br /></span>\n              <span class=\"mapSec_clinictraffic\">出雲市駅から徒歩5分、全国オンライン診療受付中<br /></span>\n              <span class=\"mapSec_tomappage\"><a href=\"https://izumo-kampo.clinic?p=23\">大きい地図はこちら</a></span>\n            </p>\n            <!-- / .mapSec -->\n          </section>\n\n          <section class=\"timeSec heightLine\" id=\"topTimeID\">\n\n            <h2>診療時間</h2>\n\n            <table id=\"tablepress-1\" class=\"tablepress tablepress-id-1 time_table\">\n              <thead>\n                <tr class=\"row-1 odd\">\n                  <th class=\"column-1\">診療時間</th>\n                  <th class=\"column-2\">月</th>\n                  <th class=\"column-3\">火</th>\n                  <th class=\"column-4\">水</th>\n                  <th class=\"column-5\">木</th>\n                  <th class=\"column-6\">金</th>\n                  <th class=\"column-7\">土</th>\n                  <th class=\"column-8\">日</th>\n                </tr>\n              </thead>\n              <tbody class=\"row-hover\">\n                <tr class=\"row-2 even\">\n                  <td class=\"column-1\">対面診療：午前<br />\n                    （9:00～12:00）</td>\n                  <td class=\"column-2\">／</td>\n                  <td class=\"column-3\">○</td>\n                  <td class=\"column-4\">○</td>\n                  <td class=\"column-5\">○</td>\n                  <td class=\"column-6\">○</td>\n                  <td class=\"column-7\">／</td>\n                  <td class=\"column-8\">／</td>\n                </tr>\n                <tr class=\"row-3 odd\">\n                  <td class=\"column-1\">対面診療：午後<br />\n                    （14:00～17:00）</td>\n                  <td class=\"column-2\">○</td>\n                  <td class=\"column-3\">○</td>\n                  <td class=\"column-4\">○</td>\n                  <td class=\"column-5\">○</td>\n                  <td class=\"column-6\">島根大学</td>\n                  <td class=\"column-7\">／</td>\n                  <td class=\"column-8\">／</td>\n                </tr>\n                <tr class=\"row-4 even\">\n                  <td class=\"column-1\">オンライン診療<br />\n                    （8:30〜18:00）</td>\n                  <td class=\"column-2\">△</td>\n                  <td class=\"column-3\">△</td>\n                  <td class=\"column-4\">△</td>\n                  <td class=\"column-5\">△</td>\n                  <td class=\"column-6\">△</td>\n                  <td class=\"column-7\">△</td>\n                  <td class=\"column-8\">△</td>\n                </tr>\n              </tbody>\n            </table>\n            <p><span class=\"meditimenote\">※\n                melmoの予約システムで予約できる時間は予約可能になっています。上記の表にない時間でも安心してご予約ください。（上記の時間以外は、時間外診療となります）\n                <br>※ 休診となっている時間でも受診いただける場合があります。受診されたい方は、出雲漢方クリニックのLINE公式アカウントまでご相談ください。</span></p>\n            <p>休診日：：土・日</p>\n            <!-- / .timeSec -->\n          </section>\n\n          <section class=\"top2Sec heightLine topSec1438\" id=\"topSecID1438\">\n\n            <p><a onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/reserve');\"\n                class=\"big-button\" href=\"/reserve.html\" rel=\"noopener noreferrer\">診療予約について詳しく知る</a>\n            </p>\n          </section>\n          <section class=\"top2Sec heightLine topSec118\" id=\"topSecID118\">\n            <h2>紹介先・提携病院</h2>\n\n            <p>当クリニックは、下記医療機関と緊密な診療連携を結んでいますので、入院や精密な検査が必要な際には、適切なタイミングでのご紹介が可能です。</p>\n            <ul class=\"\\'affili_clinic\\'\">\n              <li><a onclick=\"javascript:pageTracker._trackPageview('/outgoing/niimimasanori.com/');\"\n                  href=\"https://niimimasanori.com/\" target=\"_blank\" rel=\"noopener noreferrer\">新見正則医院（東京都千代田区）</a></li>\n              <li>島根大学医学部附属病院（出雲市）</li>\n              <li>かなざわ内科 糖尿病・骨粗しょう症クリニック（出雲市）</li>\n              <li>内海皮フ科医院 （島根県松江市）</li>\n              <li>東邦大学医療センター大森病院（東京都大田区）</li>\n              <li>北里大学東洋医学総合研究所（東京都港区）</li>\n            </ul>\n          </section>\n          <section class=\"top2Sec heightLine topSec101086\" id=\"topSecID101086\">\n            <h2>当院の施設基準と加算について</h2>\n\n            <p>当院の施設基準と加算について、詳細は<a\n                onclick=\"javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/%e5%bd%93%e9%99%a2%e3%81%ae%e6%96%bd%e8%a8%ad%e5%9f%ba%e6%ba%96%e3%81%a8%e5%8a%a0%e7%ae%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6');\"\n                href=\"https://izumo-kampo.clinic/%e5%bd%93%e9%99%a2%e3%81%ae%e6%96%bd%e8%a8%ad%e5%9f%ba%e6%ba%96%e3%81%a8%e5%8a%a0%e7%ae%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6\">こちらのページ</a>をご覧ください。\n            </p>\n          </section>\n\n        </article>\n        <!-- / #main -->\n      </div>\n      <div id=\"sideMenu\">\n        <p class=\"backhome\"><a href=\"/top.html\">HOME</a></p>\n\n        <div class=\"banner bn_top spnone\"> <!-- 2011.11.13変更 -->\n          <ul>\n\n            <li>\n\n              <a href=\"https://lin.ee/J5alWzJ\" target=\"_blank\" rel=\"nofollow\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_line.png\" alt=\"LINE公式アカウント問い合わせ\"\n                  data-eio=\"j\" />\n\n              </a>\n            </li>\n\n            <li>\n\n              <a href=\"/reserve.html\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_reserve.png\" alt=\"診療予約について\"\n                  data-eio=\"j\" />\n\n              </a>\n            </li>\n\n            <li>\n\n              <a href=\"/q_and_a.html\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/10/4d767dee6af9188b3d6c0424c1a66b01.png\"\n                  alt=\"よくある質問\" data-eio=\"j\" />\n\n              </a>\n            </li>\n\n            <li>\n\n              <a href=\"/partnership-shinkyu.html\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/05/Twitter.png\" alt=\"提携鍼灸院について\"\n                  data-eio=\"j\" />\n\n              </a>\n            </li>\n\n            <li>\n\n              <a href=\"/blog.html\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/03/53dca034c608bbba0219914e69b10442-1.png\"\n                  alt=\"院長ブログ\" data-eio=\"j\" />\n\n              </a>\n            </li>\n\n          </ul>\n        </div>\n\n        <div class=\"banner bn_top spnone sidemenu_bottom\"> <!-- 2011.11.13変更 -->\n          <ul>\n\n            <li>\n              <p><strong>公式SNS</strong></p>\n            </li>\n\n            <li>\n\n              <a href=\"https://izumo-kampo.clinic/izumo_kampo_youtube/\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/02/Twitter-2.png\" alt=\"Youtube\"\n                  data-eio=\"j\" />\n\n              </a>\n            </li>\n\n            <li>\n\n              <a href=\"https://twitter.com/wjHhI0T0zPl0TnO\" target=\"_blank\" rel=\"nofollow\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/09/Twitter.png\" alt=\"院長Twitter\"\n                  data-eio=\"j\" />\n\n              </a>\n            </li>\n\n            <li>\n\n              <a href=\"https://www.instagram.com/izumoanz/\" target=\"_blank\" rel=\"nofollow\">\n\n                <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2026/03/Twitter.png\" alt=\"あんず鍼灸院Instagram\"\n                  data-eio=\"j\" />\n\n              </a>\n            </li>\n          </ul>\n\n        </div>\n\n        <!--<div class=\"qr\">\n                                          \n                                          <img src=\"https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=https://izumo-kampo.clinic\" />\n                                          <p>スマートフォンに対応しています。</p>\n                                        </div>-->\n\n        <div id=\"side_add\">\n          <!-- サイドメニュー下部に記載する内容（#side_add） -->\n\n        </div>\n\n        <!-- / #sideMenu -->\n      </div>\n      <div id=\"bottom_contents\">\n        <!-- コンテンツの上部に記載する内容（#bottom_contents） -->\n\n      </div>\n      <div class=\"banner smart_phone\">\n        <ul>\n        </ul>\n      </div>\n    </div>\n    <div class=\"pagetop\"><a href=\"#header\">▲ ページのトップに戻る</a></div>\n    <footer id=\"footer\">\n      <div id=\"footer_area\">\n        <h2 class=\"footer_sitename\"><a href=\"/top.html\">出雲漢方クリニック</a></h2>\n        <p class=\"footer_youso\">\n          <span class=\"footer_clinickamoku\"> 【保険診療】 漢方内科 呼吸器内科・外科 アレルギー科 <br /></span>\n          <span class=\"footer_clinicaddress\">島根県出雲市今市町736-11</span><span class=\"footer_clinicbuilding\"></span><span\n            class=\"footer_clinictraffic\">　出雲市駅から徒歩5分、全国オンライン診療受付中　[<a\n              href=\"https://izumo-kampo.clinic?p=23\">地図へ</a>]<br /></span>\n          <span class=\"footer_clinicholiday\">休診日：　土・日</span>\n        </p>\n        <div id=\"footer_add\">\n          <!-- フッターに記載する内容（#bottom_contents） -->\n\n        </div>\n        <div id=\"add_footer_data\">\n        </div>\n        <address class=\"address\">\n          Copyright &copy; 出雲漢方クリニック All Rights Reserved.\n        </address>\n      </div>\n    </footer>\n    <div id=\"sidr\" class=\"sidr right\">\n      <p class=\"close\">\n        <a href=\"javascript:void(0)\" class=\"mobile_menu\">Close</a>\n      </p>\n      <p class=\"backhome\"><a href=\"/top.html\">HOME</a></p>\n      <div class=\"banner smart_phonetop\">\n        <ul>\n          <li>\n            <a href=\"https://lin.ee/J5alWzJ\" target=\"_blank\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_line.png\" alt=\"LINE公式アカウント問い合わせ\"\n                data-eio=\"j\" />\n            </a>\n          </li>\n          <li>\n            <a href=\"/reserve.html\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_reserve.png\" alt=\"診療予約について\"\n                data-eio=\"j\" />\n            </a>\n          </li>\n          <li>\n            <a href=\"/q_and_a.html\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2022/10/4d767dee6af9188b3d6c0424c1a66b01.png\"\n                alt=\"よくある質問\" data-eio=\"j\" />\n            </a>\n          </li>\n          <li>\n            <a href=\"/partnership-shinkyu.html\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/05/Twitter.png\" alt=\"提携鍼灸院について\"\n                data-eio=\"j\" />\n            </a>\n          </li>\n          <li>\n            <a href=\"/blog.html\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/03/53dca034c608bbba0219914e69b10442-1.png\"\n                alt=\"院長ブログ\" data-eio=\"j\" />\n            </a>\n          </li>\n        </ul>\n      </div>\n      <ul id=\"menu-main_menu\" class=\"menu\">\n        <li\n          class=\"menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-125\">\n          <a href=\"/top.html\" aria-current=\"page\">ホーム</a>\n        </li>\n        <li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2204\"><a\n            href=\"/clinic.html\">クリニックのご案内</a></li>\n        <li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-30\"><a\n            href=\"/doctor.html\">医師のご紹介</a></li>\n        <li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1432\"><a\n            href=\"/kampo.html\">漢方治療について</a></li>\n        <li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1746\"><a\n            href=\"/online.html\">オンライン診療について</a></li>\n        <li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-28\"><a\n            href=\"/time.html\">診療時間・アクセス</a></li>\n      </ul>\n      <div class=\"banner smart_phonebottom\">\n        <ul>\n          <li>\n            <p>\n            <p>\n              <strong>公式SNS</strong>\n            </p>\n            </p>\n          </li>\n          <li>\n            <a href=\"https://izumo-kampo.clinic/izumo_kampo_youtube/\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/02/Twitter-2.png\" alt=\"Youtube\"\n                data-eio=\"j\" />\n            </a>\n          </li>\n          <li>\n            <a href=\"https://twitter.com/wjHhI0T0zPl0TnO\" target=\"_blank\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2023/09/Twitter.png\" alt=\"院長Twitter\"\n                data-eio=\"j\" />\n            </a>\n          </li>\n          <li>\n            <a href=\"https://www.instagram.com/izumoanz/\" target=\"_blank\">\n              <img src=\"https://izumo-kampo.clinic/wp-content/uploads/2026/03/Twitter.png\" alt=\"あんず鍼灸院Instagram\"\n                data-eio=\"j\" />\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n  <!-- wp_footer contents -->\n\n  <!-- Invalid GA4 Measurement ID -->\n  <!-- Custom Feeds for Instagram JS -->\n\n  <input name=\"assist\" type=\"hidden\" value=\"\" /><input name=\"movie_play\" type=\"hidden\" value=\"1\" />\n\n  <!-- wp_footer contents end -->\n\n  <section id=\"sp_footer\">\n    <ul>\n      <li><a href=\"https://lin.ee/aYfwiH0\" target=\"_blank\" rel=\"nofollow\"><i\n            class=\"material-icons\">contact_support</i><span class=\"spf_word\">問い合わせ（LINE）</span></a></li>\n      <li><a href=\"https://clinics-app.com/clinic/6200901c030daf257f78c01f/exclusive_reservation?method=online\"\n          target=\"_blank\" rel=\"nofollow\"><i class=\"material-icons\">contact_page</i><span\n            class=\"spf_word\">診療予約</span></a></li>\n    </ul>\n  </section>\n\n\n  <script>\n    /* プレビュー用：sidr内の重複IDを無効化（表示には影響しません） */\n  </script>";
+const title =
+  "出雲漢方クリニック｜デザインリニューアル案（HTML構造そのまま・CSSのみ刷新）";
 ---
-<BaseLayout title={title}>
-  <Fragment set:html={content} />
-</BaseLayout>
+
+<PageLayout title={title} wrapperClass="page_weveryhome" active="/top.html">
+  <div id="images" slot="hero" class="">
+    <div
+      style="width: 100%; margin: 0 auto;"
+      class="ml-slider-3-9-0 metaslider metaslider-nivo metaslider-133 ml-slider"
+    >
+      <div id="metaslider_container_133">
+        <div class="slider-wrapper theme-default">
+          <div class="ribbon"></div>
+          <div id="metaslider_133" class="nivoSlider">
+            <a href="/clinic.html" target="_self"
+              ><img
+                src="https://izumo-kampo.clinic/wp-content/uploads/2022/11/1-2.jpg"
+                height="632"
+                width="1280"
+                title="1"
+                alt=""
+                class="slider-133 slide-1649"
+                data-eio="j"
+              /></a
+            ><a href="/clinic.html" target="_self"
+              ><img
+                src="https://izumo-kampo.clinic/wp-content/uploads/2022/11/2-3.jpg"
+                height="632"
+                width="1280"
+                title="2"
+                alt=""
+                class="slider-133 slide-1148"
+                data-eio="j"
+              /></a
+            ><a href="/online.html" target="_self"
+              ><img
+                src="https://izumo-kampo.clinic/wp-content/uploads/2022/11/2-2.jpg"
+                height="632"
+                width="1280"
+                title="2"
+                alt=""
+                class="slider-133 slide-1650"
+                data-eio="j"
+              /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main" class="top_main">
+    <article>
+      <!--スマホバナー-->
+
+      <div class="banner smart_phone">
+        <ul></ul>
+      </div>
+      <!--//スマホバナー-->
+
+      <section class="top3Sec heightLine topSec1220" id="topSecID1220">
+        <h2>当クリニックの診療について</h2>
+        <div class="block-emphasis">
+          <p><strong>ご予約について</strong></p>
+          <p>
+            当院は完全予約制で診療を行っております。やむを得ず予約の変更やキャンセルをされる場合は、できるだけお早めにご連絡ください。
+          </p>
+          <p>
+            なお、無断キャンセルや直前キャンセルが繰り返され、他の患者様の診療機会に影響が生じる場合には、予約管理に伴う事務手数料（500円）をご負担いただくことがあります。
+          </p>
+        </div>
+        <h3>発熱外来</h3>
+        <p>
+          発熱、風邪症状の相談を受け付けます。<strong>咳</strong>、<strong
+            >鼻水</strong
+          >、<strong>喉の痛み</strong>、<strong>ワクチン接種後</strong>の<strong
+            >倦怠感や体調不良</strong
+          >などをご相談ください。
+        </p>
+        <p>お近くの方は来院いただき、PCR検査も可能です。</p>
+        <h3>漢方外来</h3>
+        <p>
+          病院に行っても良くならない体の悩みをなんでもご相談ください。<strong
+            >慢性の胃炎</strong
+          >や<strong>下痢・便秘</strong>、<strong>頭痛や生理痛</strong>、<strong
+            >むくみや冷え</strong
+          >、<strong>アトピー</strong>、<strong>ニキビ</strong
+          >など承っております。
+        </p>
+        <p>また<strong>コロナ後遺症</strong>のご相談も受け付けております。</p>
+        <h3>肥満外来</h3>
+        <p>食生活や生活習慣を指導し、漢方薬で肥満を解消します。</p>
+        <p>
+          むくみタイプや筋肉質タイプなど、体質に合わせた漢方薬を処方します。
+        </p>
+        <p>
+          漢方薬は診察後に出雲市の郵便局からレターパックで郵送いたします（到着は翌日〜二日後）。薬局の営業時間内であれば、お近くの薬局にFAXすることも可能になってますのでご相談ください。
+        </p>
+        <p>
+          <a
+            onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/clinic');"
+            class="big-button"
+            href="/clinic.html"
+            rel="noopener noreferrer">クリニックについて詳しく知る</a
+          >
+        </p>
+      </section>
+      <section class="top3Sec heightLine topSec1620" id="topSecID1620">
+        <div class="banner smart_phone">
+          <ul>
+            <li>
+              <a
+                href="https://lin.ee/J5alWzJ"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                ><img
+                  decoding="async"
+                  src="https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_line.png.webp"
+                  alt="LINE公式アカウント問い合わせ"
+                /><br />
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/partnership-shinkyu');"
+                href="/partnership-shinkyu.html"
+                ><img
+                  decoding="async"
+                  src="https://izumo-kampo.clinic/wp-content/uploads/2023/05/Twitter.png"
+                  alt="提携鍼灸院について"
+                  data-eio="j"
+                /></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="top3Sec heightLine topSec117" id="topSecID117">
+        <h2>当院で行っている治療</h2>
+        <h3>内科系疾患</h3>
+        <h4>各種不調</h4>
+        <p>
+          頭痛、倦怠感、めまい、肩痛、腰痛、胸やけ、下痢、疲れ、コロナ後遺症など
+        </p>
+        <h4>肥満の悩み</h4>
+        <p>肥満、高血圧、肥満に伴う体調不良</p>
+        <p>
+          <a
+            onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/kampo_diet');"
+            class="big-button"
+            href="/kampo_diet.html"
+            rel="noopener noreferrer">肥満外来について詳しく知る</a>
+        </p>
+        <h4>アレルギー疾患</h4>
+        <p>花粉症、アトピー性皮膚炎、蕁麻疹、各種アレルギーなど</p>
+        <p>
+          <a
+            onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/kampo_allergy');"
+            class="big-button"
+            href="https://izumo-kampo.clinic/kampo_allergy"
+            rel="noopener noreferrer">アレルギー・花粉症治療を詳しく知る</a>
+        </p>
+        <h3>呼吸器系疾患</h3>
+        <p>風邪、鼻水、咳、たん、息が苦しい、胸痛、いびき、禁煙したいなど</p>
+        <h3>女性（更年期・思春期）疾患</h3>
+        <p>
+          不安、心配性、冷え、むくみ、のぼせ、イライラ、気候性頭痛、肩こり、月経痛、腹痛、便秘、ニキビ、シミ、やる気が出ないなど
+        </p>
+        <p>
+          <a
+            onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/kampo');"
+            class="big-button"
+            href="/kampo.html"
+            rel="noopener noreferrer">漢方治療について詳しく知る</a
+          >
+        </p>
+      </section>
+
+      <section class="infoSec heightLine" id="infoSecID">
+        <h2>お知らせ</h2>
+        <dl>
+          <!-- <dl> -->
+          <dt class="news_column">
+            <strong>院長ブログを更新しました。</strong><span class="info_date">
+              [2026.05.29更新]</span>
+          </dt>
+          <dd class="news_column">
+            <a href="/blog/01.html">開院4周年、そして地域への新たな一歩</a>
+          </dd>
+          <dt class="news_column">
+            <strong>院長ブログを更新しました。</strong><span class="info_date">
+              [2026.03.09更新]</span>
+          </dt>
+          <dd class="news_column">
+            <a href="/blog/02.html"
+              >花粉症から慢性炎症を考える - 舌診からみるアレルギー疾患</a>
+          </dd>
+          <dt class="news_column">
+            <strong>院長ブログを更新しました。</strong><span class="info_date">
+              [2026.02.04更新]</span>
+          </dt>
+          <dd class="news_column">
+            <a href="/blog/03.html">GLP-1時代のダイエット医療を考える</a>
+          </dd>
+          <dt>
+            <strong>メディア掲載</strong>
+            <span class="info_date"> [2022.09.10更新]</span>
+          </dt>
+          <dd>
+            <p>
+              <a
+                onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/publication');"
+                href="https://izumo-kampo.clinic/publication"
+                rel="noopener noreferrer">メディア掲載一覧</a>
+            </p>
+          </dd>
+        </dl>
+        <!-- / .infoSec -->
+      </section>
+
+      <section class="mapSec heightLine" id="topMapID">
+        <h2>交通案内</h2>
+        <div class="simplemap">
+          <iframe
+            src="https://maps.google.com/maps?q=%E5%B3%B6%E6%A0%B9%E7%9C%8C%E5%87%BA%E9%9B%B2%E5%B8%82%E4%BB%8A%E5%B8%82%E7%94%BA736-11%E5%87%BA%E9%9B%B2%E6%BC%A2%E6%96%B9%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF&hl=ja&z=16&output=embed"
+            width="100%"
+            height="280px"
+            frameborder="0"
+            title="出雲漢方クリニック"
+            style="padding:0 !important;"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <p>
+          <span class="mapSec_clinicadnum">〒693-0001<br /></span>
+          <span class="mapSec_clinicaddress"
+            >島根県出雲市今市町736-11<br /></span
+          >
+          <span class="mapSec_clinictraffic"
+            >出雲市駅から徒歩5分、全国オンライン診療受付中<br /></span
+          >
+          <span class="mapSec_tomappage"
+            ><a href="https://izumo-kampo.clinic?p=23">大きい地図はこちら</a
+            ></span
+          >
+        </p>
+        <!-- / .mapSec -->
+      </section>
+
+      <section class="timeSec heightLine" id="topTimeID">
+        <h2>診療時間</h2>
+
+        <table id="tablepress-1" class="tablepress tablepress-id-1 time_table">
+          <thead>
+            <tr class="row-1 odd">
+              <th class="column-1">診療時間</th>
+              <th class="column-2">月</th>
+              <th class="column-3">火</th>
+              <th class="column-4">水</th>
+              <th class="column-5">木</th>
+              <th class="column-6">金</th>
+              <th class="column-7">土</th>
+              <th class="column-8">日</th>
+            </tr>
+          </thead>
+          <tbody class="row-hover">
+            <tr class="row-2 even">
+              <td class="column-1"
+                >対面診療：午前<br />
+                （9:00～12:00）</td
+              >
+              <td class="column-2">／</td>
+              <td class="column-3">○</td>
+              <td class="column-4">○</td>
+              <td class="column-5">○</td>
+              <td class="column-6">○</td>
+              <td class="column-7">／</td>
+              <td class="column-8">／</td>
+            </tr>
+            <tr class="row-3 odd">
+              <td class="column-1"
+                >対面診療：午後<br />
+                （14:00～17:00）</td
+              >
+              <td class="column-2">○</td>
+              <td class="column-3">○</td>
+              <td class="column-4">○</td>
+              <td class="column-5">○</td>
+              <td class="column-6">島根大学</td>
+              <td class="column-7">／</td>
+              <td class="column-8">／</td>
+            </tr>
+            <tr class="row-4 even">
+              <td class="column-1"
+                >オンライン診療<br />
+                （8:30〜18:00）</td
+              >
+              <td class="column-2">△</td>
+              <td class="column-3">△</td>
+              <td class="column-4">△</td>
+              <td class="column-5">△</td>
+              <td class="column-6">△</td>
+              <td class="column-7">△</td>
+              <td class="column-8">△</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <span class="meditimenote"
+            >※
+            melmoの予約システムで予約できる時間は予約可能になっています。上記の表にない時間でも安心してご予約ください。（上記の時間以外は、時間外診療となります）
+            <br />※
+            休診となっている時間でも受診いただける場合があります。受診されたい方は、出雲漢方クリニックのLINE公式アカウントまでご相談ください。</span>
+        </p>
+        <p>休診日：：土・日</p>
+        <!-- / .timeSec -->
+      </section>
+
+      <section class="top2Sec heightLine topSec1438" id="topSecID1438">
+        <p>
+          <a
+            onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/reserve');"
+            class="big-button"
+            href="/reserve.html"
+            rel="noopener noreferrer">診療予約について詳しく知る</a
+          >
+        </p>
+      </section>
+      <section class="top2Sec heightLine topSec118" id="topSecID118">
+        <h2>紹介先・提携病院</h2>
+
+        <p>
+          当クリニックは、下記医療機関と緊密な診療連携を結んでいますので、入院や精密な検査が必要な際には、適切なタイミングでのご紹介が可能です。
+        </p>
+        <ul class="\'affili_clinic\'">
+          <li>
+            <a
+              onclick="javascript:pageTracker._trackPageview('/outgoing/niimimasanori.com/');"
+              href="https://niimimasanori.com/"
+              target="_blank"
+              rel="noopener noreferrer">新見正則医院（東京都千代田区）</a>
+          </li>
+          <li>島根大学医学部附属病院（出雲市）</li>
+          <li>かなざわ内科 糖尿病・骨粗しょう症クリニック（出雲市）</li>
+          <li>内海皮フ科医院 （島根県松江市）</li>
+          <li>東邦大学医療センター大森病院（東京都大田区）</li>
+          <li>北里大学東洋医学総合研究所（東京都港区）</li>
+        </ul>
+      </section>
+      <section class="top2Sec heightLine topSec101086" id="topSecID101086">
+        <h2>当院の施設基準と加算について</h2>
+
+        <p>
+          当院の施設基準と加算について、詳細は<a
+            onclick="javascript:pageTracker._trackPageview('/outgoing/izumo-kampo.clinic/%e5%bd%93%e9%99%a2%e3%81%ae%e6%96%bd%e8%a8%ad%e5%9f%ba%e6%ba%96%e3%81%a8%e5%8a%a0%e7%ae%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6');"
+            href="https://izumo-kampo.clinic/%e5%bd%93%e9%99%a2%e3%81%ae%e6%96%bd%e8%a8%ad%e5%9f%ba%e6%ba%96%e3%81%a8%e5%8a%a0%e7%ae%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6"
+            >こちらのページ</a
+          >をご覧ください。
+        </p>
+      </section>
+    </article>
+    <!-- / #main -->
+  </div>
+</PageLayout>

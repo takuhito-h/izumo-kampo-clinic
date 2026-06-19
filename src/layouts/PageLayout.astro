@@ -1,0 +1,31 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import MobileMenuButton from "../components/MobileMenuButton.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import GlobalNav from "../components/GlobalNav.astro";
+import ReserveBand from "../components/ReserveBand.astro";
+import SideMenu from "../components/SideMenu.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Drawer from "../components/Drawer.astro";
+import MobileFooter from "../components/MobileFooter.astro";
+
+const { title, wrapperClass = "page_weverysub", active = "" } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <input type="hidden" id="telnum" value="" />
+  <div id="wrapper" class={wrapperClass}>
+    <MobileMenuButton />
+    <SiteHeader />
+    <GlobalNav active={active} />
+    <ReserveBand />
+    <div id="contents">
+      <slot name="hero" />
+      <slot />
+      <SideMenu />
+    </div>
+    <SiteFooter />
+    <Drawer active={active} />
+  </div>
+  <MobileFooter />
+</BaseLayout>

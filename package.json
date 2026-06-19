@@ -6,9 +6,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier --write \"src/**/*.{astro,js}\" \"*.mjs\""
   },
   "dependencies": {
     "astro": "latest"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.4",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

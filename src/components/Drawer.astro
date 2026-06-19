@@ -1,0 +1,113 @@
+---
+import { navItems } from "./navItems.js";
+/* スマホ用スライドドロワー #sidr。active に現在ページのナビhref（例 "/clinic.html"）を渡すと該当項目を current 表示。 */
+const { active = "" } = Astro.props;
+---
+
+<div id="sidr" class="sidr right">
+  <p class="close">
+    <a href="javascript:void(0)" class="mobile_menu">Close</a>
+  </p>
+  <p class="backhome"><a href="/top.html">HOME</a></p>
+  <div class="banner smart_phonetop">
+    <ul>
+      <li>
+        <a href="https://lin.ee/J5alWzJ" target="_blank">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_line.png"
+            alt="LINE公式アカウント問い合わせ"
+            data-eio="j"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/reserve.html">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2022/09/banner_reserve.png"
+            alt="診療予約について"
+            data-eio="j"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/q_and_a.html">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2022/10/4d767dee6af9188b3d6c0424c1a66b01.png"
+            alt="よくある質問"
+            data-eio="j"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/partnership-shinkyu.html">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2023/05/Twitter.png"
+            alt="提携鍼灸院について"
+            data-eio="j"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/blog.html">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2023/03/53dca034c608bbba0219914e69b10442-1.png"
+            alt="院長ブログ"
+            data-eio="j"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <ul id="menu-main_menu" class="menu">
+    {
+      navItems.map((item) => (
+        <li
+          class={
+            item.href === active
+              ? "menu-item current-menu-item current_page_item"
+              : "menu-item"
+          }
+        >
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="banner smart_phonebottom">
+    <ul>
+      <li>
+        <p>
+          <strong>公式SNS</strong>
+        </p>
+      </li>
+      <li>
+        <a href="https://izumo-kampo.clinic/izumo_kampo_youtube/">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2023/02/Twitter-2.png"
+            alt="Youtube"
+            data-eio="j"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/wjHhI0T0zPl0TnO" target="_blank">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2023/09/Twitter.png"
+            alt="院長Twitter"
+            data-eio="j"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/izumoanz/" target="_blank">
+          <img
+            src="https://izumo-kampo.clinic/wp-content/uploads/2026/03/Twitter.png"
+            alt="あんず鍼灸院Instagram"
+            data-eio="j"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

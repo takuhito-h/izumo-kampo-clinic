@@ -1,0 +1,23 @@
+---
+import { navItems } from "./navItems.js";
+/* グローバルナビ #gNav。active に現在ページのナビhref（例 "/clinic.html"）を渡すと該当項目を current 表示。 */
+const { active = "" } = Astro.props;
+---
+
+<div id="gNav">
+  <ul id="nav" class="menu">
+    {
+      navItems.map((item) => (
+        <li
+          class={
+            item.href === active
+              ? "menu-item current-menu-item current_page_item"
+              : "menu-item"
+          }
+        >
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
