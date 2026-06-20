@@ -56,6 +56,9 @@
   #contents{padding:26px 14px 32px; gap:26px;}
   #main article > section{padding:22px 18px; border-radius:14px; margin:0 0 20px;}
   #sp_footer{display:block;}
+  /* ページトップボタン：固定フッター(#sp_footer)＋ホームバーの上に逃がし、サイズも少し小さく */
+  #pagetop-fab{right:14px; bottom:calc(62px + env(safe-area-inset-bottom)); width:44px; height:44px;}
+  #pagetop-fab::before{font-size:24px;}
   /* ページトップ：本文〜フッター間の余白を圧縮 */
   .pagetop{padding:4px 0 24px;}
 
@@ -88,8 +91,8 @@
      index(.timeSec)/time(.pageSec)の両ページに効くよう #main table.tablepress で指定。 */
   #main table.tablepress{table-layout:fixed; width:100%; font-size:12px;}
   #main table.tablepress th, #main table.tablepress td{padding:8px 0; line-height:1.4; word-break:break-word; vertical-align:middle;}
-  #main table.tablepress th.column-1, #main table.tablepress td.column-1{width:36%; font-size:10.5px; white-space:normal; text-align:left; padding:8px 7px; line-height:1.45;}
-  #main table.tablepress th:not(.column-1), #main table.tablepress td:not(.column-1){width:9.14%; font-size:13px;}
+  #main table.tablepress th.column-1, #main table.tablepress td.column-1{width:40%; font-size:11.5px; white-space:normal; text-align:left; padding:8px 7px; line-height:1.45;}
+  #main table.tablepress th:not(.column-1), #main table.tablepress td:not(.column-1){width:8.57%; font-size:13px;}
   /* 本文中の汎用テーブル（医師略歴など）：はみ出し防止＋余白圧縮・行見出し折返し */
   #main .subpagecontents table{max-width:100%;}
   #main table:not(.tablepress) th, #main table:not(.tablepress) td{padding:10px 12px; font-size:13.5px;}
@@ -117,8 +120,8 @@
   #sidr{width:262px;}
   #main table.tablepress{font-size:11px;}
   #main table.tablepress th, #main table.tablepress td{padding:7px 0;}
-  #main table.tablepress th.column-1, #main table.tablepress td.column-1{font-size:10px; padding:7px 5px;}
-  #main table.tablepress th:not(.column-1), #main table.tablepress td:not(.column-1){font-size:11px;}
+  #main table.tablepress th.column-1, #main table.tablepress td.column-1{font-size:10.5px; padding:7px 5px;}
+  #main table.tablepress th:not(.column-1), #main table.tablepress td:not(.column-1){font-size:11.5px;}
   #sideMenu .banner > ul{flex-direction:column;}
   #sideMenu .banner li{flex:1 1 auto;}
 }

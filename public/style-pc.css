@@ -16,7 +16,7 @@
   --shadow-sm:0 2px 10px rgba(60,70,45,.06);
 }
 *{box-sizing:border-box;}
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; scroll-padding-top:64px; } /* スティッキー #gNav 高さ分、アンカー先が裏に隠れないよう確保 */
 body{ text-align: left; margin:0; background:var(--bg); color:var(--ink); font-family:var(--gothic); line-height:1.9; font-size:16px; -webkit-font-smoothing:antialiased;}
 /* 本番テーマ css-php.css の `body{min-width:1010px}`（旧iPad対応）を打ち消し、
    幅1010px未満（タブレット〜スマホ・小さいPCウィンドウ）の横スクロールを防止。
@@ -28,6 +28,19 @@ a{color:var(--green-d); text-decoration:none;}
 a:link { color:var(--green-d); text-decoration: none; }
 a:visited { color:var(--green-d); text-decoration: none; }
 a:hover{text-decoration:underline;}
+
+/* ===== アクセシビリティ／全体の仕上げ ===== */
+/* キーボード操作時のフォーカス可視化（マウス操作では出さない :focus-visible） */
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible{
+  outline:2px solid var(--green-d); outline-offset:2px; border-radius:4px;
+}
+/* テキスト選択色をブランドカラーへ */
+::selection{ background:var(--tint2); color:var(--green-d); }
+/* 動きを抑える設定のユーザー向け：スクロール・トランジション・アニメを無効化 */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+}
 
 /* 不要・空要素やモバイル専用UIを非表示 */
 #mov_intro, #top_contents, #bottom_contents,
@@ -61,7 +74,8 @@ body.drawer-open{overflow:hidden;}
 .header_week p{margin:0; font-size:12px; color:var(--mut); font-weight:600; line-height:1.5;}
 .header_week a{display:none;}
 #searchform{grid-area:search; justify-self:end; margin:0;}
-#page_search{display:flex; align-items:center; background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:2px 4px 2px 14px;}
+#page_search{display:flex; align-items:center; background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:2px 4px 2px 14px; transition:border-color .2s, background .2s;}
+#page_search:focus-within{border-color:var(--green); background:var(--white);}
 #page_search .screen-reader-text{display:none;}
 #s{border:none; background:transparent; outline:none; font-size:13px; padding:6px 4px; width:150px; color:var(--ink);}
 #searchsubmit{ display: none; }
@@ -110,6 +124,8 @@ body.drawer-open{overflow:hidden;}
 /* ===== セクション＝カード ===== */
 #main article{display:block;}
 #main article > section{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:34px 36px; margin:0 0 28px; box-shadow:var(--shadow-sm);}
+/* セクション最後の要素の下マージンを消し、カード下端の余白をセクション間で揃える */
+#main article > section > *:last-child{margin-bottom:0;}
 /* バナーのみのセクションは枠なし */
 #main article > section.topSec1620, #main article > section.topSec1438{background:none; border:none; box-shadow:none; padding:0; margin:0 0 28px;}
 
@@ -211,14 +227,24 @@ body.drawer-open{overflow:hidden;}
 .pagetop{margin:0; text-align:center; padding:8px 0 32px;}
 .pagetop a{display:inline-block; color:var(--green-d); font-size:13px; font-weight:600;}
 
+/* ===== フローティング「ページトップへ」ボタン（JSが body に生成・.is-visible で出現） ===== */
+#pagetop-fab{position:fixed; right:24px; bottom:28px; z-index:70; width:48px; height:48px; padding:0;
+  display:flex; align-items:center; justify-content:center; border:none; cursor:pointer;
+  background:var(--green); color:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(60,70,45,.32);
+  opacity:0; visibility:hidden; transform:translateY(10px);
+  transition:opacity .25s ease, transform .25s ease, background .2s ease;}
+#pagetop-fab.is-visible{opacity:1; visibility:visible; transform:translateY(0);}
+#pagetop-fab:hover{background:var(--green-d); transform:translateY(-2px);}
+#pagetop-fab::before{font-family:'Material Icons'; content:"\e5d8"; font-size:26px; line-height:1;} /* arrow_upward */
+
 /* ===== フッター ===== */
 #footer{background:#3c4438; color:#cfd3c7; padding:50px 24px 30px;}
 #footer_area{max-width:1160px; margin:0 auto;}
 .footer_sitename{font-family:var(--serif); font-size:23px; margin:0 0 14px;}
 .footer_sitename a{color:#fff;}
-.footer_youso{font-size:13.5px; line-height:2; color:#aeb3a4; margin:0;}
+.footer_youso{font-size:13.5px; line-height:2; color:#bcc1b2; margin:0;}
 .footer_youso a{color:#dfe3d6;}
-.address{display:block; text-align:center; margin-top:24px; border-top:1px solid rgba(255,255,255,.12); padding-top:18px; font-size:12px; color:#8f9485; font-style:normal;}
+.address{display:block; text-align:center; margin-top:24px; border-top:1px solid rgba(255,255,255,.12); padding-top:18px; font-size:12px; color:#b3b8a8; font-style:normal;}
 
 /* ============================================================
    サブページ共通（オンライン診療など下層ページ）
@@ -328,9 +354,9 @@ body.drawer-open{overflow:hidden;}
    モバイル：ハンバーガー & スライドインドロワー（#sidr / 右からスライド）
    ・実サイトの sidr プラグイン挙動（side:right）を踏襲しつつリデザイン
    ・表示制御は style-sp.css（≤560 で #mobile / #sidr を display:block）
-   ・開閉は menu.js が body.drawer-open を付け外しして制御
+   ・開閉は add.js が body.drawer-open を付け外しして制御
    ============================================================ */
-/* オーバーレイ（menu.js が body 直下に生成） */
+/* オーバーレイ（add.js が body 直下に生成） */
 #drawer-overlay{position:fixed; inset:0; background:rgba(30,36,24,.5); opacity:0; visibility:hidden; transition:opacity .3s ease; z-index:995;}
 body.drawer-open #drawer-overlay{opacity:1; visibility:visible;}
 

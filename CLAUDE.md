@@ -44,7 +44,7 @@ HTML構造は本番テーマの出力をそのまま使い、**CSSのみ刷新**
 - 読み込む: jQuery 3.4.1 / js.cookie / base.js・add0.js / droppy / backstretch / sidr / lightbox一式 / nivoSlider / calendar系、および本番のインライン初期化（droppy・navdrop・nivoSlider init・count-per-day・instagram・typekit 等）。
 - **除外**: GTM / gtag（GA4）= localhostから本番GAへ送信されるため。schema(ld+json) = ページ固有メタデータのため。
 - ヒーローは本番 nivoSlider が初期化（CSSフォールバックではなく実スライダーが回る）。
-- **モバイルドロワーは `public/menu.js`（リデザイン独自）を併用**。本番 sidr.js は `.mobile_menu` の `href` を source にパネル生成する設計で、移行済みの既存 `#sidr` では機能しないため、ドロワー開閉は menu.js が担う（sidr.js 自体は読み込み済み）。
+- **モバイルドロワーは `public/add.js`（リデザイン独自）を併用**。本番 sidr.js は `.mobile_menu` の `href` を source にパネル生成する設計で、移行済みの既存 `#sidr` では機能しないため、ドロワー開閉は add.js が担う（sidr.js 自体は読み込み済み）。`add.js` はリデザイン独自JS（ドロワー制御＋ページトップボタン＋ナビのスクロール追従）を集約したファイル。
 - `admin-ajax.php`（count-per-day / instagram）はローカルにバックエンドが無く404/CORSで失敗するが無害。
 
 ## 資産のローカル化
