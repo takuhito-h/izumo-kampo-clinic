@@ -11,7 +11,7 @@
 
 /* ===== タブレット〜（〜980px）：2カラムを1カラムへ ===== */
 @media screen and (max-width:980px){
-  #contents{grid-template-columns:1fr; gap:32px; padding:36px 20px 60px;}
+  #contents{grid-template-columns:1fr; gap:32px; padding:36px 20px 40px;}
   #sideMenu{grid-column:1; position:static;}
   /* サイドメニューを横並びカードに（縦長を防ぐ） */
   #sideMenu .banner > ul{flex-direction:row; flex-wrap:wrap; gap:12px;}
@@ -26,7 +26,7 @@
 
 /* ===== スマホ（〜560px）：1カラム・ナビ折返し・固定フッター表示 ===== */
 @media screen and (max-width:560px){
-  body{font-size:15px; padding-bottom:58px;}
+  body{font-size:15px; padding-bottom:calc(52px + env(safe-area-inset-bottom));}
   /* スマホはグローバルナビがハンバーガー化し上部固定バーが無いため、PC用のアンカーオフセットを解除 */
   html{scroll-padding-top:0;}
 
@@ -53,9 +53,11 @@
   #wv_headbtn .wv_headbtn_1 li a{width:100%; justify-content:center; padding:12px 18px;}
 
   /* 本文レイアウト */
-  #contents{padding:26px 14px 48px; gap:26px;}
+  #contents{padding:26px 14px 32px; gap:26px;}
   #main article > section{padding:22px 18px; border-radius:14px; margin:0 0 20px;}
   #sp_footer{display:block;}
+  /* ページトップ：本文〜フッター間の余白を圧縮 */
+  .pagetop{padding:4px 0 24px;}
 
   /* 見出し */
   #main h2{font-size:21px; margin-bottom:18px; padding-bottom:12px;}

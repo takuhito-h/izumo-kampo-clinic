@@ -101,7 +101,7 @@ body.drawer-open{overflow:hidden;}
 #metaslider_133 .hero-dots button.is-active{background:#fff; transform:scale(1.2);}
 
 /* ===== コンテンツ全体レイアウト（メイン＋サイド） ===== */
-#contents{max-width:1160px; margin:0 auto; padding:30px 24px 70px; display:grid; grid-template-columns:minmax(0,1fr) 296px; gap:40px;}
+#contents{max-width:1160px; margin:0 auto; padding:30px 24px 44px; display:grid; grid-template-columns:minmax(0,1fr) 296px; gap:40px;}
 /* 横autoマージンはグリッドのstretchを無効化し中身（絶対配置スライド）で幅0に潰れるため打ち消す */
 #images{grid-column:1 / -1; justify-self:stretch; margin-left:0; margin-right:0; max-width:none;}
 #main{grid-column:1; min-width:0;}
@@ -163,7 +163,7 @@ body.drawer-open{overflow:hidden;}
 .timeSec table.tablepress{width:100%; border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); font-size:14px; margin:0 0 16px;}
 .timeSec table.tablepress th, .timeSec table.tablepress td{padding:13px 8px; text-align:center; border-bottom:1px solid var(--line); border-right:1px solid var(--line);}
 .timeSec table.tablepress thead th{background:var(--green); color:#fff; font-weight:600;}
-.timeSec table.tablepress td.column-1{background:var(--soft); text-align:left; font-weight:600; color:var(--green-d); font-size:13px; white-space:nowrap;}
+.timeSec table.tablepress td.column-1{ background:var(--soft); text-align:left; font-weight:600; color:var(--green-d); font-size:13px; white-space:nowrap;}
 .timeSec table.tablepress tr:last-child td{border-bottom:none;}
 .timeSec table.tablepress td:last-child, .timeSec table.tablepress th:last-child{border-right:none;}
 .timeSec .meditimenote{font-size:12.5px; color:var(--mut); line-height:1.8;}
@@ -172,7 +172,7 @@ body.drawer-open{overflow:hidden;}
    本番tablepress既定の水色ヘッダーにならないよう、ブランド緑へ統一 */
 #main table.time_table{border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); margin:0 0 16px;}
 #main table.time_table thead th{ text-align: center; background:var(--green); color:#fff; font-weight:600;}
-#main table.time_table td.column-1{background:var(--soft); color:var(--green-d); font-weight:600;}
+#main table.time_table td.column-1{ text-align: center; background:var(--soft); color:var(--green-d); font-weight:600;}
 
 
 /* ===== 本文テーブル全般（医師略歴など） ===== */
@@ -208,7 +208,7 @@ body.drawer-open{overflow:hidden;}
 
 /* ===== ページトップ ===== */
 /* css-php.css の `.pagetop{margin-top:45px}` を打ち消し、余分な上余白を除去 */
-.pagetop{margin:0; text-align:center; padding:10px 0 40px;}
+.pagetop{margin:0; text-align:center; padding:8px 0 32px;}
 .pagetop a{display:inline-block; color:var(--green-d); font-size:13px; font-weight:600;}
 
 /* ===== フッター ===== */
@@ -269,15 +269,23 @@ body.drawer-open{overflow:hidden;}
 /* YouTube 埋め込み（レスポンシブ16:9） */
 #main .iframe-youtube{width:100% !important; aspect-ratio:16/9; height:auto !important; border:0; border-radius:12px; box-shadow:var(--shadow-sm); display:block; margin:6px 0 12px;}
 
-/* ===== スマホ固定フッター（PCでは非表示・SP版で表示） ===== */
-#sp_footer{position:fixed; bottom:0; left:0; right:0; z-index:60; background:var(--green); box-shadow:0 -2px 12px rgba(0,0,0,.15); display:none;}
-#sp_footer ul{display:flex; list-style:none; margin:0; padding:0;}
+/* ===== スマホ固定フッター（PCでは非表示・SP版で表示） =====
+   全幅のブランド緑ボタンを2つ並べた固定バー（同色統一）。
+   クリーム地（--soft）を極細の仕切りに覗かせ、ボタン下端まで緑を伸ばして
+   iPhoneのホームバー領域も緑で覆う。 */
+#sp_footer{position:fixed; bottom:0; left:0; right:0; z-index:60; display:none;
+  background:var(--soft); box-shadow:0 -4px 16px rgba(60,70,45,.14);}
+#sp_footer ul{display:flex; gap:2px; list-style:none; margin:0; padding:0;}
 #sp_footer li{flex:1;}
-#sp_footer li + li{border-left:1px solid rgba(255,255,255,.25);}
-#sp_footer li a{display:flex; flex-direction:column; align-items:center; gap:2px; padding:9px 4px; color:#fff; font-size:11px; font-weight:600;}
+#sp_footer li a{display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:15px 8px calc(15px + env(safe-area-inset-bottom));
+  color:#fff; font-size:15px; font-weight:700;
+  letter-spacing:.02em; line-height:1.2; background:var(--green);
+  transition:background .15s ease;}
 #sp_footer li a:hover{text-decoration:none;}
-#sp_footer .material-icons{font-size:22px;}
-#sp_footer .spf_word{font-size:11px;}
+#sp_footer li a:active{background:var(--green-d);}
+#sp_footer .material-icons{font-size:21px;}
+#sp_footer .spf_word{font-size:14px;}
 
 /* ============ 院長ブログ（一覧 / 記事） ============ */
 /* 一覧 */
