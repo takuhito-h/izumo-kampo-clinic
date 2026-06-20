@@ -59,9 +59,7 @@ body.drawer-open{overflow:hidden;}
 /* 「休診日：土・日」と「診療時間（はこちら）」リンクを2段に分け、リンクは chevron 付きで明示。
    本番JSがリンク文言を「診療時間＋chevron_right」へ変換するため、その chevron を小さく表示して矢印リンク化する。 */
 .header_week p{margin:0; font-size:12px; color:var(--mut); font-weight:600; line-height:1.5;}
-.header_week a{display:flex; justify-content:flex-end; align-items:center; gap:2px; margin-top:3px; color:var(--green-d); font-weight:700;}
-.header_week a:hover{color:var(--green); text-decoration:none;}
-.header_week a .material-icons{display:inline-block; font-size:15px; line-height:1;}
+.header_week a{display:none;}
 #searchform{grid-area:search; justify-self:end; margin:0;}
 #page_search{display:flex; align-items:center; background:var(--soft); border:1px solid var(--line); border-radius:999px; padding:2px 4px 2px 14px;}
 #page_search .screen-reader-text{display:none;}
@@ -83,7 +81,7 @@ body.drawer-open{overflow:hidden;}
 #wv_headbtn .wv_headbtn_1 li a:hover{background:var(--green-d); text-decoration:none; transform:translateY(-1px);}
 
 /* ===== ヒーロー（スライダー） ===== */
-#images{ max-width:1112px !important; margin: 30px auto 0 !important; }
+#images{ max-width:1112px !important; }
 #images .nivoSlider{ border-radius:16px; overflow:hidden; }
 #images .nivo-controlNav{ display: none; }
 .slider-wrapper .ribbon{display:none;}
@@ -173,8 +171,9 @@ body.drawer-open{overflow:hidden;}
 /* 診療時間テーブル(.time_table)は .timeSec 外のページ（time.html=pageSec）でも
    本番tablepress既定の水色ヘッダーにならないよう、ブランド緑へ統一 */
 #main table.time_table{border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); margin:0 0 16px;}
-#main table.time_table thead th{background:var(--green); color:#fff; font-weight:600;}
+#main table.time_table thead th{ text-align: center; background:var(--green); color:#fff; font-weight:600;}
 #main table.time_table td.column-1{background:var(--soft); color:var(--green-d); font-weight:600;}
+
 
 /* ===== 本文テーブル全般（医師略歴など） ===== */
 /* tablepress（診療時間）は専用 .timeSec スタイルを使うため :not(.tablepress) で除外 */
