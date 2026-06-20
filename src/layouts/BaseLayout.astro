@@ -8,47 +8,18 @@ const { title = "出雲漢方クリニック" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-
-    <!-- 本番WordPress由来CSS -->
-    <link
-      rel="stylesheet"
-      href="/wp-includes/css/dist/block-library/style.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/wp-content/plugins/business-calendar/business-calendar.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/wp-content/plugins/count-per-day/counter.css"
-    />
+    <!-- 本番WordPress由来CSS（本番の読み込み順に合わせる） -->
     <link
       rel="stylesheet"
       href="/wp-content/plugins/instagram-feed-pro/css/sbi-styles.min.css"
     />
     <link
       rel="stylesheet"
-      href="/wp-content/plugins/ml-slider/assets/metaslider/public.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/nivo-slider.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/themes/default/default.css"
+      href="/wp-includes/css/dist/block-library/style.min.css"
     />
     <link
       rel="stylesheet"
       href="/wp-content/plugins/tablepress/css/default.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/wp-content/plugins/wevery-calendar/wevery-calendar.css"
     />
     <link
       rel="stylesheet"
@@ -60,21 +31,50 @@ const { title = "出雲漢方クリニック" } = Astro.props;
     />
     <link
       rel="stylesheet"
+      href="/wp-content/plugins/business-calendar/business-calendar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/wp-content/plugins/count-per-day/counter.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/wp-content/plugins/wevery-calendar/wevery-calendar.css"
+    />
+    <link
+      rel="stylesheet"
       href="/wp-content/plugins/wp-page-numbers/classic/wp-page-numbers.css"
     />
-    <link rel="stylesheet" href="/wp-content/themes/theme/css/droppy.css" />
     <link rel="stylesheet" href="/css-php.css" />
-
-    <!-- 上書きCSS -->
-    <link rel="stylesheet" href="/style-pc.css" />
-    <link rel="stylesheet" href="/style-sp.css" />
-
-    <link rel="stylesheet" href="/wp-content/themes/theme/css/wce-style.css" />
     <link
       rel="stylesheet"
       media="print"
       href="/wp-content/themes/theme/css/print.css"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/wp-content/themes/theme/css/droppy.css" />
+    <link
+      rel="stylesheet"
+      href="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/nivo-slider.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/wp-content/plugins/ml-slider/assets/metaslider/public.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/themes/default/default.css"
+    />
+
+    <!-- 上書きCSS（リデザイン独自：本番CSS群の後に読み込む＝意図的） -->
+    <link rel="stylesheet" href="/style-pc.css" />
+    <link rel="stylesheet" href="/style-sp.css" />
+
+    <!-- 本番テーマCSS(wce-style)：上書きCSSの後に読み込む＝意図的 -->
+    <link rel="stylesheet" href="/wp-content/themes/theme/css/wce-style.css" />
 
     <!-- 本番WordPress由来JS（head） -->
     <script is:inline type="text/javascript">
