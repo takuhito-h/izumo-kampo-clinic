@@ -257,6 +257,7 @@ body.drawer-open{overflow:hidden;}
 /* ページ見出し画像 */
 #main .mb-3{margin:0 0 24px;}
 #main .article-thumbnail{width:100%; border-radius:14px; box-shadow:var(--shadow-sm); display:block;}
+#main .subpagecontents img.alignright{border-radius:12px;}
 
 /* 本文ラッパー */
 #main .subpagecontents{margin:0;}
