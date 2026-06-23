@@ -75,6 +75,9 @@
   /* 画像・地図埋め込みのはみ出し防止 */
   #main .subpagecontents iframe{max-width:100%;}
   #main .subpagecontents iframe:not(.iframe-youtube){width:100% !important; height:300px;}
+  /* alignright/alignleft のfloatをモバイルで解除（幅不足でテキストが極端に狭くなるのを防ぐ） */
+  #main .subpagecontents img.alignright,
+  #main .subpagecontents img.alignleft{float:none; display:block; margin:0 auto 20px; max-width:100%; height:auto;}
 
   /* 目次：1カラム */
   #main .block_index{padding:16px 18px;}
