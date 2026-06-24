@@ -12,7 +12,7 @@
 /* ===== タブレット〜（〜980px）：2カラムを1カラムへ ===== */
 @media screen and (max-width:980px){
   #contents{grid-template-columns:1fr; gap:32px; padding:36px 20px 40px;}
-  #sideMenu{grid-column:1; position:static;}
+  #sideMenu{grid-column:1;}
   /* サイドメニューを横並びカードに（縦長を防ぐ） */
   #sideMenu .banner > ul{flex-direction:row; flex-wrap:wrap; gap:12px;}
   #sideMenu .banner li{flex:1 1 calc(50% - 6px);}
@@ -58,7 +58,7 @@
   /* 本文レイアウト */
   /* css-php.css max-width:480px の #main/ul/ol への上書き */
   #main{width:auto;}
-  #main article ul, #main article ol{font-size:inherit;}
+  #main article ul, #main article ol{list-style-type: none; font-size:inherit; margin:0 0 16px; line-height:1.9;}
   #contents{padding:26px 14px 32px; gap:26px;}
   #main article > section{padding:22px 18px; border-radius:14px; margin:0 0 20px;}
   #sp_footer{display:block;}
@@ -119,7 +119,7 @@
      詳細度 (1,1,3) > css-php.css (1,0,3) かつ後読み込みで確実に勝つ。 */
   #main article table.tablepress th, #main article table.tablepress td{border:1px solid var(--line); padding:8px 0; line-height:1.4; word-break:break-word; vertical-align:middle; text-align:center;}
   /* ヘッダー行：緑背景。詳細度 (1,1,4) で css-php.css の time_table th (#efefef / #677A4D 両方) も上書き */
-  #main article table.tablepress thead th{background:var(--green); color:#fff; font-weight:600; border-color:var(--green-d);}
+  #main article table.tablepress thead th{background:var(--green); color:#fff; font-weight:600;}
   /* ラベル列：淡背景＋左揃え */
   #main article table.tablepress td.column-1{background:var(--soft);}
   #main table.tablepress th.column-1, #main table.tablepress td.column-1{width:40%; font-size:11.5px; white-space:normal; text-align:left; padding:8px 7px; line-height:1.45;}

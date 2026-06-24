@@ -212,7 +212,7 @@ body.drawer-open{overflow:hidden;}
 .top2Sec li::before{content:""; position:absolute; left:2px; top:17px; width:8px; height:8px; border-radius:50%; background:var(--green);}
 
 /* ===== サイドメニュー ===== */
-#sideMenu{align-self:start; position:sticky; top:72px;}
+#sideMenu{align-self:start;}
 #sideMenu .backhome{ display: none; margin:0 0 16px;}
 #sideMenu .backhome a{display:block; text-align:center; background:var(--green-d); color:#fff; padding:11px; border-radius:10px; font-weight:700; font-size:14px;}
 #sideMenu .backhome a:hover{text-decoration:none; opacity:.92;}
@@ -271,6 +271,7 @@ body.drawer-open{overflow:hidden;}
 #main a:hover{text-decoration-color:var(--green); text-decoration-thickness:2px;}
 #main .big-button,
 #main .block_index a,
+#main #mokuji a,
 #main #breadcrumbs a,
 #main .column_title a,
 #main .column_description a,
