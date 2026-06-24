@@ -32,10 +32,13 @@
 
   /* ヘッダー：ブランド＋診療科目を左寄せ。右上の固定ハンバーガー(#mobile)分の
      余白を右に確保し、ブランドとボタンの干渉（中央寄せ時に重なる不具合）を防ぐ。 */
-  #header{grid-template-columns:1fr; grid-template-areas:"brand" "text"; text-align:left; justify-items:start; padding:12px 56px 12px 18px; column-gap:0; row-gap:4px;}
+  /* css-php.css max-width:480px の width:96% を打ち消す */
+  #header{grid-template-columns:1fr; grid-template-areas:"brand" "text"; text-align:left; justify-items:start; padding:12px 56px 12px 18px; column-gap:0; row-gap:4px; width:auto;}
   .header_address, .header_week{display:none;}
   #header .h1_text{font-size:19px;}
   #header .cliniclogo_img{width:44px;}
+  /* css-php.css max-width:480px の padding:5px 0 を打ち消す */
+  #header .header_text{padding:0;}
   .header_text p{font-size:11px; line-height:1.45;}
 
   /* グローバルナビはハンバーガー＋スライドインドロワー（#sidr）に切替 */
@@ -53,20 +56,38 @@
   #wv_headbtn .wv_headbtn_1 li a{width:100%; justify-content:center; padding:12px 18px;}
 
   /* 本文レイアウト */
+  /* css-php.css max-width:480px の #main/ul/ol への上書き */
+  #main{width:auto;}
+  #main article ul, #main article ol{font-size:inherit;}
   #contents{padding:26px 14px 32px; gap:26px;}
   #main article > section{padding:22px 18px; border-radius:14px; margin:0 0 20px;}
   #sp_footer{display:block;}
+  /* 提携鍼灸院ページはモバイルフッター不要・ページトップボタンをフッター分オフセット解除 */
+  body:has(.h2_partnership) #sp_footer{display:none;}
+  body:has(.h2_partnership){padding-bottom:0;}
+  body:has(.h2_partnership) #pagetop-fab{bottom:calc(14px + env(safe-area-inset-bottom));}
   /* ページトップボタン：固定フッター(#sp_footer)＋ホームバーの上に逃がし、サイズも少し小さく */
   #pagetop-fab{right:14px; bottom:calc(62px + env(safe-area-inset-bottom)); width:44px; height:44px;}
   #pagetop-fab::before{font-size:24px;}
   /* ページトップ：本文〜フッター間の余白を圧縮 */
-  .pagetop{padding:4px 0 24px;}
+  /* css-php.css max-width:480px の position:relative/height:50px/width:96% を打ち消す */
+  .pagetop{padding:4px 0 24px; width:auto; height:auto; position:static; clear:none;}
+  /* css-php.css max-width:480px の position:absolute/bottom:0/right:0/background:#677A4D 等を打ち消す */
+  .pagetop a{position:static; background-color:transparent; padding:0; border-radius:0;}
 
   /* 見出し */
   #main h2{font-size:21px; margin-bottom:18px; padding-bottom:12px;}
   #main h3{font-size:16.5px; padding:8px 13px;}
   #main h4{font-size:15.5px;}
   #main h5{font-size:14.5px;}
+  /* css-php.css の max-width:480px ブロックに #main article h2〜h5/p/img（詳細度が1段高い）が追加されたため
+     同じセレクタで上書き。style-sp.css は css-php.css より後に読み込まれるため同詳細度で勝つ。 */
+  #main article h2{color:var(--green-d); background:none; background-color:transparent; font-family:var(--serif); font-weight:600; font-size:21px; line-height:1.4; padding:0 0 12px; margin:0 0 18px; border-bottom:1px solid var(--line); border-radius:0; clear:none;}
+  #main article h3{color:var(--green-d); font-size:16.5px; line-height:1.5; font-weight:600; padding:8px 13px; margin:26px 0 10px; background:var(--tint); border-left:4px solid var(--green); border-radius:0 8px 8px 0; clear:none;}
+  #main article h4{color:var(--green-d); font-size:15.5px; font-weight:600; line-height:1.6; padding:0 0 8px 22px; margin:28px 0 12px; border-bottom:2px dotted var(--green); clear:none;}
+  #main article h5{color:var(--green-d); font-size:14.5px; font-weight:700; line-height:1.6; padding:1px 0 1px 12px; margin:22px 0 8px; border-left:3px solid var(--green); clear:none;}
+  #main article p{font-size:14.5px; margin:0 0 12px;}
+  #main article img{max-width:100%; padding:0; height:auto;}
 
   /* 本文・ボタン */
   #main p{font-size:14.5px;}
@@ -105,7 +126,13 @@
   #sideMenu .backhome a{padding:13px;}
 
   /* フッター */
-  #footer{padding:36px 18px 26px;}
+  /* css-php.css max-width:480px の footer{font-size:70%} を打ち消す */
+  #footer{padding:36px 18px 26px; font-size:1rem;}
+  /* css-php.css max-width:480px の #footer_area{width:96%;padding:0 0 35px} を打ち消す */
+  #footer_area{width:auto; padding:0;}
+  /* css-php.css max-width:480px の footer .address{font-size:50%}（詳細度0,1,1）を
+     #footer .address（詳細度1,1,0）で上書き */
+  #footer .address{font-size:12px; margin-top:24px;}
   .footer_sitename{font-size:20px;}
   .footer_youso{font-size:12.5px;}
 

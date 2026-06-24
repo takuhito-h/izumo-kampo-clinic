@@ -22,6 +22,9 @@ body{ text-align: left; margin:0; background:var(--bg); color:var(--ink); font-f
    幅1010px未満（タブレット〜スマホ・小さいPCウィンドウ）の横スクロールを防止。
    ※ overflow-x は position:sticky を阻害するため使わず、min-width の打ち消しのみで対処 */
 html, body{ min-width:0 !important; }
+/* css-php.css の max-width:480px ブロックが #wrapper に text-align:center / background:#fff / box-shadow を
+   付けるため打ち消す（詳細度：ID > 要素なので確実に勝つ） */
+#wrapper{text-align:left; background:var(--bg); box-shadow:none;}
 img{max-width:100%; height:auto;}
 a{color:var(--green-d); text-decoration:none;}
 /* 本番 css-php.css の `a:link{color:#0081cd}`（青）に詳細度で勝てるよう、:link/:visited にも色を明示 */
@@ -59,10 +62,11 @@ body.drawer-open{overflow:hidden;}
   max-width:1160px; margin:0 auto; padding:16px 24px;
   background:rgba(255,255,255,.95);
 }
-#header h1{grid-area:brand; margin:0; display:flex; align-items:center;}
+#header h1{grid-area:brand; margin:0; padding:0; display:flex; align-items:center;}
 #header h1 a{display:flex; align-items:center; gap:14px;}
 #header h1 a:hover{ text-decoration: none; }
-#header .cliniclogo_img{width:52px; height:auto; border-radius:8px; display:block;}
+/* css-php.css max-width:480px の zoom:60% を打ち消す */
+#header .cliniclogo_img{width:52px; height:auto; border-radius:8px; display:block; zoom:1;}
 #header .h1_text{font-family:var(--serif); font-size:22px; font-weight:600; color:var(--green-d); line-height:1.3;}
 .header_text{grid-area:text; align-self:end;}
 .header_text p{margin:0; font-size:12.5px; color:var(--mut); letter-spacing:.02em;}
@@ -301,9 +305,12 @@ body.drawer-open{overflow:hidden;}
    クリーム地（--soft）を極細の仕切りに覗かせ、ボタン下端まで緑を伸ばして
    iPhoneのホームバー領域も緑で覆う。 */
 #sp_footer{position:fixed; bottom:0; left:0; right:0; z-index:60; display:none;
-  background:var(--soft); box-shadow:0 -4px 16px rgba(60,70,45,.14);}
+  background:var(--soft); box-shadow:0 -4px 16px rgba(60,70,45,.14);
+  /* css-php.css max-width:480px の slideUp アニメを打ち消す */
+  animation:none;}
 #sp_footer ul{display:flex; gap:2px; list-style:none; margin:0; padding:0;}
-#sp_footer li{flex:1;}
+/* css-php.css max-width:480px の border-left/padding/display:table-cell を打ち消す */
+#sp_footer li{flex:1; display:block; border-left:none; padding:0;}
 #sp_footer li a{display:flex; align-items:center; justify-content:center; gap:8px;
   padding:15px 8px calc(15px + env(safe-area-inset-bottom));
   color:#fff; font-size:15px; font-weight:700;
@@ -362,7 +369,8 @@ body.drawer-open{overflow:hidden;}
 body.drawer-open #drawer-overlay{opacity:1; visibility:visible;}
 
 /* ハンバーガーボタン（右上固定） */
-#mobile{position:fixed; top:10px; right:12px; z-index:980; margin:0;}
+/* css-php.css max-width:480px で width:100%/background:#677A4D/left:0 が付くため全プロパティを明示して打ち消す */
+#mobile{position:fixed; top:10px; right:12px; left:auto; z-index:980; margin:0; width:auto; background:transparent; box-shadow:none;}
 #mobile .mobile_menu{display:flex; align-items:center; justify-content:center; width:46px; height:46px; background:var(--green); border-radius:12px; box-shadow:0 4px 12px rgba(60,70,45,.3); transition:.2s;}
 #mobile .mobile_menu:hover{background:var(--green-d); text-decoration:none;}
 #mobile .mobile_menu .material-icons { display: none;}
