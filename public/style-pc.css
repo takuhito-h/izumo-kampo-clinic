@@ -297,6 +297,21 @@ body.drawer-open{overflow:hidden;}
 #main .block_index ul ul a::before{width:7px; height:2px; margin-top:-1px; border-radius:1px; background:var(--mut);}
 #main .block_index ul ul a:hover{color:var(--green-d);}
 
+/* ===== #mokuji（Q&Aページ目次）＝ .block_index と同デザイン =====
+   HTML構造: #mokuji > #wv_index_list > ul（タイトル行なし）
+   css-php.css に #mokuji #wv_index_list（詳細度2,0,0）があるが style-pc.css は後読みなので同詳細度で勝つ */
+#mokuji #wv_index_list{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin:28px 0;}
+#main article #mokuji ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr;}
+#main article #mokuji ul li{position:relative; margin:0; padding:0; border-bottom:1px dotted var(--line);}
+#main article #mokuji a{position:relative; display:block; padding:9px 6px 9px 20px; color:var(--ink); font-size:14.5px;}
+#main article #mokuji a::before{content:""; position:absolute; left:4px; top:50%; margin-top:-3px; width:6px; height:6px; background:var(--green); border-radius:50%;}
+#main article #mokuji a:hover{color:var(--green-d); text-decoration:none;}
+#main article #mokuji ul ul{padding-left:20px; display:block;}
+#main article #mokuji ul ul li{border-bottom:none;}
+#main article #mokuji ul ul a{padding:6px 6px 6px 18px; font-size:13.5px; color:var(--mut);}
+#main article #mokuji ul ul a::before{width:7px; height:2px; margin-top:-1px; border-radius:1px; background:var(--mut);}
+#main article #mokuji ul ul a:hover{color:var(--green-d);}
+
 /* YouTube 埋め込み（レスポンシブ16:9） */
 #main .iframe-youtube{width:100% !important; aspect-ratio:16/9; height:auto !important; border:0; border-radius:12px; box-shadow:var(--shadow-sm); display:block; margin:6px 0 12px;}
 

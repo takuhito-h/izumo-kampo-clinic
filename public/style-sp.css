@@ -100,9 +100,10 @@
   #main .subpagecontents img.alignright,
   #main .subpagecontents img.alignleft{float:none; display:block; margin:0 auto 20px; max-width:100%; height:auto;}
 
-  /* 目次：1カラム */
+  /* 目次：1カラム（.block_index と #mokuji 共通） */
   #main .block_index{padding:16px 18px;}
   #main .block_index ul{grid-template-columns:1fr;}
+  #mokuji #wv_index_list{padding:16px 18px; margin:20px 0;}
 
   /* TOPバナー（LINE・提携）2カラム維持しつつ余白縮小 */
   .topSec1620 .banner ul{gap:12px;}
@@ -114,7 +115,13 @@
      ラベル列(column-1)を広げて折返しを2行程度に抑え、曜日列は均等幅で記号を見やすく。
      index(.timeSec)/time(.pageSec)の両ページに効くよう #main table.tablepress で指定。 */
   #main table.tablepress{table-layout:fixed; width:100%; font-size:12px;}
-  #main table.tablepress th, #main table.tablepress td{padding:8px 0; line-height:1.4; word-break:break-word; vertical-align:middle;}
+  /* css-php.css ≤480px の border:solid 1px #ccc / #333 をショートハンドで上書きし色をブランド線色に統一。
+     詳細度 (1,1,3) > css-php.css (1,0,3) かつ後読み込みで確実に勝つ。 */
+  #main article table.tablepress th, #main article table.tablepress td{border:1px solid var(--line); padding:8px 0; line-height:1.4; word-break:break-word; vertical-align:middle; text-align:center;}
+  /* ヘッダー行：緑背景。詳細度 (1,1,4) で css-php.css の time_table th (#efefef / #677A4D 両方) も上書き */
+  #main article table.tablepress thead th{background:var(--green); color:#fff; font-weight:600; border-color:var(--green-d);}
+  /* ラベル列：淡背景＋左揃え */
+  #main article table.tablepress td.column-1{background:var(--soft);}
   #main table.tablepress th.column-1, #main table.tablepress td.column-1{width:40%; font-size:11.5px; white-space:normal; text-align:left; padding:8px 7px; line-height:1.45;}
   #main table.tablepress th:not(.column-1), #main table.tablepress td:not(.column-1){width:8.57%; font-size:13px;}
   /* 本文中の汎用テーブル（医師略歴など）：はみ出し防止＋余白圧縮・行見出し折返し */
