@@ -69,10 +69,6 @@ const { title = "出雲漢方クリニック" } = Astro.props;
       href="/wp-content/plugins/ml-slider/assets/sliders/nivoslider/themes/default/default.css"
     />
 
-    <!-- 上書きCSS（リデザイン独自：本番CSS群の後に読み込む＝意図的） -->
-    <link rel="stylesheet" href="/style-pc.css" />
-    <link rel="stylesheet" href="/style-sp.css" />
-
     <!-- 本番テーマCSS(wce-style)：上書きCSSの後に読み込む＝意図的 -->
     <link rel="stylesheet" href="/wp-content/themes/theme/css/wce-style.css" />
 
@@ -201,6 +197,9 @@ const { title = "出雲漢方クリニック" } = Astro.props;
     <script is:inline src="/wp-content/themes/theme/js/sidr.js"></script>
   </head>
   <body>
+    <!-- 上書きCSS（リデザイン独自：本番CSS群の後に読み込む＝意図的） -->
+    <link rel="stylesheet" href="/style-pc.css" />
+    <link rel="stylesheet" href="/style-sp.css" />
     <slot />
     <!-- 本番WordPress由来JS（footer） -->
     <script is:inline type="speculationrules">

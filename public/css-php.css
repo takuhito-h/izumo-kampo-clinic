@@ -4876,14 +4876,854 @@ img {
  #nav ul li { float: none; }
  #nav ul ul { top: 0; }
 
+#sp_footer{
+	display: none;
+}
+
+}
 
 
-
-
-
-
-
-
-
-
+@media screen and (max-width:480px){
+/* -------------------------- */
+/* max-480px */
+/* -------------------------- */
+html,
+body {
+    width: 100%;
+    
+    background-color: #efefef;
+}
+#wrapper {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    -webkit-box-shadow: 3px 0 2px rgba(80,80,80,0.3);
+    -moz-shadow: 3px 0 2px rgba(80,80,80,0.3);
+    box-shadow: 3px 0 2px rgba(80,80,80,0.3);
+}
+#header {
+    width: 96%;
+    margin: 0 auto;
+    text-align: left;
+}
+#header h1 {
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.8;
+    font-weight: normal;
+    padding: 60px 0 0;
+}
+#header h1 a {
+    color: #677A4D;
+    text-decoration: none;
+}
+#header .cliniclogo_img {
+    vertical-align: middle;
+    zoom: 60%;
+    max-width: 100%;
+    margin-right: 3px;
+}
+#header .header_text {
+    font-size: 80%;
+    padding: 5px 0;
+    line-height: 1.4;
+    color: #677A4D;
+}
+#header .header_address {
+    font-size: 70%;
+    line-height: 1.4;
+    text-align: left;
+    padding: 0;
+}
+#header .header_tel {
+    font-size: 80%;
+    line-height: 1.9;
+    text-align: left;
+}
+#header .header_tel .tel {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #677A4D;
+}
+#header .header_time {
+    display: none;
+    font-size: 80%;
+    text-align: left;
+}
+#header .header_time dt {
+    float: left;
+    clear: left;
+    width: 60px;
+}
+#header .header_time dd { padding: 0 0 0 60px }
+#header .header_week {
+    display: none;
+    font-size: 80%;
+    text-align: left;
+}
+#mobile {
+    width: 100%;
+    height: auto;
+    background: #677A4D;
+    position: fixed;
+    z-index: 999;
+    -webkit-box-shadow: 0 3px 2px rgba(80, 80, 80, 0.3);
+    -moz-box-shadow: 0 3px 2px rgba(80, 80, 80, 0.3);
+    box-shadow: 0 3px 2px rgba(80, 80, 80, 0.3);
+	cursor:pointer;
+	/* 2016.01.19 メニュー位置不具合修正追加 */
+	top: 0;
+	left: 0;
+}
+#mobile a {
+    min-height: 40px;
+	    width: 100%;
+    margin: 0;
+	cursor:pointer;
+}
+#mobile a img {
+    height: inherit;
+    vertical-align: top;
+}
+.mobile_menu{ 
 	
+}
+.sidr {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -300px !important;
+    height: auto;
+    z-index: 999999;
+    width: 260px;
+    font-size: 100%;
+    background: #efefef;
+    color: #333;
+    padding: 20px;
+    -webkit-box-shadow: inset 3px 1px 2px rgba(80, 80, 80, 0.3);
+    -moz-box-shadow: inset 3px 1px 2px rgba(80, 80, 80, 0.3);
+    box-shadow: inset 3px 1px 2px rgba(80, 80, 80, 0.3);
+}
+.sidr .sidr-inner { padding: 0 0 15px }
+.sidr .sidr-inner>p {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.sidr.right {
+    left: auto;
+    right: -260px;
+}
+div#sidr.left {
+	left: -300px;
+}
+
+.sidr h2 {
+    font-size: 100%;
+    font-weight: normal;
+    padding: 10px 0 5px;
+    margin: 0;
+    color: #677A4D;
+    line-height: 1.8;
+    text-align: left;
+    border-bottom: solid 1px #677A4D;
+}
+.sidr p.close {
+    font-weight: bold;
+    text-align: right;
+}
+.sidr p.close a {
+    color: #fff;
+    font-size: 100%;
+    text-decoration: none;
+    padding: 3px 10px;
+    background: #ccc;
+}
+.sidr ul {
+    display: block;
+    margin: 0 0 15px;
+    padding: 0;
+}
+.sidr ul li {
+    display: block;
+    margin: 0;
+    text-align: left;
+}
+.sidr ul li a {
+    border-bottom: 1px solid #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 80%;
+    color: #333;
+    padding: 12px 0 10px 8px;
+}
+.sidr ul li:hover,
+.sidr ul li.active,
+.sidr ul li.sidr-class-active { border-top: none }
+
+.sidr ul li ul li{
+    margin-left:15px;
+}
+.sidr ul li ul li a:before{
+    content:"> ";
+}
+
+/* スマホバナー 2015.5.29 追加 */
+.sidr .banner ul {
+	clear: both;
+}
+
+.sidr .banner li {
+	margin-top: 10px;
+}
+
+.sidr .banner li a {
+	padding: 0;
+	border: none;
+}
+
+.banner.smart_phone{
+	clear: both;
+	margin-top: 10px;
+}
+
+#main .banner.smart_phone ul, .banner.smart_phone ul {
+	display: block;
+	padding: 0;
+	margin-left: 0;
+}
+
+#main .banner.smart_phone li, .banner.smart_phone li {
+	list-style: none;
+	text-align: center;
+	margin-bottom: 10px;
+}
+/* スマホバナー 2015.5.29 追加 ここまで */
+
+p.backhome { text-align: left }
+p.backhome a {
+    color: #fff;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    background: #677A4D;
+    padding: 3px 10px;
+}
+#page_search { display: none }
+#gNav {
+    /*width: 100%;*/
+    border: solid 1px #CCC;
+    margin: 0;
+    clear: both;
+}
+#gNav ul { display: none }
+#nav-global-parent { display: none }
+#contents {
+    width: 100%;
+    margin: 0 auto;
+}
+/* スライドショープラグイン*/
+.metaslider .caption-wrap {
+    background-color: #677A4D;
+    !important: ;
+    line-height: 10px !important;
+    font-size: 80% !important;
+}
+#images {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    margin: 0;
+}
+#images img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 20px;
+}
+#images img.topimage {
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+.top_image img {
+    width: 100%;
+    height: auto;
+}
+#images img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 20px;
+}
+#main {
+    width: 96%;
+    margin: 0 auto;
+    text-align: left;
+}
+#main article h2 {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 20px 0 8px;
+	background-color: #677A4D; 
+	padding:7px 10px 5px;
+	
+	border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    clear: both;
+	
+}
+
+#main article .column_time {
+    margin-bottom: 8px;
+}
+/* 2023.03.15 add */
+
+/* 2023.03.15 add */
+#main article h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #677A4D;
+    clear: both;
+	margin:15px 0 5px 0;
+}
+#main article h4 {
+    font-size: 16px;
+    line-height: 20px;
+    color: #415E40;
+    border-bottom: solid 1px #cccccc;
+    padding: 0;
+    clear: both;
+	margin:10px 0 5px 0;
+}
+#main article h5 {
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+    font-weight: bold;
+    clear: both;
+	margin:5px 0 0 0;
+}
+#main article p {
+    font-size: 95%;
+    margin: 0 0 5px;
+}
+#main article img {
+    max-width: 90%;
+    height: auto;
+    padding: 0 5%;
+}
+#main article img.blog-thumbnail {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+#main article img.half-size-image { width: 40% }
+#main article ul {
+    list-style-type: disc;
+    margin: 0 0 2.5em 1.5em;
+    font-size: 80%;
+    line-height: 1.7em;
+}
+#main article ol {
+    list-style-type: decimal;
+    margin: 0 0 2.5em 1.5em;
+    font-size: 80%;
+    line-height: 1.7em;
+}
+#main article table {
+    font-size: 80%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+#main article table th {
+    background: #efefef;
+    border: solid 1px #ccc;
+    text-align: center;
+    padding: 9px;
+}
+#main article table td {
+    background: #ffffff;
+    border: solid 1px #ccc;
+    padding: 9px;
+}
+#main article table p {
+    margin: 0;
+    padding: 0;
+}
+#main article dl { font-size: 80% }
+#main article dt { }
+#main article dd { margin: 0 0 10px 0 }
+/* #breadcrumbs { display: none } */
+/* - article - */
+#main article section { margin: 0 0 25px }
+#main article section.heightLine { height: auto !important }
+/* - .infoSec - */
+#main article section.infoSec dl { font-size: 80% }
+#main article section.infoSec dt {
+    color: #677A4D;
+    margin-top: 10px;
+}
+#main article section.infoSec dd {
+    padding-bottom: 5px;
+    border-bottom: dotted 1px #e6e6e6;
+}
+#main article section.infoSec p { margin: 0 }
+/* - .mapSec - */
+#main article section.mapSec iframe {
+    /*width: 100%;*/
+    height: 200px;
+    margin: 0 0 5px;
+}
+#main article section.mapSec .simplemap-content {
+    width: 95% !important;
+    margin: 0 auto;
+}
+/* - .timeSec - */
+#main article table.time_table { width: 100% }
+#main article table.time_table th {
+    background: #677A4D;
+    color: #ffffff;
+    border: solid 1px #333;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 6px;
+}
+#main article table.time_table td {
+    background: #ffffff;
+    border: solid 1px #333;
+    padding: 4px 6px;
+    text-align: center;
+}
+#main article table.time_table td.time_title {
+    color: #677A4D;
+    font-weight: bold;
+}
+
+#main dl.gallery-item img {
+border: none !important;
+}
+
+#main dl.gallery-item .gallery-caption{
+  margin-top: 7px ;
+  text-align: center ;
+  line-height: 1.4em ;
+  width: 100% ;
+  }
+  
+/*テーブルスクロールCSS*/
+#main article .table_scroll{
+overflow: auto;　　　　/*tableをスクロールさせる*/
+}
+#main article .table_scroll::-webkit-scrollbar{　　/*tableにスクロールバーを追加*/
+ height: 5px;
+}
+#main article .table_scroll::-webkit-scrollbar-track{　　/*tableにスクロールバーを追加*/
+ background: #F1F1F1;
+}
+#main article .table_scroll::-webkit-scrollbar-thumb {　　/*tableにスクロールバーを追加*/
+ background: #BCBCBC;
+}
+
+#sideMenu {
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 10px 0 0 0;
+    text-align: left;
+    /*border-top: 1px solid #ddd;*/
+}
+#sideMenu h2 {
+    color: #677A4D;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 0 0 5px 8px;
+    margin: 20px 0 0;
+}
+#sideMenu ul { font-size: 90% }
+#sideMenu li { border-bottom: solid 1px #e6e6e6 }
+#sideMenu li:last-child { border-left: none }
+#sideMenu li a {
+    width: 95%;
+    text-decoration: none;
+    color: #515151;
+    display: inline-block;
+    padding: 6px 5px 4px 8px;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+}
+#sideMenu li a:hover { background-color: rgba(255, 255, 255, 0.6) }
+#sideMenu p { font-size: 80% }
+#sideMenu .backhome { display: none }
+#sideMenu .menu_box { display: none }
+#sideMenu .banner { padding: 30px 0 0 }
+#sideMenu .banner ul { padding: 0 }
+#sideMenu .banner li {
+    border: none;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#sideMenu .banner li a {
+    width: 95%;
+    padding: 0;
+    color: #0081cd;
+    text-decoration: underline;
+}
+#sideMenu .banner li a:hover { color: #73cbf3 }
+#sideMenu .banner li a img { margin: 0 auto }
+#sideMenu .banner p a {
+    width: 95%;
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 auto;
+    padding: 12px 0;
+    text-align: center;
+    background: #677A4D;
+    border-radius: 10px; /* CSS3草案 */
+    -webkit-border-radius: 10px; /* Safari,Google Chrome用 */
+    -moz-border-radius: 10px; /* Firefox用 */
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+}
+#sideMenu .banner p a:hover {
+    background: ;
+    border-radius: 10px; /* CSS3草案 */
+    -webkit-border-radius: 10px; /* Safari,Google Chrome用 */
+    -moz-border-radius: 10px; /* Firefox用 */
+}
+#sideMenu .qr { display: none }
+.pagetop {
+    width: 96%;
+    height: 50px;
+    position: relative;
+    clear: both;
+    text-align: right;
+    margin: 0 auto;
+}
+#sideMenu .spnone{ 
+	display:none;
+}
+
+.pagetop a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #ffffff;
+    font-size: 80%;
+    text-decoration: none;
+    background-color: #677A4D;
+    padding: 5px 8px;
+    border-radius: 4px 4px 0 0; /* CSS3草案 */
+    -webkit-border-radius: 4px 4px 0 0; /* Safari,Google Chrome用 */
+    -moz-border-radius: 4px 4px 0 0; /* Firefox用 */
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+}
+.pagetop a:hover {
+    background: ;
+    border-radius: 4px 4px 0 0; /* CSS3草案 */
+    -webkit-border-radius: 4px 4px 0 0; /* Safari,Google Chrome用 */
+    -moz-border-radius: 4px 4px 0 0; /* Firefox用 */
+}
+footer {
+    width: 100%;
+    background: #333333;
+    color: #ffffff;
+    font-size: 70%;
+    padding: 30px 0;
+    clear: both;
+}
+#footer_area {
+    width: 96%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 0 35px;
+}
+footer h2 { font-size: 1.4em }
+footer .address {
+    width: 100%;
+    font-size: 50%;
+    margin: 20px auto 0;
+}
+
+/*blog基本*/
+
+#side_blog {
+margin: 10px;
+}
+
+#side_blog h3{
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#side_blog .side_blognew,#side_blog .side_blogcat{
+}
+
+#side_blog .side_blognew dt{
+    line-height: 1.6;
+    margin-left: 10px;
+}
+
+#side_blog .side_blognew dd{
+    line-height: 1.6;
+    margin-left: 10px
+}
+#side_blog .side_blognew dd a{
+    display: block;
+    padding: 5px;
+    border-bottom:1px solid #ddd;
+}
+
+
+#side_blog .side_blogcat dd{
+    line-height: 1.6;
+    margin-left: 10px
+}
+
+#side_blog .side_blogcat dd a{
+        display: block;
+    padding: 5px;
+    border-bottom:1px solid #ddd;
+}
+
+#side_blog .side_blogcal {
+
+}
+
+#wp-calendar{
+    width: 100%;
+}
+#wp-calendar th{
+    background-color: #efefef;
+}
+
+#wp-calendar tr{
+    border-top: 1px solid #ccc;
+}
+
+#wp-calendar th,#wp-calendar td{
+    text-align: center;
+}
+#wp-calendar .pad{
+    border: none;
+}
+
+/*2016.03.10 add */
+.banner ul li img { 
+	max-width: 100%;
+	/* 2022.04.20 add */
+	height: inherit;
+}
+
+/*2022.04.21 add */
+.banner.smart_phone h2 {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 20px 0 8px;
+    background-color: #677A4D; 
+    padding:7px 10px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    clear: both;
+    text-align: left;
+}
+
+/* 2022.05.26 add start */
+/* ボタン */
+#main article ul.wev_btn3col {
+    flex-flow: column;
+}
+#main article ul.wev_btn3col li {
+    width: 90%;
+    margin: 2% auto;
+}
+/* 四角アイコン */
+#main article .wev_icon_box li {
+    width: calc(100% / 2.1);
+    font-size: 1em;
+}
+#main article .wev_icon_box li strong small {
+    font-size: 0.5em;
+}
+/* 丸アイコン */
+#main article ul.wev_icon_circle li {
+    display: flex;
+    margin: 3vw;
+    width: 38vw;
+    height: 38vw;
+    font-size: 4vw;
+}
+#main article ul.wev_icon_circle li img {
+    width: 50px!important;
+}
+#main article ul.wev_icon_circle li .ttl {
+    font-size: 15px;
+}
+#main article ul.wev_icon_circle li .ttl::after {
+    bottom: 0.4em;
+}
+/* カード02 */
+#main article ul.wev_card_02 li {
+    width: 44%;
+    margin: 0.5em 0.5em;
+    font-size: 0.8em;
+}
+/* カード03 */
+.wev_accordion_area {
+    flex-flow: column;
+    align-items: center;
+}
+#main article .wev_accordion_area .wev_accordion_header img {
+    max-width: 100%!important;
+    width: 100%;
+    height: auto;
+    padding: 0!important;
+}
+.wev_accordion_inner {
+    padding: 0 10%;
+}
+/* 当院の特徴 */
+#main article .wev_feature li {
+    width: 80%;
+    margin: 0 auto 25px;
+}
+#main article .wev_feature {
+    margin: 50px auto;
+}
+#main article .wev_feature li::before {
+    bottom: auto;
+    top: 31vw;
+}
+/* 2022.05.26 add end */
+
+#main article .article-thumbnail {
+    padding: 0px !important;
+    max-width: 100% !important;
+}
+
+.blog-thumbnail-wrapper {
+    width: 100%;
+}
+
+.blog-thumbnail {
+    height: 220px !important;
+    object-fit: cover;
+}
+
+.column_list_item .column_tmb {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.blog-tmb-wrap {
+    display: flex;
+    margin: 10px 0;
+}
+.blog-tmb-wrap .blog-tmb-img {
+    width: 50%;
+}
+.blog-tmb-wrap .blog-tmb-img img {
+    padding: 0!important;
+}
+.blog-tmb-wrap > div {
+    width: fit-content;
+    box-sizing: border-box;
+    font-size: 90%;
+}
+
+#mokuji #wv_index_list {
+    margin: 0px 0px 2em 0px;
+    padding: 15px 5vw 0px;
+}
+/* 2023.03.20 add */
+
+/*====2017.11.10 add mobile共通====*/
+@font-face {
+font-family: 'Material Icons';
+font-style: normal;
+font-weight: 400;
+src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v16/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+/*
+===== スマホ下部メニュー =====
+*/
+
+#sp_footer{
+    display: flex;
+    background-color: #677A4D;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -3px 2px rgba(80, 80, 80, 0.3);
+    z-index:100;
+    animation-name: slideUp;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    transform-origin: 50% 50%  0;
+    animation-duration: .7s;
+
+}
+@keyframes slideUp {
+  0% {
+    bottom: -56px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+#sp_footer ul{
+display:table;
+    width: 100%;
+}
+
+#sp_footer li{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-left: 1px solid #fff;
+    padding:5px 0;
+    width: 50%;
+}
+
+#sp_footer li:first-child{
+border-left: none;
+}
+
+#sp_footer li i{
+
+}
+
+#sp_footer li span{
+display: block;
+font-size: 10px;
+}
+
+#sp_footer li a{
+    color: #FFFFFF;
+}
+/*====2017.11.10 add====*/
+
+
+}
