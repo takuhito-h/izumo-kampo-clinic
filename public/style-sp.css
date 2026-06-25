@@ -63,9 +63,9 @@
   #main article > section{padding:22px 18px; border-radius:14px; margin:0 0 20px;}
   #sp_footer{display:block;}
   /* 提携鍼灸院ページはモバイルフッター不要・ページトップボタンをフッター分オフセット解除 */
-  body:has(.h2_partnership) #sp_footer{display:none;}
-  body:has(.h2_partnership){padding-bottom:0;}
-  body:has(.h2_partnership) #pagetop-fab{bottom:calc(14px + env(safe-area-inset-bottom));}
+  body:has(.parent2190) #sp_footer{display:none;}
+  body:has(.parent2190){padding-bottom:0;}
+  body:has(.parent2190) #pagetop-fab{bottom:calc(14px + env(safe-area-inset-bottom));}
   /* ページトップボタン：固定フッター(#sp_footer)＋ホームバーの上に逃がし、サイズも少し小さく */
   #pagetop-fab{right:14px; bottom:calc(62px + env(safe-area-inset-bottom)); width:44px; height:44px;}
   #pagetop-fab::before{font-size:24px;}
