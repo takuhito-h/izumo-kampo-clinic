@@ -277,10 +277,15 @@ body.drawer-open{overflow:hidden;}
 #main .column_description a,
 #main a:has(img){text-decoration:none;}
 
-/* 本文中のリスト（チェックリスト風） */
-#main .subpagecontents ul{list-style:disc; margin:0 0 16px; padding:0 0 0 1.5em;}
-#main .subpagecontents ul li{margin:0 0 6px; padding:0; font-size:15px; line-height:1.9;}
-#main .subpagecontents ul li::marker{color:var(--green);}
+/* 本文中のリスト（チェックリスト風）。
+   TOPページ（.top3Sec 直下の ul）にも同じ見た目を適用。
+   バナー用 ul（.banner 内）は直下ではないため対象外、.top2Sec は専用スタイルを維持 */
+#main .subpagecontents ul,
+#main .top3Sec > ul{list-style:disc; margin:0 0 16px; padding:0 0 0 1.5em;}
+#main .subpagecontents ul li,
+#main .top3Sec > ul li{margin:0 0 6px; padding:0; font-size:15px; line-height:1.9;}
+#main .subpagecontents ul li::marker,
+#main .top3Sec > ul li::marker{color:var(--green);}
 
 /* 目次（block_index） */
 #main .block_index{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin:28px 0;}
