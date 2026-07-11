@@ -108,6 +108,9 @@
   /* TOPバナー（LINE・提携）2カラム維持しつつ余白縮小 */
   .topSec1620 .banner ul{gap:12px;}
 
+  /* TOP「各種専門外来」カード型リンク：1カラムに */
+  #main ul.specialty-list{grid-template-columns:1fr; gap:8px;}
+
   /* お知らせ */
   .infoSec dt{font-size:14.5px;}
 
