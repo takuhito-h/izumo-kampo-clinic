@@ -15,14 +15,14 @@ HTML構造は本番テーマの出力をそのまま使い、**CSSのみ刷新**
 
 ### ビルド後にローカルで確認する
 
-ビルド時に `postbuild`（`scripts/relativize.mjs`）が走り、`dist/` 内の HTML の絶対パス（`/clinic.html`・`/wp-content/...`・`/` など）を**各ファイルの階層に応じた相対パス**（root は `./`、`blog/` 配下は `../`）へ自動変換する。
+ビルド時に `postbuild`（`scripts/relativize.mjs`）が走り、`dist/` 内の HTML の絶対パス（`/clinic`・`/wp-content/...`・`/` など）を**各ファイルの階層に応じた相対パス**（root は `./`、`blog/` 配下は `../`）へ自動変換する。このとき href の拡張子なし内部リンク（`/clinic` 等）には **`.html` を付与**する（`./clinic.html`）。
 
 そのため確認方法は2通り、どちらでも崩れない:
 
 - **ファイル直開き**: `dist/index.html` や `dist/blog/01.html` をブラウザで開く（file://）
 - **ローカルサーバ**: `npm run serve`（ビルド＋ http://localhost:4321 配信）/ `npm run build && npm run preview`
 
-※ ソース（`src/`・コンポーネント）側のリンクは**絶対パス（`/clinic.html` 等）のまま**にしておくこと。相対化は postbuild が出力に対してのみ行う。
+※ ソース（`src/`・コンポーネント）側のリンクは**拡張子なしの絶対パス（`/clinic` 等、本番WordPressと同じURL形式）**で書くこと。`.html` 付与と相対化は postbuild が出力に対してのみ行う。`PageLayout` の `active` や `navItems.js` の `href` も同じ拡張子なし形式で揃える。
 
 ## ディレクトリ構成
 
