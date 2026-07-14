@@ -461,7 +461,7 @@ body.drawer-open #sidr{transform:translateX(0);}
 
 /* 治療メニュー（漢方薬・睡眠・鍼灸・運動）：上辺アクセントの白カード */
 #main .care-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0 8px;}
-#main .care-card{background:var(--white); border:1px solid var(--line); border-top:3px solid var(--green); border-radius:0 0 12px 12px; padding:18px 22px 16px;}
+#main .care-card{background:var(--white); border:1px solid var(--line); border-radius: 12px; padding:18px 22px 16px;}
 /* カード内見出し：共通 h4 の菱形マーカーは踏襲しつつ、
    カード幅に合わせて下線を細く・左端揃えに整える */
 #main .care-card h4{margin:0 0 10px; padding:0 0 8px 19px; font-size:15.5px; border-bottom:1px solid var(--line);}
@@ -470,7 +470,7 @@ body.drawer-open #sidr{transform:translateX(0);}
 
 /* 対面／オンライン診療：ヘッダー帯つきの比較カード（ボタンを下端に揃える） */
 #main .visit-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:24px 0 8px; align-items:stretch;}
-#main .visit-card{display:flex; flex-direction:column; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px 22px; box-shadow:var(--shadow-sm);}
+#main .visit-card{display:flex; flex-direction:column; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px 22px; }
 /* カード内見出し：care-card と同じ整え方（菱形は左端揃え・下線は細く） */
 #main .visit-card h4{margin:0 0 12px; padding:0 0 9px 19px; font-size:16px; border-bottom:1px solid var(--line);}
 #main .visit-card h4::before{left:0; top:.5em; width:9px; height:9px;}
