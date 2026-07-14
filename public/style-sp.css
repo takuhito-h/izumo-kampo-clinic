@@ -178,8 +178,8 @@
   #main ul.check-list li{max-width:100%; font-size:13.5px; padding:7px 14px 7px 30px; border-radius:14px;}
   #main ul.check-list li::before{left:12px;}
 
-  /* 列挙リスト・吹き出し：ひと回り小さく */
-  #main ul.dash-list{padding-left:14px;}
+  /* 列挙リスト・吹き出し：1段組に戻し、ひと回り小さく */
+  #main ul.dash-list{columns:1;}
   #main ul.dash-list li{font-size:14px;}
   #main p.voice{max-width:100%; font-size:14px; padding:8px 14px;}
 

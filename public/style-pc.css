@@ -450,11 +450,10 @@ body.drawer-open #sidr{transform:translateX(0);}
 #main ul.check-list li{position:relative; margin:0; background:var(--white); border:1px solid var(--tint2); border-radius:999px; padding:7px 17px 7px 34px; font-size:14px; line-height:1.6;}
 #main ul.check-list li::before{content:""; position:absolute; left:14px; top:50%; width:10px; height:5px; margin-top:-4px; border-left:2px solid var(--green); border-bottom:2px solid var(--green); transform:rotate(-45deg);}
 
-/* 文中の列挙リスト：箱をやめ、細い縦罫のインデントで文章の流れに馴染ませる */
-#main ul.dash-list{list-style:none; margin:10px 0 16px; padding:4px 0 4px 20px; border-left:2px solid var(--tint2);}
-#main ul.dash-list li{position:relative; margin:0 0 5px; padding:0 0 0 16px; font-size:14.5px;}
-#main ul.dash-list li:last-child{margin-bottom:0;}
-#main ul.dash-list li::before{content:""; position:absolute; left:0; top:.85em; width:8px; height:2px; border-radius:1px; background:var(--green);}
+/* 文中の列挙リスト：素のまま2段組にして縦を半分に（モバイルは style-sp 側で1段に戻す） */
+#main ul.dash-list{list-style:none; margin:10px 0 14px 2px; padding:0; columns:2; column-gap:32px;}
+#main ul.dash-list li{position:relative; margin:0 0 4px; padding:0 0 0 16px; font-size:14.5px; line-height:1.7; break-inside:avoid;}
+#main ul.dash-list li::before{content:""; position:absolute; left:0; top:.72em; width:6px; height:6px; border-radius:50%; background:var(--green);}
 
 /* 患者さんの声風の段落：吹き出し */
 #main p.voice{width:fit-content; margin:0 0 10px; padding:9px 18px; background:var(--white); border:1px solid var(--line); border-radius:14px 14px 14px 4px; box-shadow:var(--shadow-sm); font-size:14.5px;}
