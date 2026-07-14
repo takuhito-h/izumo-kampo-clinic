@@ -439,3 +439,53 @@ body.drawer-open #sidr{transform:translateX(0);}
 #sidr .banner a{display:block; border-radius:8px; overflow:hidden; box-shadow:var(--shadow-sm);}
 #sidr .banner a:hover{text-decoration:none; opacity:.92;}
 #sidr .banner img{width:100%; display:block;}
+
+/* ============================================================
+   専門外来ページ 本文コンポーネント（.subpagecontents 内・全ページ共通）
+   方針：塗りを減らし、余白・細い線・明朝で品よく整える和モダン
+   ============================================================ */
+
+/* 導入文：少し大きめにして「つかみ」を作る */
+#main .sub-intro p{font-size:16.5px; line-height:2.05; margin:0 0 10px;}
+
+/* セクションの区切り：見出し自体は共通デザイン（緑バー）のまま、前の余白だけ広めに */
+#main .sub-sec{margin:0 0 8px;}
+#main .sub-sec > h3:first-child{margin-top:38px;}
+
+/* 症状チェックリスト：白いピル（チップ）を流し込み。数が多くても圧迫感を出さない */
+#main ul.check-list{list-style:none; margin:18px 0 26px; padding:0; display:flex; flex-wrap:wrap; gap:9px 9px;}
+#main ul.check-list li{position:relative; margin:0; background:var(--white); border:1px solid var(--tint2); border-radius:999px; padding:7px 17px 7px 34px; font-size:14px; line-height:1.6;}
+#main ul.check-list li::before{content:""; position:absolute; left:14px; top:50%; width:10px; height:5px; margin-top:-4px; border-left:2px solid var(--green); border-bottom:2px solid var(--green); transform:rotate(-45deg);}
+
+/* 文中の列挙リスト：箱をやめ、細い縦罫のインデントで文章の流れに馴染ませる */
+#main ul.dash-list{list-style:none; margin:10px 0 16px; padding:4px 0 4px 20px; border-left:2px solid var(--tint2);}
+#main ul.dash-list li{position:relative; margin:0 0 5px; padding:0 0 0 16px; font-size:14.5px;}
+#main ul.dash-list li:last-child{margin-bottom:0;}
+#main ul.dash-list li::before{content:""; position:absolute; left:0; top:.85em; width:8px; height:2px; border-radius:1px; background:var(--green);}
+
+/* 患者さんの声風の段落：吹き出し */
+#main p.voice{width:fit-content; margin:0 0 10px; padding:9px 18px; background:var(--white); border:1px solid var(--line); border-radius:14px 14px 14px 4px; box-shadow:var(--shadow-sm); font-size:14.5px;}
+
+/* キーメッセージ：中央寄せの明朝＋左右の飾り線
+   flex にすることで、文章が複数行に折り返しても飾り線が全体の垂直中央に揃う */
+#main p.key-message{display:flex; align-items:center; justify-content:center; gap:14px; margin:26px 0 14px; font-family:var(--serif); font-size:18px; line-height:1.8; color:var(--green-d); text-align:center;}
+#main p.key-message strong{color:var(--green-d); font-weight:600;}
+#main p.key-message::before,
+#main p.key-message::after{content:""; flex:0 1 28px; min-width:12px; height:1px; background:var(--green); opacity:.55;}
+
+/* 治療メニュー（漢方薬・睡眠・鍼灸・運動）：上辺アクセントの白カード */
+#main .care-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0 8px;}
+#main .care-card{background:var(--white); border:1px solid var(--line); border-top:3px solid var(--green); border-radius:0 0 12px 12px; padding:18px 22px 16px;}
+#main .care-card h4{margin:0 0 10px;}
+#main .care-card p{margin:0; font-size:14px; line-height:1.9;}
+
+/* 対面／オンライン診療：ヘッダー帯つきの比較カード（ボタンを下端に揃える） */
+#main .visit-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:24px 0 8px; align-items:stretch;}
+#main .visit-card{display:flex; flex-direction:column; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px 22px; box-shadow:var(--shadow-sm);}
+#main .visit-card h4{margin:0 0 12px;}
+#main .visit-card p{margin:0 0 10px; font-size:14px; line-height:1.9;}
+#main .visit-card .visit-cta{margin-top:auto; padding-top:10px;}
+#main .visit-card .big-button{width:100%; min-width:0; margin:0; padding:13px 16px; font-size:14px;}
+
+/* 院長からのメッセージ：枠は付けず、明朝＋広めの行間で「語り」の質感だけ変える */
+#main .message-block p{font-family:var(--serif); font-size:15.5px; line-height:2.15;}

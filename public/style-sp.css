@@ -165,3 +165,45 @@
   #sideMenu .banner > ul{flex-direction:column;}
   #sideMenu .banner li{flex:1 1 auto;}
 }
+
+/* ===== 専門外来ページ本文コンポーネントのモバイル調整 ===== */
+@media screen and (max-width:980px){
+  /* 対面／オンラインの案内カードはタブレット以下で縦積み */
+  #main .visit-grid{grid-template-columns:1fr; gap:12px;}
+}
+@media screen and (max-width:560px){
+  /* 導入文：本文サイズに寄せ、行間を少し詰める */
+  #main .sub-intro p{font-size:15.5px; line-height:1.95;}
+
+  /* セクション前の余白を画面サイズに合わせて圧縮 */
+  #main .sub-sec > h3:first-child{margin-top:28px;}
+
+  /* 症状チップ：小さめに詰め、長文項目が2行に折り返しても
+     カプセル形が崩れないよう角丸を控えめに */
+  #main ul.check-list{gap:7px;}
+  #main ul.check-list li{max-width:100%; font-size:13.5px; padding:7px 14px 7px 30px; border-radius:14px;}
+  #main ul.check-list li::before{left:12px;}
+
+  /* 列挙リスト・吹き出し：ひと回り小さく */
+  #main ul.dash-list{padding-left:14px;}
+  #main ul.dash-list li{font-size:14px;}
+  #main p.voice{max-width:100%; font-size:14px; padding:8px 14px;}
+
+  /* キーメッセージ：飾り線を短くして本文の折り返しを優先 */
+  #main p.key-message{font-size:16px; gap:10px;}
+  #main p.key-message::before,
+  #main p.key-message::after{flex-basis:16px; min-width:10px;}
+
+  /* カード類：1カラム化＋余白圧縮 */
+  #main .care-grid{grid-template-columns:1fr; gap:10px;}
+  #main .care-card{padding:15px 16px 13px;}
+  #main .visit-card{padding:16px 16px 14px;}
+
+  /* 院長メッセージ：行間を少し詰める */
+  #main .message-block p{font-size:15px; line-height:2;}
+}
+@media screen and (max-width:380px){
+  /* 小型スマホ：チップをさらに詰める */
+  #main ul.check-list li{font-size:13px; padding:6px 12px 6px 28px;}
+  #main ul.check-list li::before{left:11px; width:9px; height:5px;}
+}
