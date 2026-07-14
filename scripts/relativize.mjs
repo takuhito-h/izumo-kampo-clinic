@@ -23,9 +23,20 @@ function prefixOf(file) {
 }
 
 // 絶対パス（先頭 /）→ 相対パス
-function toRel(abs, prefix) {
+// href はソース側が拡張子なし（/clinic 等）なので、末尾セグメントに拡張子が
+// 無ければ .html を付与する（build.format:"file" の出力に合わせる）
+function toRel(abs, prefix, attr) {
   if (abs === "/") return prefix + "index.html"; // トップ
-  return prefix + abs.replace(/^\//, "");
+  let rel = abs.replace(/^\//, "");
+  if (attr === "href") {
+    const m = rel.match(/^([^?#]*)([?#].*)?$/);
+    let p = m[1];
+    const tail = m[2] || "";
+    const last = p.split("/").pop();
+    if (last && !last.includes(".")) p += ".html";
+    rel = p + tail;
+  }
+  return prefix + rel;
 }
 
 const files = await walk(DIST);
@@ -35,7 +46,7 @@ for (const file of files) {
 
   // href / src / action="/..."（// で始まるプロトコル相対は除外）
   html = html.replace(/\b(href|src|action)="(\/[^"]*)"/g, (m, attr, val) =>
-    val.startsWith("//") ? m : `${attr}="${toRel(val, prefix)}"`,
+    val.startsWith("//") ? m : `${attr}="${toRel(val, prefix, attr)}"`,
   );
 
   // srcset="/a.jpg 1024w, /b.jpg 300w"（カンマ区切りの各URL）
