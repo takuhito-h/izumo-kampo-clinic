@@ -445,13 +445,6 @@ body.drawer-open #sidr{transform:translateX(0);}
    方針：塗りを減らし、余白・細い線・明朝で品よく整える和モダン
    ============================================================ */
 
-/* 導入文：少し大きめにして「つかみ」を作る */
-#main .sub-intro p{font-size:16.5px; line-height:2.05; margin:0 0 10px;}
-
-/* セクションの区切り：見出し自体は共通デザイン（緑バー）のまま、前の余白だけ広めに */
-#main .sub-sec{margin:0 0 8px;}
-#main .sub-sec > h3:first-child{margin-top:38px;}
-
 /* 症状チェックリスト：白いピル（チップ）を流し込み。数が多くても圧迫感を出さない */
 #main ul.check-list{list-style:none; margin:18px 0 26px; padding:0; display:flex; flex-wrap:wrap; gap:9px 9px;}
 #main ul.check-list li{position:relative; margin:0; background:var(--white); border:1px solid var(--tint2); border-radius:999px; padding:7px 17px 7px 34px; font-size:14px; line-height:1.6;}
@@ -470,16 +463,19 @@ body.drawer-open #sidr{transform:translateX(0);}
 /* 治療メニュー（漢方薬・睡眠・鍼灸・運動）：上辺アクセントの白カード */
 #main .care-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0 8px;}
 #main .care-card{background:var(--white); border:1px solid var(--line); border-top:3px solid var(--green); border-radius:0 0 12px 12px; padding:18px 22px 16px;}
-#main .care-card h4{margin:0 0 10px;}
+/* カード内見出し：共通 h4 の菱形マーカーは踏襲しつつ、
+   カード幅に合わせて下線を細く・左端揃えに整える */
+#main .care-card h4{margin:0 0 10px; padding:0 0 8px 19px; font-size:15.5px; border-bottom:1px solid var(--line);}
+#main .care-card h4::before{left:0; top:.5em; width:9px; height:9px;}
 #main .care-card p{margin:0; font-size:14px; line-height:1.9;}
 
 /* 対面／オンライン診療：ヘッダー帯つきの比較カード（ボタンを下端に揃える） */
 #main .visit-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:24px 0 8px; align-items:stretch;}
 #main .visit-card{display:flex; flex-direction:column; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px 22px; box-shadow:var(--shadow-sm);}
-#main .visit-card h4{margin:0 0 12px;}
+/* カード内見出し：care-card と同じ整え方（菱形は左端揃え・下線は細く） */
+#main .visit-card h4{margin:0 0 12px; padding:0 0 9px 19px; font-size:16px; border-bottom:1px solid var(--line);}
+#main .visit-card h4::before{left:0; top:.5em; width:9px; height:9px;}
 #main .visit-card p{margin:0 0 10px; font-size:14px; line-height:1.9;}
 #main .visit-card .visit-cta{margin-top:auto; padding-top:10px;}
 #main .visit-card .big-button{width:100%; min-width:0; margin:0; padding:13px 16px; font-size:14px;}
 
-/* 院長からのメッセージ：枠は付けず、明朝＋広めの行間で「語り」の質感だけ変える */
-#main .message-block p{font-family:var(--serif); font-size:15.5px; line-height:2.15;}

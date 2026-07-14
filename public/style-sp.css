@@ -172,12 +172,6 @@
   #main .visit-grid{grid-template-columns:1fr; gap:12px;}
 }
 @media screen and (max-width:560px){
-  /* 導入文：本文サイズに寄せ、行間を少し詰める */
-  #main .sub-intro p{font-size:15.5px; line-height:1.95;}
-
-  /* セクション前の余白を画面サイズに合わせて圧縮 */
-  #main .sub-sec > h3:first-child{margin-top:28px;}
-
   /* 症状チップ：小さめに詰め、長文項目が2行に折り返しても
      カプセル形が崩れないよう角丸を控えめに */
   #main ul.check-list{gap:7px;}
@@ -195,8 +189,6 @@
   #main .care-card{padding:15px 16px 13px;}
   #main .visit-card{padding:16px 16px 14px;}
 
-  /* 院長メッセージ：行間を少し詰める */
-  #main .message-block p{font-size:15px; line-height:2;}
 }
 @media screen and (max-width:380px){
   /* 小型スマホ：チップをさらに詰める */
