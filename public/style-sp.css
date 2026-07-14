@@ -189,10 +189,6 @@
   #main ul.dash-list li{font-size:14px;}
   #main p.voice{max-width:100%; font-size:14px; padding:8px 14px;}
 
-  /* キーメッセージ：飾り線を短くして本文の折り返しを優先 */
-  #main p.key-message{font-size:16px; gap:10px;}
-  #main p.key-message::before,
-  #main p.key-message::after{flex-basis:16px; min-width:10px;}
 
   /* カード類：1カラム化＋余白圧縮 */
   #main .care-grid{grid-template-columns:1fr; gap:10px;}

@@ -466,12 +466,6 @@ body.drawer-open #sidr{transform:translateX(0);}
 /* 患者さんの声風の段落：吹き出し */
 #main p.voice{width:fit-content; margin:0 0 10px; padding:9px 18px; background:var(--white); border:1px solid var(--line); border-radius:14px 14px 14px 4px; box-shadow:var(--shadow-sm); font-size:14.5px;}
 
-/* キーメッセージ：中央寄せの明朝＋左右の飾り線
-   flex にすることで、文章が複数行に折り返しても飾り線が全体の垂直中央に揃う */
-#main p.key-message{display:flex; align-items:center; justify-content:center; gap:14px; margin:26px 0 14px; font-family:var(--serif); font-size:18px; line-height:1.8; color:var(--green-d); text-align:center;}
-#main p.key-message strong{color:var(--green-d); font-weight:600;}
-#main p.key-message::before,
-#main p.key-message::after{content:""; flex:0 1 28px; min-width:12px; height:1px; background:var(--green); opacity:.55;}
 
 /* 治療メニュー（漢方薬・睡眠・鍼灸・運動）：上辺アクセントの白カード */
 #main .care-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0 8px;}
