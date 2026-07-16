@@ -1,5 +1,5 @@
 ---
-const { title = "出雲漢方クリニック" } = Astro.props;
+const { title = "出雲漢方クリニック", description = "" } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,6 +8,7 @@ const { title = "出雲漢方クリニック" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    {description && <meta name="description" content={description} />}
     <!-- 本番WordPress由来CSS（本番の読み込み順に合わせる） -->
     <link
       rel="stylesheet"

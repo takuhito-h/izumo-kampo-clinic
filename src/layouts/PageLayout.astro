@@ -9,10 +9,15 @@ import SiteFooter from "../components/SiteFooter.astro";
 import Drawer from "../components/Drawer.astro";
 import MobileFooter from "../components/MobileFooter.astro";
 
-const { title, wrapperClass = "page_weverysub", active = "" } = Astro.props;
+const {
+  title,
+  description = "",
+  wrapperClass = "page_weverysub",
+  active = "",
+} = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
   <input type="hidden" id="telnum" value="" />
   <div id="wrapper" class={wrapperClass}>
     <MobileMenuButton />
