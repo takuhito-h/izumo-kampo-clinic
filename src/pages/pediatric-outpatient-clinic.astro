@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import SpecialtyList from "../components/SpecialtyList.astro";
 
 const title = "【保険診療・オンライン診療対応】小児漢方外来";
 const description =
@@ -94,9 +95,7 @@ const description =
             <li>便秘になりやすい</li>
             <li>アレルギーを繰り返す</li>
           </ul>
-          <p>
-            などは、体質が関係していることが少なくありません。
-          </p>
+          <p>などは、体質が関係していることが少なくありません。</p>
           <p>
             漢方では症状だけを抑えるのではなく、お子さんの体質や成長に合わせて治療を行い、病気にかかりにくく、回復しやすい身体づくりをサポートします。
           </p>
@@ -199,33 +198,7 @@ const description =
             出雲漢方クリニックでは、それぞれのお悩みに合わせた専門外来を設けています。
           </p>
           <p>他の外来が気になる方は、こちらからご覧ください。</p>
-          <ul class="specialty-list">
-            <li><a href="/kampo_diet">肥満・高血圧外来</a></li>
-            <li><a href="/female-outpatient-clinic">女性漢方外来</a></li>
-            <li><a href="/menopause-outpatient-clinic">更年期漢方外来</a></li>
-            <li><a href="/allergy-outpatient-clinic">アレルギー漢方外来</a></li>
-            <li>
-              <a href="/pain-and-numbness-outpatient-clinic">痛み・しびれ外来</a
-              >
-            </li>
-            <li>
-              <a href="/skin-problem-outpatient-clinic">肌トラブル漢方外来</a>
-            </li>
-            <li><a href="/outpatient-cancer-clinic">がん漢方外来</a></li>
-            <li><a href="/sleep-outpatient-clinic">睡眠（不眠）漢方外来</a></li>
-            <li>
-              <a href="/school-refusal-adolescent-outpatient-clinic"
-                >不登校・思春期外来</a
-              >
-            </li>
-            <li><a href="/gastrointestinal-outpatient-clinic">胃腸外来</a></li>
-            <li>
-              <a href="/weather-related-illness-outpatient-clinic">気象病外来</a
-              >
-            </li>
-            <li><a href="/headache-outpatient-clinic">頭痛外来</a></li>
-            <li><a href="/pediatric-outpatient-clinic">小児漢方外来</a></li>
-          </ul>
+          <SpecialtyList />
         </div>
       </section>
     </article>

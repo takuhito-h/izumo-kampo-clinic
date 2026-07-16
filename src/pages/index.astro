@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import SpecialtyList from "../components/SpecialtyList.astro";
 
 const title =
   "出雲漢方クリニック｜デザインリニューアル案（HTML構造そのまま・CSSのみ刷新）";
@@ -97,47 +98,7 @@ const title =
         <p>
           ご自身のお悩みと合う外来がございましたら、お気軽にお問い合わせ、ご予約ください。
         </p>
-        <ul class="specialty-list">
-          <li>
-            <a href="/kampo_diet">肥満・高血圧外来</a>
-          </li>
-          <li>
-            <a href="/female-outpatient-clinic">女性漢方外来</a>
-          </li>
-          <li>
-            <a href="/menopause-outpatient-clinic">更年期漢方外来</a>
-          </li>
-          <li>
-            <a href="/allergy-outpatient-clinic">アレルギー漢方外来</a>
-          </li>
-          <li>
-            <a href="/pain-and-numbness-outpatient-clinic">痛み・しびれ外来</a>
-          </li>
-          <li>
-            <a href="/skin-problem-outpatient-clinic">肌トラブル漢方外来</a>
-          </li>
-          <li>
-            <a href="/outpatient-cancer-clinic">がん漢方外来</a>
-          </li>
-          <li>
-            <a href="/sleep-outpatient-clinic">睡眠（不眠）漢方外来</a>
-          </li>
-          <li>
-            <a href="/school-refusal-adolescent-outpatient-clinic"
-              >不登校・思春期外来</a
-            >
-          </li>
-          <li>
-            <a href="/gastrointestinal-outpatient-clinic">胃腸外来</a>
-          </li>
-          <li>
-            <a href="/weather-related-illness-outpatient-clinic">気象病外来</a>
-          </li>
-          <li>
-            <a href="/headache-outpatient-clinic">頭痛外来</a>
-          </li>
-          <li><a href="/pediatric-outpatient-clinic">小児漢方外来</a></li>
-        </ul>
+        <SpecialtyList />
       </section>
       <section class="top3Sec heightLine topSec1620" id="topSecID1620">
         <div class="banner smart_phone">

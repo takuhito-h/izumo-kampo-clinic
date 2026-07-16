@@ -1,0 +1,32 @@
+---
+// 「各種専門外来について」の外来リンク一覧（全ページ共通）
+const items = [
+  { href: "/kampo_diet", label: "肥満・高血圧外来" },
+  { href: "/female-outpatient-clinic", label: "女性漢方外来" },
+  { href: "/menopause-outpatient-clinic", label: "更年期漢方外来" },
+  { href: "/allergy-outpatient-clinic", label: "アレルギー漢方外来" },
+  { href: "/pain-and-numbness-outpatient-clinic", label: "痛み・しびれ外来" },
+  { href: "/skin-problem-outpatient-clinic", label: "肌トラブル漢方外来" },
+  { href: "/outpatient-cancer-clinic", label: "がん漢方外来" },
+  { href: "/sleep-outpatient-clinic", label: "睡眠（不眠）漢方外来" },
+  {
+    href: "/school-refusal-adolescent-outpatient-clinic",
+    label: "不登校・思春期外来",
+  },
+  { href: "/gastrointestinal-outpatient-clinic", label: "胃腸外来" },
+  { href: "/weather-related-illness-outpatient-clinic", label: "気象病外来" },
+  { href: "/headache-outpatient-clinic", label: "頭痛外来" },
+  { href: "/pediatric-outpatient-clinic", label: "小児漢方外来" },
+  { href: "/dizziness-outpatient-clinic", label: "めまい漢方外来" },
+];
+---
+
+<ul class="specialty-list">
+  {
+    items.map((item) => (
+      <li>
+        <a href={item.href}>{item.label}</a>
+      </li>
+    ))
+  }
+</ul>
