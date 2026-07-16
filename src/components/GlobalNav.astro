@@ -8,13 +8,7 @@ const { active = "" } = Astro.props;
   <ul id="nav" class="menu">
     {
       navItems.map((item) => (
-        <li
-          class={
-            item.href === active
-              ? "menu-item current-menu-item current_page_item"
-              : "menu-item"
-          }
-        >
+        <li class={item.href === active ? "menu-item current-menu-item current_page_item" : "menu-item"}>
           <a href={item.href}>{item.label}</a>
         </li>
       ))

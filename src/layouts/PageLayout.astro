@@ -9,12 +9,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 import Drawer from "../components/Drawer.astro";
 import MobileFooter from "../components/MobileFooter.astro";
 
-const {
-  title,
-  description = "",
-  wrapperClass = "page_weverysub",
-  active = "",
-} = Astro.props;
+const { title, description = "", wrapperClass = "page_weverysub", active = "" } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
