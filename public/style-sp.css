@@ -170,6 +170,8 @@
 @media screen and (max-width:980px){
   /* 対面／オンラインの案内カードはタブレット以下で縦積み */
   #main .visit-grid{grid-template-columns:1fr; gap:12px;}
+  /* 料金カードもタブレット以下で縦積み */
+  #main .price-grid{grid-template-columns:1fr; gap:12px;}
 }
 @media screen and (max-width:560px){
   /* 症状チップ：小さめに詰め、長文項目が2行に折り返しても
@@ -189,6 +191,24 @@
   #main .care-card{padding:15px 16px 13px;}
   #main .visit-card{padding:16px 16px 14px;}
 
+  /* 提携鍼灸院ページ：スタッフカードは縦積みに（横並びだと本文が狭すぎるため） */
+  #main .staff-card{flex-direction:column; gap:14px; padding:22px 0;}
+  /* 料金カード：見出し帯と本文の余白を圧縮（初診・再診の2ボックス並列は維持） */
+  #main .price-card h4{padding:10px 15px;}
+  #main .price-card-inner{padding:13px 15px;}
+  #main .price-box{padding:9px 11px 8px;}
+  #main .price-box .price-value{font-size:18px;}
+  /* 施術の流れ：バッジを小さく、カード余白を圧縮 */
+  #main .flow-step{gap:12px; padding-bottom:16px;}
+  #main .flow-num{flex-basis:30px; width:30px; height:30px; font-size:14px;}
+  #main .flow-step::before{left:15px; top:32px;}
+  #main .flow-body{padding:12px 15px 10px;}
+  /* 情報テーブル：ラベルを上に積む */
+  #main .info-row{grid-template-columns:1fr;}
+  #main .info-row dt{padding:8px 15px 7px;}
+  #main .info-row dd{padding:11px 15px 12px;}
+  #main .qa-item{padding:14px 15px 12px;}
+  #main .map-embed iframe{height:300px;}
 }
 @media screen and (max-width:380px){
   /* 小型スマホ：チップをさらに詰める */

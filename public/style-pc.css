@@ -458,6 +458,9 @@ body.drawer-open #sidr{transform:translateX(0);}
 /* 患者さんの声風の段落：吹き出し */
 #main p.voice{width:fit-content; margin:0 0 10px; padding:9px 18px; background:var(--white); border:1px solid var(--line); border-radius:14px 14px 14px 4px; box-shadow:var(--shadow-sm); font-size:14.5px;}
 
+/* 院長からのメッセージ：単独の顔写真に角丸・影をつけ、中央に据えて他カードと馴染ませる */
+#main .doctor-message-photo{display:block; margin:4px 0 22px; border-radius:14px; box-shadow:var(--shadow-sm);}
+
 
 /* 治療メニュー（漢方薬・睡眠・鍼灸・運動）：上辺アクセントの白カード */
 #main .care-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0 8px;}
@@ -466,7 +469,8 @@ body.drawer-open #sidr{transform:translateX(0);}
    カード幅に合わせて下線を細く・左端揃えに整える */
 #main .care-card h4{margin:0 0 10px; padding:0 0 8px 19px; font-size:15.5px; border-bottom:1px solid var(--line);}
 #main .care-card h4::before{left:0; top:.5em; width:9px; height:9px;}
-#main .care-card p{margin:0; font-size:14px; line-height:1.9;}
+#main .care-card p{margin:0 0 8px; font-size:14px; line-height:1.9;}
+#main .care-card p:last-child{margin:0;}
 
 /* 対面／オンライン診療：ヘッダー帯つきの比較カード（ボタンを下端に揃える） */
 #main .visit-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:24px 0 8px; align-items:stretch;}
@@ -477,4 +481,69 @@ body.drawer-open #sidr{transform:translateX(0);}
 #main .visit-card p{margin:0 0 10px; font-size:14px; line-height:1.9;}
 #main .visit-card .visit-cta{margin-top:auto; padding-top:10px;}
 #main .visit-card .big-button{width:100%; min-width:0; margin:0; padding:13px 16px; font-size:14px;}
+
+/* ===== 提携鍼灸院ページ用コンポーネント ===== */
+/* 本文中の写真：角丸＋影で統一 */
+#main .content-photo{max-width:100%; border-radius:12px; box-shadow:var(--shadow-sm); display:block;}
+/* 注記（※〜）：小さめグレー */
+#main p.note{font-size:13px; color:var(--mut); line-height:2;}
+/* 単一列の丸ドットリスト（dash-list の1カラム版） */
+#main ul.note-list{list-style:none; margin:14px 0 16px; padding:0;}
+#main ul.note-list li{position:relative; margin:0 0 8px; padding:0 0 0 18px; font-size:14.5px; line-height:1.8;}
+#main ul.note-list li::before{content:""; position:absolute; left:0; top:.7em; width:6px; height:6px; border-radius:50%; background:var(--green);}
+/* スタッフ紹介：横並びは維持しつつ枠を外した軽量版（区切りは罫線1本） */
+#main .staff-card{display:flex; gap:22px; padding:26px 0; border-bottom:1px solid var(--line); margin:0;}
+#main .staff-card:first-child{padding-top:0;}
+#main .staff-card:last-child{border-bottom:none; padding-bottom:0;}
+#main .staff-photo{flex:0 0 200px; width:200px; height:200px; border-radius:10px; overflow:hidden;}
+#main .staff-photo img{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
+#main .staff-body{flex:1; min-width:0;}
+#main .staff-body h4{margin:0 0 4px; padding:0; font-family:var(--serif); font-size:18px; font-weight:600; border-bottom:none; color:var(--ink);}
+#main .staff-body h4::before{display:none;}
+#main .staff-card p{margin:0 0 8px; font-size:14px; line-height:1.9;}
+#main .staff-card p.staff-license{font-size:12px; color:var(--mut); margin:0 0 10px; line-height:1.8;}
+#main .staff-tags{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0;}
+#main .staff-tags .tags-label{color:var(--mut); font-size:12px; font-weight:600; margin-right:2px;}
+#main .staff-tags span:not(.tags-label){border:1px solid var(--tint2); color:var(--green-d); border-radius:999px; padding:2px 11px; font-size:11.5px; line-height:1.7;}
+/* 施術の流れ：番号バッジ＋縦ラインのタイムライン */
+#main .flow-list{margin:18px 0 8px;}
+#main .flow-step{position:relative; display:flex; gap:16px; padding:0 0 20px;}
+#main .flow-step::before{content:""; position:absolute; left:17px; top:36px; bottom:2px; width:2px; background:var(--tint2);}
+#main .flow-step:last-child{padding-bottom:0;}
+#main .flow-step:last-child::before{display:none;}
+#main .flow-num{flex:0 0 34px; width:34px; height:34px; border-radius:50%; background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:16px; font-weight:700; box-shadow:0 2px 8px rgba(103,122,77,.3);}
+#main .flow-body{flex:1; min-width:0; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:14px 20px 12px;}
+#main .flow-body h4{margin:0 0 8px; padding:0 0 7px; font-size:15.5px; border-bottom:1px dotted var(--line);}
+#main .flow-body h4::before{display:none;}
+#main .flow-body p{margin:0 0 8px; font-size:14.5px; line-height:1.9;}
+#main .flow-body p:last-child{margin:0;}
+/* 施術メニュー：見出し帯付き料金カード（初診・再診を並列ボックスで） */
+#main .price-grid{display:grid; grid-template-columns:repeat(1,1fr); gap:14px; margin:20px 0 8px; align-items:stretch;}
+#main .price-card{display:flex; flex-direction:column; background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+#main .price-card h4{margin:0; padding:12px 20px; font-size:16px; color:var(--green-d); background:var(--tint); border-bottom:1px solid var(--line);}
+#main .price-card h4::before{display:none;}
+#main .price-card-inner{display:flex; flex-direction:column; flex:1; padding:16px 20px;}
+#main .price-boxes{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:0 0 14px;}
+#main .price-box{display:flex; flex-direction:column; background:var(--soft); border-radius:10px; padding:10px 14px 9px;}
+#main .price-box .price-label{width:fit-content; background:var(--green); color:#fff; border-radius:6px; padding:0 10px; font-size:11px; font-weight:700; line-height:1.9; margin:0 0 4px;}
+#main .price-box .price-value{font-size:20px; font-weight:700; color:var(--green-d); line-height:1.4;}
+#main .price-box .price-note{font-size:12px; color:var(--mut); line-height:1.7; margin-top:2px;}
+#main .price-card p{margin:0 0 10px; font-size:14px; line-height:1.9;}
+#main .price-card p:last-child{margin-bottom:0;}
+/* よくある質問：Q&Aカード */
+#main .qa-item{background:var(--white); border:1px solid var(--line); border-radius:12px; padding:16px 20px 14px; margin:0 0 12px;}
+#main .qa-item h4{margin:0 0 10px; padding:0 0 9px 19px; font-size:15.5px; border-bottom:1px solid var(--line);}
+#main .qa-item h4::before{left:0; top:.5em; width:9px; height:9px;}
+#main .qa-item p{margin:0 0 8px; font-size:14.5px; line-height:1.9;}
+#main .qa-item p:last-child{margin:0;}
+/* 開院時間・アクセス：ラベル付き情報テーブル */
+#main .info-table{background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:16px 0 20px;}
+#main .info-table dl{margin:0;}
+#main .info-row{display:grid; grid-template-columns:132px 1fr;}
+#main .info-row + .info-row{border-top:1px solid var(--line);}
+#main .info-row dt{background:var(--soft); color:var(--green-d); font-weight:600; font-size:14px; padding:14px 16px; line-height:1.8;}
+#main .info-row dd{margin:0; padding:14px 20px; font-size:14.5px; line-height:1.9;}
+#main .info-row dd .note{display:block; font-size:12.5px; color:var(--mut); line-height:1.9; margin-top:4px;}
+/* Googleマップ埋め込み：角丸＋影 */
+#main .map-embed iframe{width:100%; border:0; border-radius:12px; display:block; box-shadow:var(--shadow-sm);}
 
