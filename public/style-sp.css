@@ -179,6 +179,9 @@
   #main ul.check-list{gap:7px;}
   #main ul.check-list li{max-width:100%; font-size:13.5px; padding:7px 14px 7px 30px; border-radius:14px;}
   #main ul.check-list li::before{left:12px;}
+  /* 予約導線バンド：スマホは余白を圧縮 */
+  #main .cta-band{padding:18px 16px 20px;}
+  #main .cta-band .cta-lead{font-size:15px;}
 
   /* 列挙リスト・吹き出し：1段組に戻し、ひと回り小さく */
   #main ul.dash-list{columns:1;}

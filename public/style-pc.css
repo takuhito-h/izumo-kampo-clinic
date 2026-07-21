@@ -450,6 +450,14 @@ body.drawer-open #sidr{transform:translateX(0);}
 #main ul.check-list li{position:relative; margin:0; background:var(--white); border:1px solid var(--tint2); border-radius:999px; padding:7px 17px 7px 34px; font-size:14px; line-height:1.6;}
 #main ul.check-list li::before{content:""; position:absolute; left:14px; top:50%; width:10px; height:5px; margin-top:-4px; border-left:2px solid var(--green); border-bottom:2px solid var(--green); transform:rotate(-45deg);}
 
+/* 予約導線バンド：本文冒頭に置く「安心ポイント＋予約CTA」（長いページでも早い段階で予約導線に触れられるように）。
+   チップは .check-list を流用、中央寄せにして帯として見せる。 */
+#main .cta-band{background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:22px 26px 24px; margin:26px 0;}
+#main .cta-band .cta-lead{margin:0; font-family:var(--serif); font-size:16.5px; font-weight:600; color:var(--green-d); text-align:center; line-height:1.7;}
+#main .cta-band ul.check-list{justify-content:center; margin:14px 0 18px;}
+#main .cta-band ul.check-list li{font-size:13.5px; padding:6px 15px 6px 32px;}
+#main .cta-band .big-button{margin:2px auto 0;}
+
 /* 文中の列挙リスト：素のまま2段組にして縦を半分に（モバイルは style-sp 側で1段に戻す） */
 #main ul.dash-list{list-style:none; margin:10px 0 14px 2px; padding:0; columns:2; column-gap:32px;}
 #main ul.dash-list li{position:relative; margin:0 0 4px; padding:0 0 0 16px; font-size:14.5px; line-height:1.7; break-inside:avoid;}
