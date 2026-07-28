@@ -502,7 +502,10 @@ body.drawer-open #sidr{transform:translateX(0);}
 /* スタッフ紹介：横並びは維持しつつ枠を外した軽量版（区切りは罫線1本） */
 #main .staff-card{display:flex; gap:22px; padding:26px 0; border-bottom:1px solid var(--line); margin:0;}
 #main .staff-card:first-child{padding-top:0;}
-#main .staff-card:last-child{border-bottom:none; padding-bottom:0;}
+/* 連続するカードの最後（後ろに .staff-card が続かないもの）は区切り線を出さない。
+   後続に別要素が来るページ（舌診ラボ等）では :last-child が効かないため :has で判定する。 */
+#main .staff-card:last-child,
+#main .staff-card:not(:has(+ .staff-card)){border-bottom:none; padding-bottom:0;}
 #main .staff-photo{flex:0 0 200px; width:200px; height:200px; border-radius:10px; overflow:hidden;}
 #main .staff-photo img{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
 #main .staff-body{flex:1; min-width:0;}
@@ -540,8 +543,9 @@ body.drawer-open #sidr{transform:translateX(0);}
 #main .price-card p:last-child{margin-bottom:0;}
 /* よくある質問：Q&Aカード */
 #main .qa-item{background:var(--white); border:1px solid var(--line); border-radius:12px; padding:16px 20px 14px; margin:0 0 12px;}
-#main .qa-item h4{margin:0 0 10px; padding:0 0 9px 19px; font-size:15.5px; border-bottom:1px solid var(--line);}
-#main .qa-item h4::before{left:0; top:.5em; width:9px; height:9px;}
+#main .qa-item h4{margin:0 0 10px; padding:0 0 9px; font-size:15.5px; border-bottom:1px solid var(--line);}
+/* 「Q.」で始まる見出しのため、共通 h4 の菱形マーカーは出さない（左インデントも詰める） */
+#main .qa-item h4::before{display:none;}
 #main .qa-item p{margin:0 0 8px; font-size:14.5px; line-height:1.9;}
 #main .qa-item p:last-child{margin:0;}
 /* 開院時間・アクセス：ラベル付き情報テーブル */
