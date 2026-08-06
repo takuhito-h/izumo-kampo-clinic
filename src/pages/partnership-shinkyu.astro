@@ -1,11 +1,11 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import { SITE, WEBSITE_ID, ORG_ID, websiteNode, clinicNode, toJsonLd } from "../schema/site";
 
 const title = "出雲漢方クリニック｜提携鍼灸院について（出雲あんず鍼灸院） デザインリニューアル案（共通CSS使用）";
 
 // --- 構造化データ（JSON-LD） --------------------------------------------------
 // 本番URL基準で記述する（相対化の対象外。postbuild の relativize は href/src 属性のみ変換）
-const SITE = "https://izumo-kampo.clinic";
 const PAGE = `${SITE}/partnership-shinkyu`;
 const SHINKYU_ID = `${PAGE}#shinkyuin`;
 const LINE_URL = "https://lin.ee/B82qcEz";
@@ -73,7 +73,7 @@ const schema = {
       name: "提携鍼灸院について（出雲あんず鍼灸院）",
       description: "出雲漢方クリニックの提携鍼灸院「出雲あんず鍼灸院」のご案内。女性鍼灸師による完全予約制・女性限定・完全個室の鍼灸院です（JR出雲市駅より徒歩5分・駐車場完備）。",
       inLanguage: "ja",
-      isPartOf: { "@id": `${SITE}/#website` },
+      isPartOf: { "@id": WEBSITE_ID },
       about: { "@id": SHINKYU_ID },
       primaryImageOfPage: {
         "@type": "ImageObject",
@@ -81,42 +81,14 @@ const schema = {
         width: 1024,
         height: 683,
       },
-      breadcrumb: { "@id": `${PAGE}#breadcrumb` },
       mainEntity: faqs.map((f) => ({
         "@type": "Question",
         name: `Q. ${f.q}`,
         acceptedAnswer: { "@type": "Answer", text: f.a },
       })),
     },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${PAGE}#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "ホーム", item: `${SITE}/` },
-        { "@type": "ListItem", position: 2, name: "提携鍼灸院について", item: PAGE },
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE}/#website`,
-      url: `${SITE}/`,
-      name: "出雲漢方クリニック",
-      inLanguage: "ja",
-      publisher: { "@id": `${SITE}/#organization` },
-    },
-    {
-      "@type": ["MedicalClinic", "Organization"],
-      "@id": `${SITE}/#organization`,
-      name: "出雲漢方クリニック",
-      url: `${SITE}/`,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "今市町736-11",
-        addressLocality: "出雲市",
-        addressRegion: "島根県",
-        addressCountry: "JP",
-      },
-    },
+    websiteNode,
+    clinicNode,
     {
       "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
       "@id": SHINKYU_ID,
@@ -125,7 +97,7 @@ const schema = {
       description: "女性鍼灸師が施術を担当する、完全予約制・女性限定・完全個室の鍼灸院です。出雲漢方クリニックと連携しています。",
       url: PAGE,
       image: [`${SITE}/wp-content/uploads/2023/05/IMG_6717-1024x683.jpg`, `${SITE}/wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-1-1024x660.jpg`, `${SITE}/wp-content/uploads/2023/05/S__90873960-1024x683.jpg`],
-      parentOrganization: { "@id": `${SITE}/#organization` },
+      parentOrganization: { "@id": ORG_ID },
       address: {
         "@type": "PostalAddress",
         postalCode: "693-0001",
@@ -186,8 +158,7 @@ const schema = {
   ],
 };
 
-// </script> によるHTML早期終了を防ぐためエスケープ
-const schemaJson = JSON.stringify(schema).replace(/</g, "\\u003c");
+const schemaJson = toJsonLd(schema);
 ---
 
 <PageLayout title={title} wrapperClass="page_weverysub parent2190 my1691 cat pcat">

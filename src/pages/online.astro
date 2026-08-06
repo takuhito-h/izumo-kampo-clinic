@@ -1,10 +1,94 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import { SITE, WEBSITE_ID, ORG_ID, DOCTOR_ID, websiteNode, clinicNode, doctorNode, toJsonLd } from "../schema/site";
 
-const title = "出雲漢方クリニック｜オンライン診療 デザインリニューアル案（共通CSS使用）";
+const title = "オンライン漢方診療｜初診から保険適用・全国対応｜出雲漢方クリニック";
+const description = "初診から保険適用のオンライン漢方診療。北海道から沖縄まで全国対応。スマホのビデオ通話で医師が診察し、漢方薬はご自宅へ郵送。自己負担3,000〜5,000円ほど。";
+
+const PAGE = `${SITE}/online`;
+const HERO = `${SITE}/wp-content/uploads/2022/06/3ffbb34faf3d37f3574b3fd8ae5f2499-e1659787053758.jpg`;
+
+// 「診療メニューのご紹介」の4メニューと対応
+const services = [
+  { name: "オンライン漢方外来", description: "保険診療内で漢方医学的診断を行い、漢方薬を処方します。風邪や感染症後の倦怠感・咳、頭痛、月経に伴う症状、更年期の不調、慢性の下痢や便秘などをご相談いただけます。" },
+  { name: "オンライン肥満・高血圧外来", description: "食事療法と漢方薬を併用し、生活習慣の改善から体重と血圧のコントロールを指導します。現在服用中の血圧の薬との併用も可能です。" },
+  { name: "オンライン発熱外来", description: "風邪、インフルエンザ、新型コロナウイルス感染症をご相談いただけます。病院受診の必要性を検討し、症状に応じた漢方薬と解熱剤を提案します。" },
+  { name: "迅速漢方外来", description: "短時間での漢方薬の処方を希望される、お忙しい患者さま向けの外来です。初診10分前後、再診3分ほどで診療します。" },
+];
+
+// ページ内に埋め込んでいるYouTube動画（メタデータはYouTube側の実データに合わせる）
+const videos = [
+  {
+    id: "BW-FImD2kz8",
+    name: "【誰でも簡単】オンライン診療のやり方",
+    description: "出雲漢方クリニック院長 宮本信宏が、漢方医になった理由と漢方治療の魅力を語り、当院のオンライン診療の受け方を解説します。",
+    uploadDate: "2024-03-15T02:56:02-07:00",
+    duration: "PT2M13S",
+  },
+  {
+    id: "ZmCxMaNvjhs",
+    name: "【漢方とお金の話】漢方治療の費用",
+    description: "オンライン診療にかかる費用を解説します。診察代と漢方薬の費用、処方箋にかかる費用について説明しています。",
+    uploadDate: "2024-04-12T02:00:25-07:00",
+    duration: "PT1M37S",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": PAGE,
+      url: PAGE,
+      name: "オンライン診療について",
+      description,
+      inLanguage: "ja",
+      isPartOf: { "@id": WEBSITE_ID },
+      about: { "@id": ORG_ID },
+      audience: { "@type": "MedicalAudience", audienceType: "Patient" },
+      primaryImageOfPage: { "@type": "ImageObject", url: HERO, caption: "患者さんと向かい合って診察する出雲漢方クリニック院長 宮本信宏" },
+      mainContentOfPage: { "@type": "WebPageElement", cssSelector: ".subpagecontents" },
+      significantLink: [`${SITE}/reserve`, `${SITE}/kampo`, `${SITE}/kampo_diet`, `${SITE}/doctor`],
+    },
+    websiteNode,
+    {
+      ...clinicNode,
+      // このページで説明しているオンライン診療メニューを、クリニックの提供サービスとして明示する
+      availableService: services.map((s) => ({
+        "@type": "MedicalTherapy",
+        name: s.name,
+        description: s.description,
+        provider: { "@id": ORG_ID },
+        url: PAGE,
+      })),
+    },
+    doctorNode,
+    ...videos.map((v) => ({
+      "@type": "VideoObject",
+      "@id": `${PAGE}#video-${v.id}`,
+      name: v.name,
+      description: v.description,
+      uploadDate: v.uploadDate,
+      duration: v.duration,
+      thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`],
+      embedUrl: `https://www.youtube.com/embed/${v.id}`,
+      contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
+      inLanguage: "ja",
+      isFamilyFriendly: true,
+      publisher: { "@id": ORG_ID },
+      creator: { "@id": DOCTOR_ID },
+      isPartOf: { "@id": PAGE },
+    })),
+  ],
+};
+
+const schemaJson = toJsonLd(schema);
 ---
 
-<PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat" active="/online">
+<PageLayout title={title} description={description} wrapperClass="page_weverysub parent1691 my1691 cat pcat" active="/online">
+  <script slot="head" type="application/ld+json" is:inline set:html={schemaJson} />
+
   <div id="main">
     <div id="breadcrumbs">
       <a href="/">ホーム</a> &gt; オンライン診療について
@@ -14,7 +98,7 @@ const title = "出雲漢方クリニック｜オンライン診療 デザイン�
       <section class="pageSec">
         <h2 class="h2_1691">オンライン診療について</h2>
         <div class="mb-3">
-          <img class="article-thumbnail" src="/wp-content/uploads/2022/06/3ffbb34faf3d37f3574b3fd8ae5f2499-e1659787053758.jpg" alt="" data-eio="j" />
+          <img class="article-thumbnail" src="/wp-content/uploads/2022/06/3ffbb34faf3d37f3574b3fd8ae5f2499-e1659787053758.jpg" alt="患者さんと向かい合って診察する出雲漢方クリニック院長 宮本信宏" data-eio="j" />
         </div>
         <div class="subpagecontents">
           <p>
@@ -160,7 +244,7 @@ const title = "出雲漢方クリニック｜オンライン診療 デザイン�
           </ul>
           <h3 id="anchor-doctor">診察する医師のご紹介</h3>
           <p>
-            <img decoding="async" class="wp-image-1307 alignnone" src="/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg" alt="" width="200" height="217" srcset="
+            <img decoding="async" class="wp-image-1307 alignnone" src="/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg" alt="白衣姿の出雲漢方クリニック院長 宮本信宏" width="200" height="217" srcset="
                         /wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg         854w,
                         /wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a-277x300.jpg 277w,
                         /wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a-221x240.jpg 221w,
