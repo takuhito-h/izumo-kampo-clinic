@@ -13,6 +13,7 @@ const { title, description = "", wrapperClass = "page_weverysub", active = "" } 
 ---
 
 <BaseLayout title={title} description={description}>
+  <slot name="head" slot="head" />
   <input type="hidden" id="telnum" value="" />
   <div id="wrapper" class={wrapperClass}>
     <MobileMenuButton />

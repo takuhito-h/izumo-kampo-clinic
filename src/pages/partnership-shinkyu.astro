@@ -2,9 +2,197 @@
 import PageLayout from "../layouts/PageLayout.astro";
 
 const title = "出雲漢方クリニック｜提携鍼灸院について（出雲あんず鍼灸院） デザインリニューアル案（共通CSS使用）";
+
+// --- 構造化データ（JSON-LD） --------------------------------------------------
+// 本番URL基準で記述する（相対化の対象外。postbuild の relativize は href/src 属性のみ変換）
+const SITE = "https://izumo-kampo.clinic";
+const PAGE = `${SITE}/partnership-shinkyu`;
+const SHINKYU_ID = `${PAGE}#shinkyuin`;
+const LINE_URL = "https://lin.ee/B82qcEz";
+
+// 施術メニュー：初診／再診の2オファーを持つ Service として表現（価格は税込・JPY）
+const menus = [
+  { name: "全身治療", first: 7000, repeat: 6000, firstMin: 90, repeatMin: 60, description: "全身をチェックして、体全体の調子を整える施術です。初診料1,000円を含みます。" },
+  { name: "局所治療", first: 3000, repeat: 2000, firstMin: 45, repeatMin: 20, description: "つらさや違和感が出ている部分を中心に鍼やお灸を行う施術です。初診料1,000円を含みます。" },
+  { name: "美容鍼", first: 7000, repeat: 6000, firstMin: 60, repeatMin: 40, description: "顔を中心に鍼を行う美容目的の施術です。初診料1,000円を含みます。" },
+  { name: "全身治療＋美容鍼（セット割）", first: 12000, repeat: 11000, firstMin: 120, repeatMin: 90, description: "全身治療と美容鍼を同時に受けられる方は、セット割として1,000円割引となります。" },
+];
+
+const offerFor = (name, price, minutes, label) => ({
+  "@type": "Offer",
+  name: `${name}（${label}）`,
+  price: String(price),
+  priceCurrency: "JPY",
+  valueAddedTaxIncluded: true,
+  availability: "https://schema.org/InStock",
+  url: PAGE,
+  eligibleDuration: { "@type": "QuantitativeValue", value: minutes, unitCode: "MIN" },
+});
+
+// 「よくある質問」セクションと1対1で対応させる
+const faqs = [
+  {
+    q: "健康保険は使えますか？",
+    a: "申し訳ありませんが、完全自由診療となっていますので健康保険はお使いいただけません。",
+  },
+  {
+    q: "予約なしでも鍼灸治療を受けられますか？",
+    a: "完全予約制となっておりますので、すぐに鍼灸治療を受けられたい方でも一度LINE公式アカウントまでご連絡ください。予約スケジュールを確認した上で返信させていただきます。",
+  },
+  {
+    q: "男性が鍼灸治療を受けることは可能でしょうか？",
+    a: "男性向けの鍼灸治療は「女性の患者さんからの紹介制」での対応となっております。紹介の患者さんで施術をご希望の方は、LINE公式アカウントへ「紹介者のお名前」と共に予約のご連絡をお願いします。",
+  },
+  {
+    q: "子どもが鍼灸治療を受けることは可能でしょうか？",
+    a: "対応しております。詳しくは、LINE公式アカウントまでご相談ください。",
+  },
+  {
+    q: "どんな服装でうかがえばいいですか？",
+    a: "上はタンクトップやキャミソールなど、首元が開いて袖がないような物、下は太ももまでめくれる短パンなどありましたらご持参いただけると助かります。",
+  },
+  {
+    q: "化粧をしたままでも施術を受けることは可能ですか？",
+    a: "化粧をしたままで基本的に大丈夫ですが、美容鍼の施術をご希望の場合、多少崩れてしまう可能性があります。ご希望であれば鏡を用意していますので、お直しは可能です（化粧品はご持参ください）。",
+  },
+];
+
+const staff = [
+  { name: "曽田", credential: "はり師・きゅう師（国家資格）", alumniOf: "東洋医療専門学校 鍼灸師学科" },
+  { name: "吉川", credential: "はり師・きゅう師・あん摩マッサージ指圧師（国家資格）", alumniOf: "学校法人花田学園 日本鍼灸理療専門学校本科" },
+  { name: "竹本", credential: "はり師・きゅう師（国家資格）", alumniOf: "神戸医療福祉専門学校中央校 鍼灸学科" },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["WebPage", "FAQPage"],
+      "@id": PAGE,
+      url: PAGE,
+      name: "提携鍼灸院について（出雲あんず鍼灸院）",
+      description: "出雲漢方クリニックの提携鍼灸院「出雲あんず鍼灸院」のご案内。女性鍼灸師による完全予約制・女性限定・完全個室の鍼灸院です（JR出雲市駅より徒歩5分・駐車場完備）。",
+      inLanguage: "ja",
+      isPartOf: { "@id": `${SITE}/#website` },
+      about: { "@id": SHINKYU_ID },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${SITE}/wp-content/uploads/2023/05/IMG_6717-1024x683.jpg`,
+        width: 1024,
+        height: 683,
+      },
+      breadcrumb: { "@id": `${PAGE}#breadcrumb` },
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: `Q. ${f.q}`,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "ホーム", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "提携鍼灸院について", item: PAGE },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      url: `${SITE}/`,
+      name: "出雲漢方クリニック",
+      inLanguage: "ja",
+      publisher: { "@id": `${SITE}/#organization` },
+    },
+    {
+      "@type": ["MedicalClinic", "Organization"],
+      "@id": `${SITE}/#organization`,
+      name: "出雲漢方クリニック",
+      url: `${SITE}/`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "今市町736-11",
+        addressLocality: "出雲市",
+        addressRegion: "島根県",
+        addressCountry: "JP",
+      },
+    },
+    {
+      "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
+      "@id": SHINKYU_ID,
+      name: "出雲あんず鍼灸院",
+      alternateName: "出雲あんず鍼灸院（出雲漢方クリニック提携鍼灸院）",
+      description: "女性鍼灸師が施術を担当する、完全予約制・女性限定・完全個室の鍼灸院です。出雲漢方クリニックと連携しています。",
+      url: PAGE,
+      image: [`${SITE}/wp-content/uploads/2023/05/IMG_6717-1024x683.jpg`, `${SITE}/wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-1-1024x660.jpg`, `${SITE}/wp-content/uploads/2023/05/S__90873960-1024x683.jpg`],
+      parentOrganization: { "@id": `${SITE}/#organization` },
+      address: {
+        "@type": "PostalAddress",
+        postalCode: "693-0001",
+        streetAddress: "今市町1190-114 TCスクエア 302",
+        addressLocality: "出雲市",
+        addressRegion: "島根県",
+        addressCountry: "JP",
+      },
+      geo: { "@type": "GeoCoordinates", latitude: 35.362157, longitude: 132.7626973 },
+      hasMap: "https://www.google.com/maps/place/%E5%87%BA%E9%9B%B2%E3%81%82%E3%82%93%E3%81%9A%E9%8D%BC%E7%81%B8%E9%99%A2/@35.362157,132.762697,14z",
+      sameAs: ["https://www.instagram.com/izumoanz/"],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+          opens: "09:00",
+          closes: "17:00",
+        },
+      ],
+      publicAccess: true,
+      isAccessibleForFree: false,
+      currenciesAccepted: "JPY",
+      paymentAccepted: "現金",
+      priceRange: "¥2,000〜¥12,000",
+      availableLanguage: { "@type": "Language", name: "Japanese", alternateName: "ja" },
+      audience: { "@type": "PeopleAudience", suggestedGender: "Female", description: "女性限定（男性は女性の患者さんからの紹介制）" },
+      amenityFeature: [
+        { "@type": "LocationFeatureSpecification", name: "駐車場", value: true },
+        { "@type": "LocationFeatureSpecification", name: "完全個室", value: true },
+      ],
+      publicTransportationAccess: "JR出雲市駅から徒歩5分",
+      potentialAction: {
+        "@type": "ReserveAction",
+        name: "LINE公式アカウントから予約する",
+        target: { "@type": "EntryPoint", urlTemplate: LINE_URL, inLanguage: "ja", actionPlatform: ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"] },
+        result: { "@type": "Reservation", name: "鍼灸施術のご予約" },
+      },
+      employee: staff.map((s) => ({
+        "@type": "Person",
+        name: s.name,
+        jobTitle: "鍼灸師",
+        worksFor: { "@id": SHINKYU_ID },
+        hasCredential: { "@type": "EducationalOccupationalCredential", credentialCategory: "国家資格", name: s.credential },
+        alumniOf: { "@type": "EducationalOrganization", name: s.alumniOf },
+      })),
+      makesOffer: menus.flatMap((m) => [offerFor(m.name, m.first, m.firstMin, "初診"), offerFor(m.name, m.repeat, m.repeatMin, "再診")]),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "施術メニュー",
+        itemListElement: menus.map((m) => ({
+          "@type": "OfferCatalog",
+          name: m.name,
+          description: m.description,
+          itemListElement: [offerFor(m.name, m.first, m.firstMin, "初診"), offerFor(m.name, m.repeat, m.repeatMin, "再診")],
+        })),
+      },
+    },
+  ],
+};
+
+// </script> によるHTML早期終了を防ぐためエスケープ
+const schemaJson = JSON.stringify(schema).replace(/</g, "\\u003c");
 ---
 
-<PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+<PageLayout title={title} wrapperClass="page_weverysub parent2190 my1691 cat pcat">
+  <script slot="head" type="application/ld+json" is:inline set:html={schemaJson} />
+
   <div id="main">
     <div id="breadcrumbs"><a href="/">ホーム</a> &gt; 提携鍼灸院について</div>
 

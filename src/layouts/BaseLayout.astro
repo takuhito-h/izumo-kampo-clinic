@@ -9,6 +9,8 @@ const { title = "出雲漢方クリニック", description = "" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    <!-- ページ固有の head 追加（構造化データ等） -->
+    <slot name="head" />
     <!-- 本番WordPress由来CSS（本番の読み込み順に合わせる） -->
     <link rel="stylesheet" href="/wp-content/plugins/instagram-feed-pro/css/sbi-styles.min.css" />
     <link rel="stylesheet" href="/wp-includes/css/dist/block-library/style.min.css" />
