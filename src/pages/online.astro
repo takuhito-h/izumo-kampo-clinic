@@ -1,93 +1,212 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import { SITE, WEBSITE_ID, ORG_ID, DOCTOR_ID, websiteNode, clinicNode, doctorNode, toJsonLd } from "../schema/site";
 
 const title = "オンライン漢方診療｜初診から保険適用・全国対応｜出雲漢方クリニック";
-const description = "初診から保険適用のオンライン漢方診療。北海道から沖縄まで全国対応。スマホのビデオ通話で医師が診察し、漢方薬はご自宅へ郵送。自己負担3,000〜5,000円ほど。";
-
-const PAGE = `${SITE}/online`;
-const HERO = `${SITE}/wp-content/uploads/2022/06/3ffbb34faf3d37f3574b3fd8ae5f2499-e1659787053758.jpg`;
-
-// 「診療メニューのご紹介」の4メニューと対応
-const services = [
-  { name: "オンライン漢方外来", description: "保険診療内で漢方医学的診断を行い、漢方薬を処方します。風邪や感染症後の倦怠感・咳、頭痛、月経に伴う症状、更年期の不調、慢性の下痢や便秘などをご相談いただけます。" },
-  { name: "オンライン肥満・高血圧外来", description: "食事療法と漢方薬を併用し、生活習慣の改善から体重と血圧のコントロールを指導します。現在服用中の血圧の薬との併用も可能です。" },
-  { name: "オンライン発熱外来", description: "風邪、インフルエンザ、新型コロナウイルス感染症をご相談いただけます。病院受診の必要性を検討し、症状に応じた漢方薬と解熱剤を提案します。" },
-  { name: "迅速漢方外来", description: "短時間での漢方薬の処方を希望される、お忙しい患者さま向けの外来です。初診10分前後、再診3分ほどで診療します。" },
-];
-
-// ページ内に埋め込んでいるYouTube動画（メタデータはYouTube側の実データに合わせる）
-const videos = [
-  {
-    id: "BW-FImD2kz8",
-    name: "【誰でも簡単】オンライン診療のやり方",
-    description: "出雲漢方クリニック院長 宮本信宏が、漢方医になった理由と漢方治療の魅力を語り、当院のオンライン診療の受け方を解説します。",
-    uploadDate: "2024-03-15T02:56:02-07:00",
-    duration: "PT2M13S",
-  },
-  {
-    id: "ZmCxMaNvjhs",
-    name: "【漢方とお金の話】漢方治療の費用",
-    description: "オンライン診療にかかる費用を解説します。診察代と漢方薬の費用、処方箋にかかる費用について説明しています。",
-    uploadDate: "2024-04-12T02:00:25-07:00",
-    duration: "PT1M37S",
-  },
-];
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "MedicalWebPage",
-      "@id": PAGE,
-      url: PAGE,
-      name: "オンライン診療について",
-      description,
-      inLanguage: "ja",
-      isPartOf: { "@id": WEBSITE_ID },
-      about: { "@id": ORG_ID },
-      audience: { "@type": "MedicalAudience", audienceType: "Patient" },
-      primaryImageOfPage: { "@type": "ImageObject", url: HERO, caption: "患者さんと向かい合って診察する出雲漢方クリニック院長 宮本信宏" },
-      mainContentOfPage: { "@type": "WebPageElement", cssSelector: ".subpagecontents" },
-      significantLink: [`${SITE}/reserve`, `${SITE}/kampo`, `${SITE}/kampo_diet`, `${SITE}/doctor`],
-    },
-    websiteNode,
-    {
-      ...clinicNode,
-      // このページで説明しているオンライン診療メニューを、クリニックの提供サービスとして明示する
-      availableService: services.map((s) => ({
-        "@type": "MedicalTherapy",
-        name: s.name,
-        description: s.description,
-        provider: { "@id": ORG_ID },
-        url: PAGE,
-      })),
-    },
-    doctorNode,
-    ...videos.map((v) => ({
-      "@type": "VideoObject",
-      "@id": `${PAGE}#video-${v.id}`,
-      name: v.name,
-      description: v.description,
-      uploadDate: v.uploadDate,
-      duration: v.duration,
-      thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`],
-      embedUrl: `https://www.youtube.com/embed/${v.id}`,
-      contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
-      inLanguage: "ja",
-      isFamilyFriendly: true,
-      publisher: { "@id": ORG_ID },
-      creator: { "@id": DOCTOR_ID },
-      isPartOf: { "@id": PAGE },
-    })),
-  ],
-};
-
-const schemaJson = toJsonLd(schema);
+const description = "初診から保険適用のオンライン漢方診療。北海道から沖縄まで全国対応、患者さんの7割がオンライン受診。スマホのビデオ通話で漢方専門医が診察し、漢方薬はご自宅へ郵送（院内処方）。自己負担2,000〜5,000円程度、土日も診療。";
 ---
 
 <PageLayout title={title} description={description} wrapperClass="page_weverysub parent1691 my1691 cat pcat" active="/online">
-  <script slot="head" type="application/ld+json" is:inline set:html={schemaJson} />
+  <script slot="head" type="application/ld+json" is:inline is:raw>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalWebPage",
+          "@id": "https://izumo-kampo.clinic/online",
+          "url": "https://izumo-kampo.clinic/online",
+          "name": "オンライン診療について",
+          "description": "初診から保険適用のオンライン漢方診療。北海道から沖縄まで全国対応、患者さんの7割がオンライン受診。スマホのビデオ通話で漢方専門医が診察し、漢方薬はご自宅へ郵送（院内処方）。自己負担2,000〜5,000円程度、土日も診療。",
+          "inLanguage": "ja",
+          "isPartOf": {
+            "@id": "https://izumo-kampo.clinic/#website"
+          },
+          "about": {
+            "@id": "https://izumo-kampo.clinic/#organization"
+          },
+          "audience": {
+            "@type": "MedicalAudience",
+            "audienceType": "Patient"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/3ffbb34faf3d37f3574b3fd8ae5f2499-e1659787053758.jpg",
+            "caption": "患者さんと向かい合って診察する出雲漢方クリニック院長 宮本信宏"
+          },
+          "mainContentOfPage": {
+            "@type": "WebPageElement",
+            "cssSelector": ".subpagecontents"
+          },
+          "significantLink": ["https://izumo-kampo.clinic/reserve", "https://izumo-kampo.clinic/kampo", "https://izumo-kampo.clinic/kampo_diet", "https://izumo-kampo.clinic/doctor"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://izumo-kampo.clinic/#website",
+          "url": "https://izumo-kampo.clinic/",
+          "name": "出雲漢方クリニック",
+          "inLanguage": "ja",
+          "publisher": {
+            "@id": "https://izumo-kampo.clinic/#organization"
+          }
+        },
+        {
+          "@type": ["MedicalClinic", "Organization"],
+          "@id": "https://izumo-kampo.clinic/#organization",
+          "name": "出雲漢方クリニック",
+          "url": "https://izumo-kampo.clinic/",
+          "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+          "description": "島根県出雲市の漢方クリニック。初診から再診までオンライン診療（保険診療）に対応し、全国の患者さんを診療しています。",
+          "address": {
+            "@type": "PostalAddress",
+            "postalCode": "693-0001",
+            "streetAddress": "今市町736-11",
+            "addressLocality": "出雲市",
+            "addressRegion": "島根県",
+            "addressCountry": "JP"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "日本"
+          },
+          "availableLanguage": {
+            "@type": "Language",
+            "name": "Japanese",
+            "alternateName": "ja"
+          },
+          "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学"],
+          "founder": {
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+          },
+          "employee": {
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+          },
+          "isAcceptingNewPatients": true,
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "name": "対面診療（午前）",
+              "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+              "opens": "09:00",
+              "closes": "12:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "name": "対面診療（午後）",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+              "opens": "14:00",
+              "closes": "17:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "name": "オンライン診療",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            }
+          ],
+          "availableService": [
+            {
+              "@type": "MedicalTherapy",
+              "name": "オンライン漢方外来",
+              "description": "保険診療内で漢方医学的診断を行い、漢方薬を処方します。風邪や感染症後の倦怠感・咳、頭痛、月経に伴う症状、更年期の不調、慢性の下痢や便秘などをご相談いただけます。",
+              "provider": {
+                "@id": "https://izumo-kampo.clinic/#organization"
+              },
+              "url": "https://izumo-kampo.clinic/online"
+            },
+            {
+              "@type": "MedicalTherapy",
+              "name": "オンライン肥満・高血圧外来",
+              "description": "食事療法と漢方薬を併用し、生活習慣の改善から体重と血圧のコントロールを指導します。現在服用中の血圧の薬との併用も可能です。",
+              "provider": {
+                "@id": "https://izumo-kampo.clinic/#organization"
+              },
+              "url": "https://izumo-kampo.clinic/online"
+            },
+            {
+              "@type": "MedicalTherapy",
+              "name": "オンライン発熱外来",
+              "description": "風邪、インフルエンザ、新型コロナウイルス感染症をご相談いただけます。病院受診の必要性を検討し、症状に応じた漢方薬と解熱剤を提案します。",
+              "provider": {
+                "@id": "https://izumo-kampo.clinic/#organization"
+              },
+              "url": "https://izumo-kampo.clinic/online"
+            },
+            {
+              "@type": "MedicalTherapy",
+              "name": "迅速漢方外来",
+              "description": "短時間での漢方薬の処方を希望される、お忙しい患者さま向けの外来です。初診10分前後、再診3分ほどで診療します。",
+              "provider": {
+                "@id": "https://izumo-kampo.clinic/#organization"
+              },
+              "url": "https://izumo-kampo.clinic/online"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+          "name": "宮本 信宏",
+          "alternateName": "みやもと のぶひろ",
+          "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+          "url": "https://izumo-kampo.clinic/doctor",
+          "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+          "worksFor": {
+            "@id": "https://izumo-kampo.clinic/#organization"
+          },
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "国家資格",
+            "name": "医師免許"
+          },
+          "knowsAbout": ["漢方治療", "漢方医学", "オンライン診療", "東洋医学", "外科"]
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://izumo-kampo.clinic/online#video-BW-FImD2kz8",
+          "name": "【誰でも簡単】オンライン診療のやり方",
+          "description": "出雲漢方クリニック院長 宮本信宏が、漢方医になった理由と漢方治療の魅力を語り、当院のオンライン診療の受け方を解説します。",
+          "uploadDate": "2024-03-15T02:56:02-07:00",
+          "duration": "PT2M13S",
+          "thumbnailUrl": ["https://i.ytimg.com/vi/BW-FImD2kz8/maxresdefault.jpg"],
+          "embedUrl": "https://www.youtube.com/embed/BW-FImD2kz8",
+          "contentUrl": "https://www.youtube.com/watch?v=BW-FImD2kz8",
+          "inLanguage": "ja",
+          "isFamilyFriendly": true,
+          "publisher": {
+            "@id": "https://izumo-kampo.clinic/#organization"
+          },
+          "creator": {
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+          },
+          "isPartOf": {
+            "@id": "https://izumo-kampo.clinic/online"
+          }
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://izumo-kampo.clinic/online#video-ZmCxMaNvjhs",
+          "name": "【漢方とお金の話】漢方治療の費用",
+          "description": "オンライン診療にかかる費用を解説します。診察代と漢方薬の費用、処方箋にかかる費用について説明しています。",
+          "uploadDate": "2024-04-12T02:00:25-07:00",
+          "duration": "PT1M37S",
+          "thumbnailUrl": ["https://i.ytimg.com/vi/ZmCxMaNvjhs/maxresdefault.jpg"],
+          "embedUrl": "https://www.youtube.com/embed/ZmCxMaNvjhs",
+          "contentUrl": "https://www.youtube.com/watch?v=ZmCxMaNvjhs",
+          "inLanguage": "ja",
+          "isFamilyFriendly": true,
+          "publisher": {
+            "@id": "https://izumo-kampo.clinic/#organization"
+          },
+          "creator": {
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+          },
+          "isPartOf": {
+            "@id": "https://izumo-kampo.clinic/online"
+          }
+        }
+      ]
+    }
+  </script>
 
   <div id="main">
     <div id="breadcrumbs">
