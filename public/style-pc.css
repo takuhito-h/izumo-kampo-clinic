@@ -352,6 +352,30 @@ body.drawer-open{overflow:hidden;}
 #sp_footer .material-icons{font-size:21px;}
 #sp_footer .spf_word{font-size:14px;}
 
+/* ===== 提携鍼灸院ページ専用の固定フッター #anzu_footer（PC・SPとも表示） =====
+   マークアップは .subpagecontents 内にあるため、本文用のリスト装飾に負けないよう #main 付きで指定。
+   共通の #sp_footer はこのページでは非表示にし、代わりに
+   出雲あんず鍼灸院の公式LINEへ誘導する1ボタンの固定バーを出す。 */
+#main #anzu_footer{position:fixed; bottom:0; left:0; right:0; margin: 0; z-index:60; display:block;
+  background:var(--soft); box-shadow:0 -4px 16px rgba(60,70,45,.14);}
+/* PCは全幅の帯の中に中央寄せのピル型ボタン。SP版（≤560）で全幅ボタンに戻す */
+#main #anzu_footer ul{display:flex; list-style:none; max-width:560px; margin:0 auto; padding:10px 16px;}
+#main #anzu_footer li{flex:1; display:block; margin:0; padding:0;}
+#main #anzu_footer li a{display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:13px 20px; border-radius:999px;
+  color:#fff; font-size:15px; font-weight:700;
+  letter-spacing:.02em; line-height:1.2; background:var(--green);
+  box-shadow:0 4px 14px rgba(103,122,77,.32);
+  transition:background .15s ease, transform .2s ease;}
+#main #anzu_footer li a:hover{background:var(--green-d); text-decoration:none; transform:translateY(-2px);}
+#main #anzu_footer li a:active{background:var(--green-d);}
+#main #anzu_footer .material-icons{font-size:21px;}
+#main #anzu_footer .spf_word{font-size:14px;}
+/* 固定バーが本文末尾に被らないよう下余白を確保し、ページトップボタンをバーの上へ逃がす
+   （≤560 は style-sp.css 側で調整） */
+body:has(.parent2190){padding-bottom:80px;}
+body:has(.parent2190) #pagetop-fab{bottom:76px;}
+
 /* ============ 院長ブログ（一覧 / 記事） ============ */
 /* 一覧 */
 #main .column h2{margin-bottom:6px;}
