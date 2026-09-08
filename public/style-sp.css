@@ -175,6 +175,8 @@
 
 /* ===== 専門外来ページ本文コンポーネントのモバイル調整 ===== */
 @media screen and (max-width:980px){
+  /* TOPページ 提携鍼灸院の紹介枠：写真を上に置いて1カラムへ */
+  #main .anzu-intro{grid-template-columns:minmax(0,1fr); gap:16px;}
   /* 対面／オンラインの案内カードはタブレット以下で縦積み */
   #main .visit-grid{grid-template-columns:1fr; gap:12px;}
   /* 料金カードもタブレット以下で縦積み */

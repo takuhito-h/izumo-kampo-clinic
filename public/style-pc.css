@@ -214,6 +214,17 @@ body.drawer-open{overflow:hidden;}
 .top2Sec li:last-child{border-bottom:none;}
 .top2Sec li::before{content:""; position:absolute; left:2px; top:17px; width:8px; height:8px; border-radius:50%; background:var(--green);}
 
+/* ===== TOPページ：提携鍼灸院（出雲あんず鍼灸院）の紹介枠 =====
+   写真＋紹介文の2カラム。特徴は本文用の .check-list（白いピル）を流用し、
+   下端に詳細ページへの big-button を置く。≤980 で1カラムに（style-sp.css） */
+#main .anzu-intro{display:grid; grid-template-columns:200px minmax(0,1fr); gap:20px; align-items:start; margin:0 0 4px;}
+#main .anzu-photo{margin:0;}
+#main .anzu-photo a{display:block; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--line); transition:.2s;}
+#main .anzu-photo a:hover{transform:translateY(-2px); box-shadow:var(--shadow); text-decoration:none;}
+#main .anzu-body > *:last-child{margin-bottom:0;}
+#main .anzu-body ul.check-list{margin:14px 0 12px;}
+#main .anzu-body ul.check-list li{font-size:13.5px; padding:6px 15px 6px 32px;}
+
 /* ===== サイドメニュー ===== */
 #sideMenu{align-self:start;}
 #sideMenu .backhome{ display: none; margin:0 0 16px;}
