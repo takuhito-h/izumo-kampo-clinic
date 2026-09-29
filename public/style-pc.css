@@ -398,8 +398,8 @@ body.drawer-open{overflow:hidden;}
    （≤560 は style-sp.css 側で調整） */
 body:has(.parent2190){padding-bottom:80px;}
 /* 固定バー #anzu_footer（高さ約64px）の上に予約ボタン→ページトップの順で積む */
-body:has(.parent2190) #wv_headbtn{bottom:84px;}
-body:has(.parent2190) #pagetop-fab{bottom:142px;}
+body:has(.parent2190) #wv_headbtn{ display: none; }
+body:has(.parent2190) #pagetop-fab{bottom:84px;}
 
 /* ============ 院長ブログ（一覧 / 記事） ============ */
 /* 一覧 */
@@ -600,6 +600,7 @@ body.drawer-open #sidr{transform:translateX(0);}
 #main .price-card h4{margin:0; padding:12px 20px; font-size:16px; color:var(--green-d); background:var(--tint); border-bottom:1px solid var(--line);}
 #main .price-card h4::before{display:none;}
 #main .price-card-inner{display:flex; flex-direction:column; flex:1; padding:16px 20px;}
+#main .price-card-inner .big-button{ margin-top: 15px; }
 #main .price-boxes{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:0 0 14px;}
 #main .price-box{display:flex; flex-direction:column; background:var(--soft); border-radius:10px; padding:10px 14px 9px;}
 #main .price-box .price-label{width:fit-content; background:var(--green); color:#fff; border-radius:6px; padding:0 10px; font-size:11px; font-weight:700; line-height:1.9; margin:0 0 4px;}
@@ -624,3 +625,20 @@ body.drawer-open #sidr{transform:translateX(0);}
 /* Googleマップ埋め込み：角丸＋影 */
 #main .map-embed iframe{width:100%; border:0; border-radius:12px; display:block; box-shadow:var(--shadow-sm);}
 
+
+/* ===== 美容鍼LP（partnership-shinkyu-biyou）用コンポーネント ===== */
+/* 強み：POINT番号付きの3カラムカード（≤980 で1カラム：style-sp.css） */
+#main .point-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:20px 0 8px; align-items:stretch;}
+#main .point-card{background:var(--white); border:1px solid var(--line); border-top:3px solid var(--green); border-radius:12px; padding:18px 20px 16px;}
+#main .point-card .point-num{display:inline-block; font-family:var(--serif); font-size:12px; font-weight:700; letter-spacing:.12em; color:var(--green);}
+#main .point-card h4{margin:2px 0 10px; padding:0 0 8px; font-family:var(--serif); font-size:16.5px; border-bottom:1px solid var(--line);}
+#main .point-card h4::before{display:none;}
+#main .point-card p{margin:0 0 8px; font-size:14px; line-height:1.9;}
+#main .point-card p:last-child{margin:0;}
+/* 院のデータ：2カラムのカード（グラフ未用意の間はプレースホルダー表示） */
+#main .data-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0 8px;}
+#main .data-card{background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px 20px;}
+#main .data-card h4{margin:0 0 12px; padding:0 0 8px; font-size:15.5px; border-bottom:1px solid var(--line);}
+#main .data-card h4::before{display:none;}
+#main .data-card img{display:block; width:100%; height:auto;}
+#main .data-placeholder{display:flex; align-items:center; justify-content:center; aspect-ratio:4/3; background:var(--soft); border-radius:10px; color:var(--mut); font-size:13px;}

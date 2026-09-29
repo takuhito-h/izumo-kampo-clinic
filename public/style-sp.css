@@ -185,6 +185,9 @@
   #main .visit-grid{grid-template-columns:1fr; gap:12px;}
   /* 料金カードもタブレット以下で縦積み */
   #main .price-grid{grid-template-columns:1fr; gap:12px;}
+  /* 美容鍼LP：強み・データのカードも縦積み */
+  #main .point-grid{grid-template-columns:1fr; gap:12px;}
+  #main .data-grid{grid-template-columns:1fr; gap:12px;}
 }
 @media screen and (max-width:560px){
   /* 症状チップ：小さめに詰め、長文項目が2行に折り返しても
@@ -212,6 +215,7 @@
   /* 料金カード：見出し帯と本文の余白を圧縮し、初診・再診の2ボックスは縦並びに */
   #main .price-card h4{padding:10px 15px;}
   #main .price-card-inner{padding:13px 15px;}
+  #main .price-card-inner .big-button{ margin-top: 10px; }
   #main .price-boxes{grid-template-columns:1fr; gap:8px;}
   #main .price-box{padding:9px 11px 8px;}
   #main .price-box .price-value{font-size:18px;}
