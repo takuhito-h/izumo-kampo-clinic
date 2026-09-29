@@ -22,6 +22,12 @@
   #searchform{display:none;}
   #gNav #nav > li > a{padding:12px 14px; font-size:13.5px;}
   #main article > section{padding:28px 26px;}
+  /* 右下の固定予約ボタンは画面が狭い分だけコンパクトに */
+  :root #wv_headbtn{right:16px; bottom:16px;}
+  :root #wv_headbtn .wv_headbtn_1 li a{padding:12px 20px !important; font-size:14px;}
+  #pagetop-fab{right:16px; bottom:72px;}
+  body:has(.parent2190) #wv_headbtn{bottom:76px;}
+  body:has(.parent2190) #pagetop-fab{bottom:132px;}
 }
 
 /* ===== スマホ（〜560px）：1カラム・ナビ折返し・固定フッター表示 ===== */
@@ -49,11 +55,9 @@
   /* サイドメニューは非表示（項目はドロワー #sidr と固定フッター #sp_footer に集約済み） */
   #sideMenu{display:none;}
 
-  /* 予約ボタン帯：全幅で押しやすく */
-  #wv_headbtn{text-align:center; padding:16px 16px 0;}
-  #wv_headbtn .wv_headbtn_1{display:flex;}
-  #wv_headbtn .wv_headbtn_1 li{flex:1;}
-  #wv_headbtn .wv_headbtn_1 li a{width:100%; justify-content:center; padding:12px 18px;}
+  /* 予約ボタン帯：スマホは固定フッター #sp_footer に予約導線があるため、
+     PC用の右下固定CTA（#wv_headbtn）は重複するので非表示にする */
+  #wv_headbtn{display:none;}
 
   /* 本文レイアウト */
   /* css-php.css max-width:480px の #main/ul/ol への上書き */
@@ -205,9 +209,10 @@
 
   /* 提携鍼灸院ページ：スタッフカードは縦積みに（横並びだと本文が狭すぎるため） */
   #main .staff-card{flex-direction:column; gap:14px; padding:22px 0;}
-  /* 料金カード：見出し帯と本文の余白を圧縮（初診・再診の2ボックス並列は維持） */
+  /* 料金カード：見出し帯と本文の余白を圧縮し、初診・再診の2ボックスは縦並びに */
   #main .price-card h4{padding:10px 15px;}
   #main .price-card-inner{padding:13px 15px;}
+  #main .price-boxes{grid-template-columns:1fr; gap:8px;}
   #main .price-box{padding:9px 11px 8px;}
   #main .price-box .price-value{font-size:18px;}
   /* 施術の流れ：バッジを小さく、カード余白を圧縮 */

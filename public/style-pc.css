@@ -92,11 +92,22 @@ body.drawer-open{overflow:hidden;}
 #gNav #nav > li > a:hover{background:rgba(255,255,255,.16); text-decoration:none;}
 #gNav #nav > li.current-menu-item > a{background:var(--green-d); font-weight:700;}
 
-/* ===== 予約ボタン帯 ===== */
-#wv_headbtn{ display: none; }
-#wv_headbtn .wv_headbtn_1{list-style:none; margin:0; padding:0; display:inline-flex; gap:10px;}
-#wv_headbtn .wv_headbtn_1 li a{display:inline-flex; align-items:center; gap:6px; background:var(--green); color:#fff; padding:11px 26px; border-radius:999px; font-weight:700; font-size:14.5px; box-shadow:0 4px 12px rgba(103,122,77,.3); transition:.2s;}
-#wv_headbtn .wv_headbtn_1 li a:hover{background:var(--green-d); text-decoration:none; transform:translateY(-1px);}
+/* ===== 予約ボタン帯 #wv_headbtn（PC・タブレット：右下に追従する固定CTA） =====
+   全ページ共通チャンク（PageLayout）なので、CSSだけで全ページに予約ボタンを常時表示する。
+   本番 css-php.css は min-width:481px でこれを右端の縦書きタブにし、padding / writing-mode を
+   !important で指定しているため、こちらも !important で打ち消す。
+   ※スマホ（≤560）は固定フッター #sp_footer に予約導線があるため style-sp.css で非表示。 */
+:root #wv_headbtn{position:fixed; right:24px; bottom:24px; top:auto; left:auto; z-index:65; margin:0; padding:0; height:auto; line-height:1.2; text-align:right;}
+#wv_headbtn .wv_headbtn_1{list-style:none; margin:0; padding:0; display:inline-flex; gap:10px; float:none;}
+#wv_headbtn .wv_headbtn_1 li{display:block; margin:0; padding:0;}
+:root #wv_headbtn .wv_headbtn_1 li a{display:inline-flex; align-items:center; gap:8px;
+  background:var(--green); color:#fff; padding:13px 26px !important; margin:0;
+  writing-mode:horizontal-tb !important; -webkit-writing-mode:horizontal-tb !important; -ms-writing-mode:lr-tb !important;
+  border-radius:999px; font-weight:700; font-size:15px; line-height:1.2; white-space:nowrap;
+  box-shadow:0 6px 20px rgba(60,70,45,.28); transition:.2s;}
+/* Material Icons の event（カレンダー）でひと目で予約と分かるように */
+:root #wv_headbtn .wv_headbtn_1 li a::before{font-family:'Material Icons'; content:"\e878"; font-size:20px; line-height:1; font-weight:400;}
+:root #wv_headbtn .wv_headbtn_1 li a:hover{background:var(--green-d); color:#fff; text-decoration:none; transform:translateY(-2px); box-shadow:0 10px 26px rgba(60,70,45,.34);}
 
 /* ===== ヒーロー（スライダー） ===== */
 #images{ max-width:1112px !important; }
@@ -245,8 +256,9 @@ body.drawer-open{overflow:hidden;}
 .pagetop{margin:0; text-align:center; padding:8px 0 32px;}
 .pagetop a{display:inline-block; color:var(--green-d); font-size:13px; font-weight:600;}
 
-/* ===== フローティング「ページトップへ」ボタン（JSが body に生成・.is-visible で出現） ===== */
-#pagetop-fab{position:fixed; right:24px; bottom:28px; z-index:70; width:48px; height:48px; padding:0;
+/* ===== フローティング「ページトップへ」ボタン（JSが body に生成・.is-visible で出現） =====
+   右下の固定予約ボタン #wv_headbtn（高さ約46px）の上に重ならないよう bottom を確保。 */
+#pagetop-fab{position:fixed; right:24px; bottom:82px; z-index:70; width:48px; height:48px; padding:0;
   display:flex; align-items:center; justify-content:center; border:none; cursor:pointer;
   background:var(--green); color:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(60,70,45,.32);
   opacity:0; visibility:hidden; transform:translateY(10px);
@@ -385,7 +397,9 @@ body.drawer-open{overflow:hidden;}
 /* 固定バーが本文末尾に被らないよう下余白を確保し、ページトップボタンをバーの上へ逃がす
    （≤560 は style-sp.css 側で調整） */
 body:has(.parent2190){padding-bottom:80px;}
-body:has(.parent2190) #pagetop-fab{bottom:76px;}
+/* 固定バー #anzu_footer（高さ約64px）の上に予約ボタン→ページトップの順で積む */
+body:has(.parent2190) #wv_headbtn{bottom:84px;}
+body:has(.parent2190) #pagetop-fab{bottom:142px;}
 
 /* ============ 院長ブログ（一覧 / 記事） ============ */
 /* 一覧 */
@@ -544,6 +558,7 @@ body.drawer-open #sidr{transform:translateX(0);}
 
 /* 本文中の写真：角丸＋影で統一 */
 #main .content-photo{max-width:100%; border-radius:12px; box-shadow:var(--shadow-sm); display:block;}
+#main .content-photo--screen{width:100%; max-width:320px; height:auto; margin:0 auto;}
 /* 注記（※〜）：小さめグレー */
 #main p.note{font-size:13px; color:var(--mut); line-height:2;}
 /* 単一列の丸ドットリスト（dash-list の1カラム版） */
@@ -589,7 +604,7 @@ body.drawer-open #sidr{transform:translateX(0);}
 #main .price-box{display:flex; flex-direction:column; background:var(--soft); border-radius:10px; padding:10px 14px 9px;}
 #main .price-box .price-label{width:fit-content; background:var(--green); color:#fff; border-radius:6px; padding:0 10px; font-size:11px; font-weight:700; line-height:1.9; margin:0 0 4px;}
 #main .price-box .price-value{font-size:20px; font-weight:700; color:var(--green-d); line-height:1.4;}
-#main .price-box .price-note{font-size:12px; color:var(--mut); line-height:1.7; margin-top:2px;}
+#main .price-box .price-note{font-size:13px; color:var(--mut); line-height:1.7; margin-top:2px;}
 #main .price-card p{margin:0 0 10px; font-size:14px; line-height:1.9;}
 #main .price-card p:last-child{margin-bottom:0;}
 /* よくある質問：Q&Aカード */
