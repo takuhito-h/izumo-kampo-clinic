@@ -42,10 +42,18 @@ HTML構造は本番テーマの出力をそのまま使い、**CSSのみ刷新**
 `BaseLayout.astro` で本番WordPressと同じJSを読み込む（完全再現方針）。全て `is:inline`、同一オリジンJSは `public/` にDL済み・ローカルパス参照、jQuery等のCDNは `https:` 明示。
 
 - 読み込む: jQuery 3.4.1 / js.cookie / base.js・add0.js / droppy / backstretch / sidr / lightbox一式 / nivoSlider / calendar系、および本番のインライン初期化（droppy・navdrop・nivoSlider init・count-per-day・instagram・typekit 等）。
-- **除外**: GTM / gtag（GA4）= localhostから本番GAへ送信されるため。schema(ld+json) = ページ固有メタデータのため。
+- **除外**: GTM / gtag（GA4）= localhostから本番GAへ送信されるため。本番テーマが出力する schema(ld+json) = ページ固有メタデータのため（リデザイン独自の JSON-LD は「構造化データ」節を参照）。
 - ヒーローは本番 nivoSlider が初期化（CSSフォールバックではなく実スライダーが回る）。
 - **モバイルドロワーは `public/add.js`（リデザイン独自）を併用**。本番 sidr.js は `.mobile_menu` の `href` を source にパネル生成する設計で、移行済みの既存 `#sidr` では機能しないため、ドロワー開閉は add.js が担う（sidr.js 自体は読み込み済み）。`add.js` はリデザイン独自JS（ドロワー制御＋ページトップボタン＋ナビのスクロール追従）を集約したファイル。
 - `admin-ajax.php`（count-per-day / instagram）はローカルにバックエンドが無く404/CORSで失敗するが無害。
+
+## 構造化データ（JSON-LD）
+
+各ページに schema.org の JSON-LD を**ベタ書き**する（WordPress の記事ページへそのまま移植できるようにするため）。
+
+- 形式: `<PageLayout>` 直下に `<Fragment slot="head">` で包んだ素の `<script type="application/ld+json">…</script>`。`is:inline` / `is:raw` / `slot` などの Astro 専用属性を `<script>` に付けない（Fragment 内の script 部分をそのまま WordPress に貼れる状態を保つ）。
+- URL は本番の絶対URL（`https://izumo-kampo.clinic/clinic` 等、拡張子なし）。postbuild の相対化対象外。
+- 1ページで完結させる（WebSite / MedicalClinic / Person もページ内に含める）。別ページの `@id` だけを参照する書き方はしない。
 
 ## 資産のローカル化
 
