@@ -1,0 +1,279 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const title = "出雲漢方クリニック｜漢方AIと肥満漢方外来（院長ブログ）";
+---
+
+<PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://izumo-kampo.clinic/blog/kampo-ai-and-obesity-clinic#article",
+            "url": "https://izumo-kampo.clinic/blog/kampo-ai-and-obesity-clinic",
+            "mainEntityOfPage": "https://izumo-kampo.clinic/blog/kampo-ai-and-obesity-clinic",
+            "headline": "漢方AIと肥満漢方外来",
+            "description": "先日、医師向けに「漢方AIと肥満漢方外来」をテーマにオンライン講演を行いました。約45分のズーム講演で、多くの先生方と活発に意見交換ができ、私自身にとっても学びの多い時間となりました。",
+            "inLanguage": "ja",
+            "datePublished": "2025-09-24",
+            "dateModified": "2025-09-24",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://izumo-kampo.clinic/blog#blog"
+            },
+            "articleSection": "院長ブログ",
+            "breadcrumb": {
+              "@id": "https://izumo-kampo.clinic/blog/kampo-ai-and-obesity-clinic#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://izumo-kampo.clinic/blog/kampo-ai-and-obesity-clinic#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://izumo-kampo.clinic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "院長ブログ",
+                "item": "https://izumo-kampo.clinic/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "漢方AIと肥満漢方外来",
+                "item": "https://izumo-kampo.clinic/blog/kampo-ai-and-obesity-clinic"
+              }
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://izumo-kampo.clinic/blog#blog",
+            "name": "院長ブログ",
+            "url": "https://izumo-kampo.clinic/blog",
+            "inLanguage": "ja",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://izumo-kampo.clinic/#website",
+            "url": "https://izumo-kampo.clinic/",
+            "name": "出雲漢方クリニック",
+            "inLanguage": "ja",
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": ["MedicalClinic", "Organization"],
+            "@id": "https://izumo-kampo.clinic/#organization",
+            "name": "出雲漢方クリニック",
+            "url": "https://izumo-kampo.clinic/",
+            "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/ba291ea5c7a4e73223d8e6936a806b74.jpg",
+            "description": "島根県出雲市の漢方クリニック。保険診療で、初診からオンライン診療に対応し、全国の患者さんを診療しています。",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "693-0001",
+              "streetAddress": "今市町736-11",
+              "addressLocality": "出雲市",
+              "addressRegion": "島根県",
+              "addressCountry": "JP"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学", "漢方内科", "呼吸器内科", "呼吸器外科", "アレルギー科"],
+            "founder": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "employee": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "isAcceptingNewPatients": true,
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午前）",
+                "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+                "opens": "09:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午後）",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "診療予約・相談",
+              "url": "https://izumo-kampo.clinic/reserve",
+              "availableLanguage": ["ja", "en"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+            "name": "宮本 信宏",
+            "alternateName": "みやもと のぶひろ",
+            "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+            "url": "https://izumo-kampo.clinic/doctor",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+            "sameAs": ["https://twitter.com/wjHhI0T0zPl0TnO"],
+            "worksFor": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "高知医科大学"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "国家資格",
+                "name": "医師免許"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "専門医",
+                "name": "日本外科学会 認定外科専門医"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "認定医",
+                "name": "日本胸部外科学会 胸部外科認定医"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "日本東洋医学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本胸部外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科感染症学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本肺癌学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本がんサポーティブケア学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器外科学会"
+              }
+            ],
+            "award": ["2016年 日本外科感染症学会 最優秀論文賞（炭山賞）", "2018年 日本東洋医学会 中四国支部総会 奨励賞", "2022年 日本東洋医学会 中四国支部総会 学会賞"],
+            "knowsAbout": ["漢方治療", "漢方医学", "東洋医学", "オンライン診療", "胸部外科", "呼吸器外科"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://izumo-kampo.clinic/online#service",
+            "name": "オンライン診療",
+            "url": "https://izumo-kampo.clinic/online",
+            "description": "予約制のオンライン診療です。8:30〜18:00の予約可能な枠で受診いただけます。通常の休診日や上記時間外でも診療できる場合があります。予約システムで空き枠をご確認ください。",
+            "provider": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://izumo-kampo.clinic/online",
+              "availableLanguage": ["ja", "en"]
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
+  <div id="main">
+    <div id="breadcrumbs">
+      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 漢方AIと肥満漢方外来
+    </div>
+
+    <article>
+      <section class="blogSec">
+        <h2>漢方AIと肥満漢方外来</h2>
+        <div class="column_time">[2025.09.24]</div>
+
+        <div class="subpagecontents">
+          <p>先日、医師向けに「漢方AIと肥満漢方外来」をテーマにオンライン講演を行いました。約45分のズーム講演で、多くの先生方と活発に意見交換ができ、私自身にとっても学びの多い時間となりました。</p>
+          <h3>新薬の功罪と漢方薬の注意点</h3>
+          <p>肥満治療ではGLP-1受容体作動薬やマンジャロ（チルゼパチド）が注目されています。</p>
+          <p>強力に体重を減らせる一方で、食欲を奪い「食べる楽しみ」を失わせるリスクがあり、鬱や骨・筋肉の減少、骨折につながることもあります。</p>
+          <p>特に新薬は<strong>「すでに痩せている人をさらに痩せさせる」</strong>傾向があり、中年以降では骨粗しょう症やフレイルのリスクを高める点が問題です。</p>
+          <p>また講演では、よく使われる防風通聖散の副作用にも触れました。体質に合わないと下痢や食欲不振を起こすだけでなく、まれに肝障害や間質性肺炎など重い副作用を生じることがあり、注意が必要です。</p>
+          <h3>元気を守る肥満漢方外来</h3>
+          <p>肥満漢方外来を続けていると、時に「太っていないが美容目的で痩せたい」という問い合わせをいただくことがあります。</p>
+          <p>こうした方は漢方外来では基本的にお断りしています。ただし自由診療で痩身薬を使っていた方が「漢方に切り替えたい」と来られるケースは少なくありません。</p>
+          <p>しかしながら、すでに痩せている人が漢方薬を飲んでも痩せることはありません。</p>
+          <p>私が講演で最も強調したのは「<strong>元気</strong>」という視点です。</p>
+          <p>元気とは「<strong>食べて・動いて・笑える力</strong>」。</p>
+          <p>痩せることよりも、元気を支えることこそ肥満漢方外来の本当の目的です。</p>
+          <ul>
+            <li>腸内環境を整えて下痢や便秘を改善し、食物繊維をしっかり摂ること</li>
+            <li>食事・生活指導をあわせて行うこと</li>
+            <li>筋肉のポンプを動かす「1日1分のスクワット（6秒×10回）」で血流を改善し、むくみや体重を自然に減らしていくこと</li>
+          </ul>
+          <p>そんな当たり前のことを当たり前に続けることが、元気を取り戻す近道です。</p>
+          <h3>漢方AIの可能性</h3>
+          <p>今回の講演では「漢方AI」についても紹介しました。AIが肥満のタイプを見分け、漢方に不慣れな医師でもその人に合った処方を考える助けになります。</p>
+          <p>当院ではすでに漢方AIを試験的に導入しており、1か月ほど使った印象として、診療の助けになるだけでなく、患者さん自身がAIと対話する「AI漢方指導」が役立っています。気候や気温に応じて、その方の体質に合わせた食事や生活指導をAIと一緒に毎日行っていただいています。10月から本格導入を予定していますので、ご希望の方は受診時にご相談ください。</p>
+          <h3>終わりに</h3>
+          <p>肥満漢方外来は「体重を減らす」こと以上に、「元気を支え、元気を取り戻す」ことを中心に据えるべきです。漢方、食事、運動、そしてAIの力を組み合わせながら、患者さんが日常を元気に過ごせる医療をこれからも実践していきたいと思います。</p><div id="blog_prev_next">
+            <ul>
+              <li class="blog_prev"><a href="/blog/17" rel="prev">前の記事へ</a></li>
+              <li class="blog_next"><a href="/blog/15" rel="next">次の記事へ</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+    <!-- / #main -->
+  </div>
+</PageLayout>

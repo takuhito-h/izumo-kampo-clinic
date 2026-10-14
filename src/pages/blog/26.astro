@@ -1,0 +1,314 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const title = "出雲漢方クリニック｜腰痛と鍼灸と漢方薬（院長ブログ）";
+---
+
+<PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://izumo-kampo.clinic/blog/shinkyu-and-kampo#article",
+            "url": "https://izumo-kampo.clinic/blog/shinkyu-and-kampo",
+            "mainEntityOfPage": "https://izumo-kampo.clinic/blog/shinkyu-and-kampo",
+            "headline": "腰痛と鍼灸と漢方薬",
+            "description": "慣れない机と椅子で作業したら腰が痛くなった。駆お血剤を飲んで右大腿に置鍼（おきばり）をした。体の痛みには漢方より鍼灸（しんきゅう）痛みには漢方の効果がイマイチ島根大学の漢方外来を始めた当初、痛みの患者さんには痛みの漢方薬を処方した。",
+            "inLanguage": "ja",
+            "datePublished": "2022-05-15",
+            "dateModified": "2022-05-15",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-1024x613.jpg",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://izumo-kampo.clinic/blog#blog"
+            },
+            "articleSection": "院長ブログ",
+            "breadcrumb": {
+              "@id": "https://izumo-kampo.clinic/blog/shinkyu-and-kampo#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://izumo-kampo.clinic/blog/shinkyu-and-kampo#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://izumo-kampo.clinic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "院長ブログ",
+                "item": "https://izumo-kampo.clinic/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "腰痛と鍼灸と漢方薬",
+                "item": "https://izumo-kampo.clinic/blog/shinkyu-and-kampo"
+              }
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://izumo-kampo.clinic/blog#blog",
+            "name": "院長ブログ",
+            "url": "https://izumo-kampo.clinic/blog",
+            "inLanguage": "ja",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://izumo-kampo.clinic/#website",
+            "url": "https://izumo-kampo.clinic/",
+            "name": "出雲漢方クリニック",
+            "inLanguage": "ja",
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": ["MedicalClinic", "Organization"],
+            "@id": "https://izumo-kampo.clinic/#organization",
+            "name": "出雲漢方クリニック",
+            "url": "https://izumo-kampo.clinic/",
+            "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/ba291ea5c7a4e73223d8e6936a806b74.jpg",
+            "description": "島根県出雲市の漢方クリニック。保険診療で、初診からオンライン診療に対応し、全国の患者さんを診療しています。",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "693-0001",
+              "streetAddress": "今市町736-11",
+              "addressLocality": "出雲市",
+              "addressRegion": "島根県",
+              "addressCountry": "JP"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学", "漢方内科", "呼吸器内科", "呼吸器外科", "アレルギー科"],
+            "founder": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "employee": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "isAcceptingNewPatients": true,
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午前）",
+                "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+                "opens": "09:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午後）",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "診療予約・相談",
+              "url": "https://izumo-kampo.clinic/reserve",
+              "availableLanguage": ["ja", "en"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+            "name": "宮本 信宏",
+            "alternateName": "みやもと のぶひろ",
+            "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+            "url": "https://izumo-kampo.clinic/doctor",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+            "sameAs": ["https://twitter.com/wjHhI0T0zPl0TnO"],
+            "worksFor": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "高知医科大学"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "国家資格",
+                "name": "医師免許"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "専門医",
+                "name": "日本外科学会 認定外科専門医"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "認定医",
+                "name": "日本胸部外科学会 胸部外科認定医"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "日本東洋医学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本胸部外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科感染症学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本肺癌学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本がんサポーティブケア学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器外科学会"
+              }
+            ],
+            "award": ["2016年 日本外科感染症学会 最優秀論文賞（炭山賞）", "2018年 日本東洋医学会 中四国支部総会 奨励賞", "2022年 日本東洋医学会 中四国支部総会 学会賞"],
+            "knowsAbout": ["漢方治療", "漢方医学", "東洋医学", "オンライン診療", "胸部外科", "呼吸器外科"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://izumo-kampo.clinic/online#service",
+            "name": "オンライン診療",
+            "url": "https://izumo-kampo.clinic/online",
+            "description": "予約制のオンライン診療です。8:30〜18:00の予約可能な枠で受診いただけます。通常の休診日や上記時間外でも診療できる場合があります。予約システムで空き枠をご確認ください。",
+            "provider": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://izumo-kampo.clinic/online",
+              "availableLanguage": ["ja", "en"]
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
+  <div id="main">
+    <div id="breadcrumbs">
+      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 腰痛と鍼灸と漢方薬
+    </div>
+
+    <article>
+      <section class="blogSec">
+        <h2>腰痛と鍼灸と漢方薬</h2>
+        <div class="column_time">[2022.05.15]</div>
+
+        <div class="subpagecontents">
+          <p>慣れない机と椅子で作業したら腰が痛くなった。駆お血剤を飲んで右大腿に置鍼（おきばり）をした。</p>
+          <h3>体の痛みには漢方より鍼灸（しんきゅう）</h3>
+          <h4>痛みには漢方の効果がイマイチ</h4>
+          <p>島根大学の漢方外来を始めた当初、痛みの患者さんには痛みの漢方薬を処方した。腕が悪いのかぜんぜん効かない。</p>
+          <p>漢方の本を読みあさって処方、増量してもやっぱり効かない。</p>
+          <p>効いた感がない。患者さんは来なくなる。こんな繰り返しでうまくいかない。</p>
+          <h4>鍼（ハリ）治療の良さを知って、指圧を始める</h4>
+          <p>色々な外来、流派を見学させていただき、痛みには鍼（ハリ）を使う先生が多いと感じ、指圧や注射を試してみた。</p>
+          <p>意外といける。漢方薬の学び始めと同様、面白いように効果を示し、患者さんに喜んでもらえた。</p>
+          <p>そうしているうちに、病棟、外来で指圧をするようになる。</p>
+          <p>「お医者さんに肩揉んでもらえて」などとおおむね好評。</p>
+          <p>けれど、時々指では響かない患者さんがいる。</p>
+          <p>「鍼（ハリ）ができたらなあ、ブラックジャック世代やし・・・」と思ってた。。</p>
+          <p>患者さんには鍼治療を薦めるものの、どこに紹介していいかも分からなかった。</p>
+          <h3>外科医が鍼灸（しんきゅう）にハマるまで</h3>
+          <h4>私と痛みの歴史</h4>
+          <p>私の腰痛は14歳から。野球で痛めて座位がとれなくなった。病院に行っても湿布薬だけ。</p>
+          <p>近所の鍼灸院に行くと２回の施術で動けるようになった。病院はなんだったのか？</p>
+          <p>24歳で京都の研修医になった。奈良にバイトに行って、蕁麻疹（じんましん）の患者がきた。</p>
+          <p>ステロイドでも出そうか悩んでたら、リハビリの鍼灸師さんが腕に一撃。</p>
+          <p>蕁麻疹がすぐに消えた。なかなかの衝撃だった。</p>
+          <p>34歳でミネソタに留学して痛みの話をしていた。</p>
+          <p>「Mayoでは鍼は結構やる人いるよ」</p>
+          <p>「東洋の文化なのに・・・」と思いながら、学ぶことはなかった。</p>
+          <p>40歳で漢方を始め、48歳で50肩になった。痛くてジャケットが着られない。漢方薬で少しはマシになるが、やはり痛い。</p>
+          <h4>鍼灸と出会い直し、そして学ぶ</h4>
+          <p>そこで思い出したのが出雲市の岡鍼灸院。留学前に手術中に腰を痛めた時に救ってくれた、出雲のレジェンド鍼灸師だ。</p>
+          <p>年に一回の中医学会でご挨拶していた。お弟子さんの連絡先を聞いていたので久しぶりに岡鍼灸院に行った。</p>
+          <p>時間が合わなくて弟子の女性鍼灸師、坂本さんに施術してもらった。１か月で肩は上がるようになった。</p>
+          <p>漢方薬と鍼灸それぞれ得意分野がある。一緒にできたらと鍼灸師との交流が増えた。</p>
+          <p>「漢方医は全部を漢方薬でなんとかしようとするね。鍼（ハリ）でいいところもあるのに」</p>
+          <p>次の中医学会で岡先生に言われた。</p>
+          <p>同じ日に、島根大学大学院生の鍼灸師、吉田くんと知り合いになった。</p>
+          <h3>出雲漢方クリニックで、鍼灸治療を提供しているワケ</h3>
+          <p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-1024x613.jpg" alt="" width="1024" height="613" class="alignnone size-large wp-image-2358" srcset="/wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-1024x613.jpg 1024w, /wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-300x180.jpg 300w, /wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-240x144.jpg 240w, /wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-768x460.jpg 768w, /wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-1536x920.jpg 1536w, /wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V-480x287.jpg 480w, /wp-content/uploads/2022/05/OMG0I9A9238280133641_TP_V.jpg 1600w" sizes="(max-width: 1024px) 100vw, 1024px" data-eio="j" /></p>
+          <h4>理想を追い求めていったら、開業することに</h4>
+          <p>漢方薬と鍼灸、西洋医学と東洋医学、それぞれに得意分野がある。</p>
+          <p>未病の治療をすると言うので大学を辞めて転勤したら、未病の治療はできなくなり、島根でも働けなくなった。</p>
+          <p>高知で鍼灸師と未病の治療をしてもいいと言うので引っ越したが、そういう話ではなくなった。</p>
+          <p>鍼灸師の吉田くんが高知で弟子になる、と言うのでそういうことになった。</p>
+          <p>医者が漢方薬を使うこと、医者と鍼灸師が一緒に働くことにはさまざまなハードルがある。</p>
+          <p>そういうわけで、出雲漢方クリニックを開業することにした。</p>
+          <h4>何より自分がいいと思える治療を提供したい</h4>
+          <p>自分や患者さんに一番良いと思える治療を提供したい。標準治療の偉い先生方は日本中にたくさんいる。</p>
+          <p>偉くはないが、西洋医学と漢方医学、胸部外科と漢方薬とはりきゅうを学んだ。それぞれにとても相性がいい。</p>
+          <p>オンラインで漢方や健康の相談に乗って、出雲と高知では鍼灸師が施術してくれる。そんな出雲漢方クリニックができた。</p>
+          <p>出雲漢方クリニックでは、曽田さんに改名した坂本さんが事務をサポートしてくれている。癒し系女鍼灸師として人気が出るかも。</p>
+          <p>先週ミネソタツインズのスーパースター、バイロンバクストンが脚を痛めた。</p>
+          <p>しばらく休養では、と噂されたが、鍼治療をしたらしい。</p>
+          <p>で、今朝ホームランを打った。ツインズも出雲漢方も楽しみだ。</p>
+          <h3>鍼灸院を開業しました</h3>
+          <p><img decoding="async" src="/wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-1024x768.jpg" alt="" width="1024" height="768" class="alignnone wp-image-2326 size-large" srcset="/wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-1024x768.jpg 1024w, /wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-300x225.jpg 300w, /wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-240x180.jpg 240w, /wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-768x576.jpg 768w, /wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-1536x1152.jpg 1536w, /wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-2048x1536.jpg 2048w, /wp-content/uploads/2023/05/0ECF4C49-C5D8-4888-919F-6EFB982B0B65-480x360.jpg 480w" sizes="(max-width: 1024px) 100vw, 1024px" data-eio="j" /></p>
+          <p>今まで出雲漢方クリニックではサービスで鍼灸治療を提供してきましたが、「もっとゆっくり鍼灸治療を受けたい」という患者さんの要望を満たせていませんでした。</p>
+          <p>そこで今回、完全予約制でゆっくりと施術を受けられる鍼灸治療院、「出雲あんず鍼灸院」を開業いたしました。</p>
+          <p>女性鍼灸師が施術を提供する女性専用の治療院となっています。</p>
+          <p>岡鍼灸院でお世話になった女性鍼灸師、曽田さんに鍼灸治療を提供してもらっています。</p>
+          <p>詳しく知りたい方は以下のボタンからどうぞ。</p>
+          <p><a class="big-button" href="/partnership-shinkyu" rel="noopener noreferrer">出雲あんず鍼灸院を詳しく知る</a></p><div id="blog_prev_next">
+            <ul>
+              <li class="blog_prev"><a href="/blog/27" rel="prev">前の記事へ</a></li>
+              <li class="blog_next"><a href="/blog/25" rel="next">次の記事へ</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+    <!-- / #main -->
+  </div>
+</PageLayout>

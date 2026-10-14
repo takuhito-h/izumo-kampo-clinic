@@ -1,62 +1,275 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const title = "出雲漢方クリニック｜東西医学の融合と、父からの遺産（院長ブログ）";
+const title = "出雲漢方クリニック｜冬の冷え・むくみへの漢方的アプローチについて（院長ブログ）";
 ---
 
 <PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://izumo-kampo.clinic/blog/%e5%86%ac%e3%81%ae%e5%86%b7%e3%81%88%e3%83%bb%e3%82%80%e3%81%8f%e3%81%bf%e3%81%b8%e3%81%ae%e6%bc%a2%e6%96%b9%e7%9a%84%e3%82%a2%e3%83%97%e3%83%ad%e3%83%bc%e3%83%81%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6#article",
+            "url": "https://izumo-kampo.clinic/blog/%e5%86%ac%e3%81%ae%e5%86%b7%e3%81%88%e3%83%bb%e3%82%80%e3%81%8f%e3%81%bf%e3%81%b8%e3%81%ae%e6%bc%a2%e6%96%b9%e7%9a%84%e3%82%a2%e3%83%97%e3%83%ad%e3%83%bc%e3%83%81%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6",
+            "mainEntityOfPage": "https://izumo-kampo.clinic/blog/%e5%86%ac%e3%81%ae%e5%86%b7%e3%81%88%e3%83%bb%e3%82%80%e3%81%8f%e3%81%bf%e3%81%b8%e3%81%ae%e6%bc%a2%e6%96%b9%e7%9a%84%e3%82%a2%e3%83%97%e3%83%ad%e3%83%bc%e3%83%81%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6",
+            "headline": "冬の冷え・むくみへの漢方的アプローチについて",
+            "description": "寒さや気象の変化で増えている手足の冷え、むくみ、だるさ、頭痛、めまい、長引く咳などの体調不良について、自律神経との関係と漢方的なアプローチを院長が紹介します。",
+            "inLanguage": "ja",
+            "datePublished": "2026-01-28",
+            "dateModified": "2026-01-28",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://izumo-kampo.clinic/blog#blog"
+            },
+            "articleSection": "院長ブログ",
+            "breadcrumb": {
+              "@id": "https://izumo-kampo.clinic/blog/%e5%86%ac%e3%81%ae%e5%86%b7%e3%81%88%e3%83%bb%e3%82%80%e3%81%8f%e3%81%bf%e3%81%b8%e3%81%ae%e6%bc%a2%e6%96%b9%e7%9a%84%e3%82%a2%e3%83%97%e3%83%ad%e3%83%bc%e3%83%81%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://izumo-kampo.clinic/blog/%e5%86%ac%e3%81%ae%e5%86%b7%e3%81%88%e3%83%bb%e3%82%80%e3%81%8f%e3%81%bf%e3%81%b8%e3%81%ae%e6%bc%a2%e6%96%b9%e7%9a%84%e3%82%a2%e3%83%97%e3%83%ad%e3%83%bc%e3%83%81%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://izumo-kampo.clinic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "院長ブログ",
+                "item": "https://izumo-kampo.clinic/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "冬の冷え・むくみへの漢方的アプローチについて",
+                "item": "https://izumo-kampo.clinic/blog/%e5%86%ac%e3%81%ae%e5%86%b7%e3%81%88%e3%83%bb%e3%82%80%e3%81%8f%e3%81%bf%e3%81%b8%e3%81%ae%e6%bc%a2%e6%96%b9%e7%9a%84%e3%82%a2%e3%83%97%e3%83%ad%e3%83%bc%e3%83%81%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6"
+              }
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://izumo-kampo.clinic/blog#blog",
+            "name": "院長ブログ",
+            "url": "https://izumo-kampo.clinic/blog",
+            "inLanguage": "ja",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://izumo-kampo.clinic/#website",
+            "url": "https://izumo-kampo.clinic/",
+            "name": "出雲漢方クリニック",
+            "inLanguage": "ja",
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": ["MedicalClinic", "Organization"],
+            "@id": "https://izumo-kampo.clinic/#organization",
+            "name": "出雲漢方クリニック",
+            "url": "https://izumo-kampo.clinic/",
+            "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/ba291ea5c7a4e73223d8e6936a806b74.jpg",
+            "description": "島根県出雲市の漢方クリニック。保険診療で、初診からオンライン診療に対応し、全国の患者さんを診療しています。",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "693-0001",
+              "streetAddress": "今市町736-11",
+              "addressLocality": "出雲市",
+              "addressRegion": "島根県",
+              "addressCountry": "JP"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学", "漢方内科", "呼吸器内科", "呼吸器外科", "アレルギー科"],
+            "founder": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "employee": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "isAcceptingNewPatients": true,
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午前）",
+                "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+                "opens": "09:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午後）",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "診療予約・相談",
+              "url": "https://izumo-kampo.clinic/reserve",
+              "availableLanguage": ["ja", "en"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+            "name": "宮本 信宏",
+            "alternateName": "みやもと のぶひろ",
+            "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+            "url": "https://izumo-kampo.clinic/doctor",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+            "sameAs": ["https://twitter.com/wjHhI0T0zPl0TnO"],
+            "worksFor": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "高知医科大学"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "国家資格",
+                "name": "医師免許"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "専門医",
+                "name": "日本外科学会 認定外科専門医"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "認定医",
+                "name": "日本胸部外科学会 胸部外科認定医"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "日本東洋医学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本胸部外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科感染症学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本肺癌学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本がんサポーティブケア学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器外科学会"
+              }
+            ],
+            "award": ["2016年 日本外科感染症学会 最優秀論文賞（炭山賞）", "2018年 日本東洋医学会 中四国支部総会 奨励賞", "2022年 日本東洋医学会 中四国支部総会 学会賞"],
+            "knowsAbout": ["漢方治療", "漢方医学", "東洋医学", "オンライン診療", "胸部外科", "呼吸器外科"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://izumo-kampo.clinic/online#service",
+            "name": "オンライン診療",
+            "url": "https://izumo-kampo.clinic/online",
+            "description": "予約制のオンライン診療です。8:30〜18:00の予約可能な枠で受診いただけます。通常の休診日や上記時間外でも診療できる場合があります。予約システムで空き枠をご確認ください。",
+            "provider": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://izumo-kampo.clinic/online",
+              "availableLanguage": ["ja", "en"]
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
   <div id="main">
     <div id="breadcrumbs">
-      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 東西医学の融合と、父からの遺産
+      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 冬の冷え・むくみへの漢方的アプローチについて
     </div>
 
     <article>
       <section class="blogSec">
-        <h2>東西医学の融合と、父からの遺産</h2>
-        <div class="column_time">[2025.10.30]</div>
+        <h2>冬の冷え・むくみへの漢方的アプローチについて</h2>
+        <div class="column_time">[2026.01.28]</div>
 
         <div class="subpagecontents">
-          <p data-start="2155" data-end="2252">心臓外科医としての道を離れ、漢方にたどり着いた私。</p>
-          <p data-start="2155" data-end="2252">その歩みの先に見えたのは、父が高知で築いた近代外科と、もう一人の高知出身の医師・大塚敬節が再興した漢方医学という、二つの医学の流れでした。</p>
-          <h3 data-start="2259" data-end="2280">国際シンポジウムと、東西医学</h3>
-          <p data-start="2281" data-end="2787">父が亡くなった日、私は広島で開催された日本東洋医学会中四国支部総会の国際シンポジウムで、座長を務めていました。</p>
-          <p data-start="2281" data-end="2787">台湾の郭先生は、私が胸部外科から漢方に転じた経歴を知って驚いていました。</p>
-          <p data-start="2281" data-end="2787">外科医が臨床の場で漢方を処方する例は、東西医療の融合が進む台湾でも、ほとんどないそうです。</p>
-          <p data-start="2281" data-end="2787">心臓や肺の手術を担当していた私が、今は舌や体質を見て処方を考えるようになったことは、大きな変化です。</p>
-          <p data-start="2281" data-end="2787">2022年にオンライン漢方外来で開業し、日本全国、世界の様々な都市から漢方治療を希望して来院してもらえるようになりました。</p>
-          <p data-start="2281" data-end="2787">西洋医学でうまくいかない患者さんに対して、漢方治療が驚くような効果を示すことをしばしば経験します。</p>
-          <p data-start="2281" data-end="2787">外科の現場で日々見てきた「術後の反応」や「患者ごとの違い」が、漢方の視点で一本につながる瞬間があります。</p>
-          <p data-start="2281" data-end="2787">陰陽や六病位、五臓論といった漢方医学を学ぶうちに、西洋医学では整理しづらかった「免疫と炎症のあいだ」が、理解できるようになってきました。</p>
-          <p data-start="2281" data-end="2787">臨床の中で、体調が実際に変わっていく患者を目の当たりにしながら、標準治療と漢方医学が相補的に支え合う医療の可能性を強く感じています。</p>
-          <h3 data-start="2794" data-end="2816">高知で芽生えた二つの医学の流れ</h3>
-          <p data-start="2817" data-end="2951">近代医学の拡大とともに、高知の地からはもう一つの医学の流れが生まれています。</p>
-          <p data-start="2817" data-end="2951">明治維新以降、西洋医学が主流となり、漢方は一時、低迷期を迎えました。</p>
-          <p data-start="2817" data-end="2951">高知市出身の大塚敬節先生は、明治から昭和にかけて漢方医学を再評価し、現代漢方の礎を築いた漢方医学の巨人です。</p>
-          <p data-start="2817" data-end="2951">西洋医学を学んでいましたが、湯本求真の『皇漢医学』に感銘を受け、1930年（父が生まれる6年前）、繁盛していた高知市追手筋の医院をたたみ、東京で本格的な修行に入ります。</p>
-          <p data-start="2817" data-end="2951">大塚先生は、古典（傷寒論・金匱要略）と臨床を往復し、症状の背景にある「体質（証）」を重視し、その考え方は、今も日本漢方の礎となっています。</p>
-          <p data-start="2817" data-end="2951">父が高知市民病院に胸部外科チームを立ち上げたのは1970年代初頭でした。</p>
-          <p data-start="2817" data-end="2951">人工心肺の導入から間もない時期で、地方で心臓手術を行うには器械も人材も限られ、まさに「挑戦の時代」だったといえます。</p>
-          <p data-start="2817" data-end="2951">一方その頃、漢方の世界では、大塚先生が漢方を臨床と研究の両面から再評価し、科学的検証の対象として位置づけようとしました。</p>
-          <p data-start="2817" data-end="2951">昭和47年（1972年）、北里研究所附属東洋医学総合研究所を設立し、初代所長に就任されています。</p>
-          <p data-start="2817" data-end="2951">この活動が漢方をエビデンスに基づく医療へと発展させる礎となりました。</p>
-          <p data-start="3365" data-end="3558">こうした流れによって、漢方は一部の専門医の領域から臨床医全体に広がり、私や父のような普通の外科医も、患者の状態に応じて漢方薬を治療選択肢として用いることが可能な時代となりました。</p>
-          <p data-start="3365" data-end="3558">ちなみに、父からきいた話では、大塚先生の親族が京大胸部研内科に在籍されており、お話をしたことがあるそうです。</p>
-          <p data-start="3365" data-end="3558">父もその頃は、自分が外科引退後に「漢方おじいちゃん」になるとは思っていなかったでしょう。</p>
-          <h3 data-start="3565" data-end="3577">おわりに</h3>
-          <p data-start="3578" data-end="3781">40年以上前に高知で心臓弁膜症のカテーテル手術が生まれた経緯を知る人は、今では多くありません。</p>
-          <p data-start="3578" data-end="3781">医学は進歩し、外科手術は低侵襲化し、カテーテル治療は標準的な選択肢になりました。</p>
-          <p data-start="3578" data-end="3781">免疫と炎症についての分子生物学的研究も進み、東洋医学的概念を西洋医学に翻訳できるようになってきました。</p>
-          <p data-start="3578" data-end="3781">かつては胡散臭い医療と思われていた漢方医学も、ビッグデータの時代にエビデンスの構築と臨床応用が進んでいます。</p>
-          <p data-start="3783" data-end="3949">父は胸部外科部長という激務のなか、酒もタバコも欠かさない生活を送りながら、外科引退後は漢方薬を飲み、外来で30年以上漢方薬を処方し続け、90歳まで生きました。</p>
-          <p data-start="3783" data-end="3949">もしかしたら、漢方薬は本当に効果があるのかもしれません。</p>
-          <p data-start="3783" data-end="3949">私も、漢方おじさんとしてできる限り長く臨床の現場に立ち、多くの患者さんを診察し続けたいと考えています。</p>
-          <p data-start="3951" data-end="3984">※この内容は、父を知る医療者の方々へ、共有のために記録しています。</p><div id="blog_prev_next">
+          <p>先日の地震と今週の大雪に際し、多くの方からご心配のメッセージをいただき、ありがとうございました。</p>
+          <p>当院は大きな被害もなく、通常どおり診療を行っております。皆さまのご心配に深く感謝申し上げます。</p>
+          <h3>寒さや気象変化による体調不良について</h3>
+          <p>ここ最近の外来では、寒さや気象の変化の影響で体調を崩している方が多く見られます。</p>
+          <p>特に、手足の冷え、むくみ、慢性的なだるさ、頭痛、めまい、関節周囲の痛みなどを主訴に受診される方が増えています。また、風邪症状として、咳が長引く、のどの違和感が続くといった声も多く聞かれます。</p>
+          <p data-start="385" data-end="535">
+            気温・気圧の変化が大きいこの季節は、自律神経のバランスが乱れやすく、体の恒常性を維持する力が低下しやすい時期です。外的ストレスとしては寒さだけでなく、先日の地震による心理的な緊張も重なっています。<br data-start="483" data-end="486" />
+            このような状態では、単に症状を抑えるだけでなく、体全体のバランスを整えることが必要になります。
+          </p>
+          <p data-start="537" data-end="658">検査で大きな異常が見られない場合でも、症状が続くケースは少なくありません。これは血液検査や画像検査では捉えにくい、「体の微細なバランスの乱れ」によるものです。具体的には、血流の滞り、内臓の働きの低下、自律神経の緊張感の持続などが考えられます。</p>
+          <h3 data-start="537" data-end="658">冷えと睡眠を中心とした体調回復の考え方</h3>
+          <p data-start="688" data-end="890">こうした状態を改善する上で重要なのが、十分な睡眠です。睡眠は体の回復にとって不可欠であり、しっかり眠れる環境を整えることがまず第一です。人は、日中に体温が一度しっかり上がり、そこから下がってくる過程で眠気が生じます。</p>
+          <p data-start="688" data-end="890">そのため、日中の適度な運動、入浴による体温の上昇、規則正しい食事が睡眠の質を高める助けになります。また、必要に応じて、体を温めたり自律神経の調整を促す漢方薬を使用することも有効です。</p>
+          <p data-start="892" data-end="1018">体が冷えていると、血流が低下し、筋肉や関節のこわばりが強くなり、むくみも出やすくなります。また、胃腸の働きが落ちると、消化・吸収機能が低下し、全身のエネルギー供給が滞ることになります。こうした一連の変化が、だるさや睡眠の浅さ、慢性疲労感につながります。</p>
+          <p data-start="892" data-end="1018">当院では、西洋医学的な検査と評価を行ったうえで、患者さん一人ひとりの症状と体質に応じた治療方針を立てています。</p>
+          <p data-start="892" data-end="1018">必要に応じて漢方薬を併用し、体全体のバランスを整える治療を進めています。特に、冷えやむくみ、長引く風邪症状の方には、「水滞（体液の巡りの悪さ）」や「気血の不足」などの漢方的な視点からも評価し、処方を検討しています。</p>
+          <h3 data-start="892" data-end="1018">終わりに</h3>
+          <p data-start="1207" data-end="1341">昨年10月からは、煎じ漢方薬（漢方茶）も選択肢としてご利用いただけるようになりました。煎じ漢方は、エキス剤に比べて体に馴染みやすく、効果の出方が穏やかであることが多いため、体質改善を目的とする場合に適した選択となることがあります。ご希望の際は診察時にお申し出ください。</p>
+          <p data-start="1343" data-end="1514">
+            3月19日（木）19時より、「最前線・冷えとむくみの漢方治療」をテーマにWeb講演を行います。<a href="https://www.kotaro.co.jp/iryou/kenkyuukai/%e5%b0%be%e9%81%93%e6%bc%a2%e6%96%b9%e7%a0%94%e7%a9%b6%e4%bc%9a-%ef%bc%88web%e9%85%8d%e4%bf%a1%ef%bc%89%ef%bc%88%e7%89%b9%e5%88%a5%e7%b7%a8%ef%bc%89/" target="_blank" rel="noopener">小太郎漢方製薬のホームページ</a>から申し込みが可能です。
+          </p>
+          <p data-start="1343" data-end="1514">また、当院主催の「舌診ラボ」は毎週月曜日夜8時30分よりオンラインで開催しています。</p>
+          <p data-start="1343" data-end="1514">体調のご相談、勉強会へのお問い合わせは、公式LINEからお願いいたします。</p>
+          <p data-start="1516" data-end="1636">寒さや気象の変化による体調不良は、放っておくと慢性化しやすく、日常生活の質を低下させることがあります。症状が気になる場合は、早めに相談されることをおすすめします。無理をせず、体全体のバランスを整えていくことが結果的に早い改善につながります。</p>
+          <p data-start="1638" data-end="1687">これから気候はさらに変わりやすくなりますが、気になる症状がある方は、どうぞ遠慮なくご相談ください。</p><div id="blog_prev_next">
             <ul>
-              <li class="blog_prev">
-                <a href="/blog/09" rel="prev">前の記事へ</a>
-              </li><li class="blog_next">
-                <a href="/blog/07" rel="next">次の記事へ</a>
-              </li>
+              <li class="blog_prev"><a href="/blog/09" rel="prev">前の記事へ</a></li>
+              <li class="blog_next"><a href="/blog/07" rel="next">次の記事へ</a></li>
             </ul>
           </div>
         </div>

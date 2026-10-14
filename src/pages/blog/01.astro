@@ -1,56 +1,336 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const title = "出雲漢方クリニック｜開院4周年、そして地域への新たな一歩（院長ブログ）";
+const title = "出雲漢方クリニック｜睡眠学会と熊本の災害から考えたこと（院長ブログ）";
 ---
 
 <PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://izumo-kampo.clinic/blog/%e7%9d%a1%e7%9c%a0%e5%ad%a6%e4%bc%9a%e3%81%a8%e7%86%8a%e6%9c%ac%e3%81%ae%e7%81%bd%e5%ae%b3%e3%81%8b%e3%82%89%e8%80%83%e3%81%88%e3%81%9f%e3%81%93%e3%81%a8#article",
+            "url": "https://izumo-kampo.clinic/blog/%e7%9d%a1%e7%9c%a0%e5%ad%a6%e4%bc%9a%e3%81%a8%e7%86%8a%e6%9c%ac%e3%81%ae%e7%81%bd%e5%ae%b3%e3%81%8b%e3%82%89%e8%80%83%e3%81%88%e3%81%9f%e3%81%93%e3%81%a8",
+            "mainEntityOfPage": "https://izumo-kampo.clinic/blog/%e7%9d%a1%e7%9c%a0%e5%ad%a6%e4%bc%9a%e3%81%a8%e7%86%8a%e6%9c%ac%e3%81%ae%e7%81%bd%e5%ae%b3%e3%81%8b%e3%82%89%e8%80%83%e3%81%88%e3%81%9f%e3%81%93%e3%81%a8",
+            "headline": "睡眠学会と熊本の災害から考えたこと",
+            "description": "先日、日本睡眠学会に参加しました。そこで改めて考えたことがあります。人は、なぜ眠るのでしょうか。睡眠には、記憶の整理、免疫調節、代謝や内分泌の調整など、さまざまな役割があります。",
+            "inLanguage": "ja",
+            "datePublished": "2026-08-13",
+            "dateModified": "2026-08-13",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://izumo-kampo.clinic/blog#blog"
+            },
+            "articleSection": "院長ブログ",
+            "breadcrumb": {
+              "@id": "https://izumo-kampo.clinic/blog/%e7%9d%a1%e7%9c%a0%e5%ad%a6%e4%bc%9a%e3%81%a8%e7%86%8a%e6%9c%ac%e3%81%ae%e7%81%bd%e5%ae%b3%e3%81%8b%e3%82%89%e8%80%83%e3%81%88%e3%81%9f%e3%81%93%e3%81%a8#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://izumo-kampo.clinic/blog/%e7%9d%a1%e7%9c%a0%e5%ad%a6%e4%bc%9a%e3%81%a8%e7%86%8a%e6%9c%ac%e3%81%ae%e7%81%bd%e5%ae%b3%e3%81%8b%e3%82%89%e8%80%83%e3%81%88%e3%81%9f%e3%81%93%e3%81%a8#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://izumo-kampo.clinic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "院長ブログ",
+                "item": "https://izumo-kampo.clinic/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "睡眠学会と熊本の災害から考えたこと",
+                "item": "https://izumo-kampo.clinic/blog/%e7%9d%a1%e7%9c%a0%e5%ad%a6%e4%bc%9a%e3%81%a8%e7%86%8a%e6%9c%ac%e3%81%ae%e7%81%bd%e5%ae%b3%e3%81%8b%e3%82%89%e8%80%83%e3%81%88%e3%81%9f%e3%81%93%e3%81%a8"
+              }
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://izumo-kampo.clinic/blog#blog",
+            "name": "院長ブログ",
+            "url": "https://izumo-kampo.clinic/blog",
+            "inLanguage": "ja",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://izumo-kampo.clinic/#website",
+            "url": "https://izumo-kampo.clinic/",
+            "name": "出雲漢方クリニック",
+            "inLanguage": "ja",
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": ["MedicalClinic", "Organization"],
+            "@id": "https://izumo-kampo.clinic/#organization",
+            "name": "出雲漢方クリニック",
+            "url": "https://izumo-kampo.clinic/",
+            "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/ba291ea5c7a4e73223d8e6936a806b74.jpg",
+            "description": "島根県出雲市の漢方クリニック。保険診療で、初診からオンライン診療に対応し、全国の患者さんを診療しています。",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "693-0001",
+              "streetAddress": "今市町736-11",
+              "addressLocality": "出雲市",
+              "addressRegion": "島根県",
+              "addressCountry": "JP"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学", "漢方内科", "呼吸器内科", "呼吸器外科", "アレルギー科"],
+            "founder": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "employee": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "isAcceptingNewPatients": true,
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午前）",
+                "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+                "opens": "09:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午後）",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "診療予約・相談",
+              "url": "https://izumo-kampo.clinic/reserve",
+              "availableLanguage": ["ja", "en"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+            "name": "宮本 信宏",
+            "alternateName": "みやもと のぶひろ",
+            "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+            "url": "https://izumo-kampo.clinic/doctor",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+            "sameAs": ["https://twitter.com/wjHhI0T0zPl0TnO"],
+            "worksFor": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "高知医科大学"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "国家資格",
+                "name": "医師免許"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "専門医",
+                "name": "日本外科学会 認定外科専門医"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "認定医",
+                "name": "日本胸部外科学会 胸部外科認定医"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "日本東洋医学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本胸部外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科感染症学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本肺癌学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本がんサポーティブケア学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器外科学会"
+              }
+            ],
+            "award": ["2016年 日本外科感染症学会 最優秀論文賞（炭山賞）", "2018年 日本東洋医学会 中四国支部総会 奨励賞", "2022年 日本東洋医学会 中四国支部総会 学会賞"],
+            "knowsAbout": ["漢方治療", "漢方医学", "東洋医学", "オンライン診療", "胸部外科", "呼吸器外科"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://izumo-kampo.clinic/online#service",
+            "name": "オンライン診療",
+            "url": "https://izumo-kampo.clinic/online",
+            "description": "予約制のオンライン診療です。8:30〜18:00の予約可能な枠で受診いただけます。通常の休診日や上記時間外でも診療できる場合があります。予約システムで空き枠をご確認ください。",
+            "provider": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://izumo-kampo.clinic/online",
+              "availableLanguage": ["ja", "en"]
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
   <div id="main">
     <div id="breadcrumbs">
-      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 開院4周年、そして地域への新たな一歩
+      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 睡眠学会と熊本の災害から考えたこと
     </div>
 
     <article>
       <section class="blogSec">
-        <h2>開院4周年、そして地域への新たな一歩</h2>
-        <div class="column_time">[2026.05.29]</div>
+        <h2>睡眠学会と熊本の災害から考えたこと</h2>
+        <div class="column_time">[2026.08.13]</div>
 
         <div class="subpagecontents">
-          <p>おかげさまで出雲漢方クリニックは開院4周年を迎えることができました。この4年間、多くの患者様、ご家族、関係者の皆様に支えていただき、心より感謝申し上げます。</p>
-          <p>当院は開院当初からオンライン診療に力を入れてきました。特にコロナ禍以降は、コロナ後遺症や気象病、自律神経の乱れなどでお困りの患者様から多くのご相談をいただきました。全国どこに住んでいても医療につながることができるオンライン診療の意義を強く感じる日々でした。</p>
-          <p>その後、診療内容も少しずつ広がり、現在では肥満治療や更年期症状、慢性疲労、不眠などのご相談も増えています。これらの症状は検査だけでは異常が見つからないことも多く、患者様ご自身も周囲から理解されにくいことがあります。しかし実際には生活の質を大きく低下させており、日常生活や仕事に影響を及ぼしています。</p>
-          <h3>漢方診療を通じて感じた鍼灸の価値</h3>
-          <p>私はこれまで漢方診療を通じて、多くの患者様の体調改善に関わらせていただきました。漢方薬は体質改善や慢性的な不調の改善に大きな力を発揮します。しかし診療を続ける中で改めて感じることがあります。</p>
-          <p>それは、肩こりや肩の痛み、腰痛、膝痛、首の痛み、筋肉の緊張など、身体の構造や動きに関連する症状については、漢方薬だけではなく鍼灸治療の方が適している場合が少なくないということです。</p>
-          <p>もちろん漢方薬で改善することもあります。しかし実際には、筋肉の緊張をほぐし、血流を改善し、身体を温め、局所へ直接アプローチできる鍼灸の方が早く効果を実感される患者様も多くおられます。</p>
-          <p>また、鍼灸の価値は痛みの治療だけではありません。</p>
-          <p>施術を受けることで身体が温まり、呼吸が深くなり、リラックスし、睡眠が改善する。痛みが軽くなることで外出する意欲が生まれ、人と会う機会が増える。結果として活動量が増え、筋力低下やフレイルの予防にもつながります。</p>
-          <p>私はこれこそが鍼灸の本質的な価値の一つだと考えています。</p>
-          <p>病気だけを診るのではなく、人の生活全体を支えること。</p>
-          <h3>多職種で支える「出雲モデル」と地域への想い</h3>
-          <p>そのためには医師だけでは不十分です。薬剤師、鍼灸師、管理栄養士、運動指導者、介護職など、多くの職種が連携する必要があります。</p>
-          <p>私が以前から構想している「出雲モデル」もまさにその考え方です。</p>
-          <p>医師が診断し、薬剤師が服薬を支え、鍼灸師が身体を整える。さらに運動、食事、睡眠、温泉など地域の資源も活用しながら健康づくりを支援する。病気になった人を治療するだけではなく、病気になりにくい身体づくりや健康寿命の延伸を目指す取り組みです。</p>
-          <p>一方で、私は常々考えていました。</p>
-          <p>「全国の患者様を診ることができるようになった今だからこそ、もっと地域に貢献できることがあるのではないか。」</p>
-          <p>高齢化が進む中、腰痛や膝痛、肩の痛み、手術後の筋力低下などにより、通院そのものが難しくなっている方がたくさんおられます。医療機関へ行きたくても行けない。身体の不調を抱えながら、自宅で不安な毎日を過ごしている方も少なくありません。</p>
-          <h3>訪問鍼灸の開始と、これからの地域医療へ</h3>
-          <p>そこでこのたび、出雲あんず鍼灸院では鍼灸師3名体制となり、保険診療による訪問鍼灸を開始しました。</p>
-          <p>神経痛、リウマチ、五十肩、腰痛症、頸腕症候群などの慢性的な痛みを抱え、歩行困難や通院困難となった方々に対し、医師と鍼灸師が連携しながらご自宅で施術を行います。</p>
-          <p>また自由診療では、慢性疲労、不眠、自律神経の乱れ、更年期症状、美容鍼、スポーツコンディショニングなど幅広いお悩みに対応しています。</p>
-          <p>全国へ広がるオンライン診療。そして地域に根差した訪問鍼灸。</p>
-          <p>この二つは一見異なる取り組みに見えるかもしれません。しかし私の中ではどちらも同じです。</p>
-          <p>「困っている人のもとへ医療を届ける」</p>
-          <p>という考え方です。</p>
-          <p>
-            これからも医師、薬剤師、鍼灸師が力を合わせ、出雲から新しい地域医療の形を発信していきたいと思います。<br />
-            病気を診るだけでなく、人を支える医療へ。
-          </p>
-          <p>開院5年目も、その初心を忘れず歩んでまいります。</p><div id="blog_prev_next">
+          <p>先日、日本睡眠学会に参加しました。</p>
+          <p>そこで改めて考えたことがあります。</p>
+          <p>人は、なぜ眠るのでしょうか。</p>
+          <p>睡眠には、記憶の整理、免疫調節、代謝や内分泌の調整など、さまざまな役割があります。</p>
+          <p>私は、その本質の一つは、日中に受けた負荷から身体を回復させ、もう一度「整える」ことにあるのではないかと考えています。</p>
+          <p>昨日の自分と、今日の自分は厳密には同じではありません。</p>
+          <p>私たちの身体を構成する細胞や組織は、常に代謝し、修復され、更新されています。</p>
+          <p>日中は動き、考え、働き、さまざまな負荷を受ける。</p>
+          <p>夜になると休息に入り、自律神経、免疫、内分泌、代謝などが調節され、翌日に向けて身体が回復していく。</p>
+          <p>免疫も、単純に「強ければよい」ものではありません。</p>
+          <p>弱すぎれば感染症に弱くなりますし、過剰に働けば炎症や自己免疫の問題につながります。</p>
+          <p>重要なのは、免疫反応を適切な状態に調節することです。</p>
+          <p>自律神経も同じです。</p>
+          <p>活動するときには交感神経が働き、休息するときには副交感神経が働く。</p>
+          <p>健康とは、何かを一方的に強くすることではなく、身体のさまざまな機能が必要なときに適切に働ける状態に「整っていること」なのだと思います。</p>
+          <p>そして、その「整えること」の中心にあるのが睡眠です。</p>
+          <p>これまで取り組んできたことは、睡眠につながっていた</p>
+          <p>昔から、「身体を温めるとよく眠れる」と経験的に言われてきました。</p>
+          <p>最近では、その理由についても医学的な根拠が示されるようになってきました。</p>
+          <p>人は、単に身体が温かくなることで眠るのではありません。</p>
+          <p>運動や入浴によっていったん身体が温まり、末梢の血流が増えて身体の熱が外へ放散され、その後、深部体温が下がっていく。</p>
+          <p>この体温の変化が、自然な眠気や入眠に関係していることが分かってきています。</p>
+          <p>そう考えると、私がこれまで診療の中で大切にしてきたことが、一つにつながってきます。</p>
+          <p>運動して身体を動かす。</p>
+          <p>温泉や入浴で身体を温める。</p>
+          <p>漢方薬で冷えや自律神経の乱れを整える。</p>
+          <p>鍼灸やマッサージによって、筋緊張や身体の不調を和らげる。</p>
+          <p>方法は違っても、身体が自然に休息へ向かえる状態をつくり、最終的には良い睡眠につなげる。</p>
+          <p>そして睡眠の中で、自律神経、免疫、内分泌、代謝などが適切な状態へ調節され、翌日に向けて身体が回復していく。</p>
+          <p>こう考えると、私がこれまで取り組んできた医療は、実はすべて<strong>「睡眠」という一点につながっていたのかもしれない</strong>と思うようになりました。</p>
+          <h3>その直後に起きた熊本の災害</h3>
+          <p>睡眠学会の後、熊本で豪雨災害が起こりました。</p>
+          <p>家屋の被害、停電や断水、そして猛暑の中で生活を続けている方々の状況が報道されています。</p>
+          <p>そのとき、睡眠学会で考えたことと災害時医療が、自分の中でつながりました。</p>
+          <p>この方々は、夜にきちんと眠れているのだろうか。</p>
+          <p>真夏にエアコンのない環境で、災害への不安を抱え、昼間は片付けや避難生活を続ける。</p>
+          <p>睡眠不足に、暑さ、脱水、疲労、心理的ストレスが加われば、高齢者や慢性疾患を持つ方にとって大きな負担になります。</p>
+          <p>災害時には、水、食料、医薬品の確保が不可欠です。</p>
+          <p>しかし、避難生活が数日に及ぶのであれば、安心して横になり、適切な温度の中で眠れる環境を確保することも、重要な健康支援だと思います。</p>
+          <p>ホテル、旅館、温泉施設など、地域には冷暖房があり、入浴でき、休息できる場所があります。</p>
+          <p>こうした施設を、災害時にどう活用するのか。</p>
+          <p>災害が起きてから考えるのではなく、平時から地域の中で連携しておく必要があるのではないでしょうか。</p>
+          <h3>「困ったときはお互い様」</h3>
+          <p>現在、熊本県八代市の近くで働いている友人も被災しています。</p>
+          <p>この友人とは、私がMayo Clinicに留学していた頃、ミネソタ州ロチェスターで一緒に生活しました。</p>
+          <p>海外で暮らす留学生たちは、足りないものを譲り合い、車を出し合い、困ったことがあれば自然に互いを頼って生活していました。</p>
+          <p>その友人から教えてもらった言葉が、</p>
+          <p>「困ったときはお互い様」</p>
+          <p>でした。</p>
+          <p>今回、「何か必要なものはないか」と尋ねても、返ってくるのは「大丈夫」という言葉です。</p>
+          <p>留学中はあれほど自然に周囲を頼っていた友人でも、本当に大変な状況になると遠慮してしまう。</p>
+          <p>被災地には、同じような方が多くおられるのだと思います。</p>
+          <p>だから「何か必要ですか」と尋ねて待つだけではなく、</p>
+          <p>「薬は足りていますか」</p>
+          <p>「食事は取れていますか」</p>
+          <p>「夜は眠れていますか」</p>
+          <p>「涼しい場所へ移る必要はありませんか」</p>
+          <p>と、支援する側が具体的に困りごとを拾い上げる仕組みが必要だと思います。</p>
+          <h3>ファーストレスポンダーという考え方</h3>
+          <p>ロチェスターで生活していた頃、私が印象に残った考え方の一つが、ファーストレスポンダーです。</p>
+          <p>何かが起きたとき、助ける能力を持つ人が、それぞれの立場で可能な対応をする。</p>
+          <p>すべての人が同じことをする必要はありません。</p>
+          <p>医療者は医療で支える。</p>
+          <p>移動手段を持つ人は人を運ぶ。</p>
+          <p>宿泊施設は、安全に休める場所を提供する。</p>
+          <p>地域の人は、困っている人を見つける。</p>
+          <p>できる人が、できることで支える。</p>
+          <p>そして、自分が困ったときには誰かに支えてもらう。</p>
+          <p>これは「困ったときはお互い様」を、社会の仕組みにした考え方だと思います。</p>
+          <h3>出雲モデルへ</h3>
+          <p>私は、この考え方を「出雲モデル」として形にしたいと考えています。</p>
+          <p>オンライン診療を中心に、薬局、病院、クリニック、鍼灸師、温泉、宿泊施設など、地域にすでにある資源をつなぐ。</p>
+          <p>薬局や訪問する鍼灸師が、患者さんの日常の小さな言葉や変化を拾う。</p>
+          <p>必要な人をオンライン診療や医療機関へつなぐ。</p>
+          <p>平時には、運動、温浴、漢方、鍼灸などを通して、よく眠り、身体を整え、健康を維持する。</p>
+          <p>そして災害が起きたときには、その平時のネットワークをそのまま活用する。</p>
+          <p>医療が必要な人には医療を。</p>
+          <p>薬が必要な人には薬を。</p>
+          <p>移動が必要な人には移動手段を。</p>
+          <p>そして休息が必要な人には、安心して眠れる場所を。</p>
+          <p>私は「困ったときはお互い様」という言葉を、個人の善意だけに任せるのではなく、地域の仕組みにしたいと考えています。</p>
+          <p>健康とは、身体を強くすることではなく、適切な状態に整えること。</p>
+          <p>その中心に睡眠がある。</p>
+          <p>そして地域もまた、何かが起きたときに支え合い、できるだけ早く元の状態へ戻れる仕組みを持っていることが大切です。</p>
+          <p>身体を整えることと、地域を整えること。</p>
+          <p>その両方を支えるネットワークを、出雲からつくっていきたいと思います。</p>
+          <p>それが、私の考える「出雲モデル」です。</p><div id="blog_prev_next">
             <ul>
-              <li class="blog_prev">
-                <a href="/blog/02" rel="prev">前の記事へ</a>
-              </li>
+              <li class="blog_prev"><a href="/blog/02" rel="prev">前の記事へ</a></li>
             </ul>
           </div>
         </div>

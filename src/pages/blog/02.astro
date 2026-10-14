@@ -1,144 +1,290 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const title = "出雲漢方クリニック｜花粉症から慢性炎症を考える - 舌診からみるアレルギー疾患（院長ブログ）";
+const title = "出雲漢方クリニック｜オールスターブレイクに4月のミネソタ訪問を振り返る（院長ブログ）";
 ---
 
 <PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://izumo-kampo.clinic/blog/%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF#article",
+            "url": "https://izumo-kampo.clinic/blog/%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF",
+            "mainEntityOfPage": "https://izumo-kampo.clinic/blog/%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF",
+            "headline": "オールスターブレイクに4月のミネソタ訪問を振り返る",
+            "description": "メジャーリーグはオールスターブレイク。今年のオールスターゲームはフィラデルフィアで開催されました。私の30球団ボールパーク巡りも、残すところフィラデルフィアのみです。",
+            "inLanguage": "ja",
+            "datePublished": "2026-07-17",
+            "dateModified": "2026-07-17",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://izumo-kampo.clinic/blog#blog"
+            },
+            "articleSection": "院長ブログ",
+            "breadcrumb": {
+              "@id": "https://izumo-kampo.clinic/blog/%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://izumo-kampo.clinic/blog/%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://izumo-kampo.clinic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "院長ブログ",
+                "item": "https://izumo-kampo.clinic/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "オールスターブレイクに4月のミネソタ訪問を振り返る",
+                "item": "https://izumo-kampo.clinic/blog/%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF"
+              }
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://izumo-kampo.clinic/blog#blog",
+            "name": "院長ブログ",
+            "url": "https://izumo-kampo.clinic/blog",
+            "inLanguage": "ja",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://izumo-kampo.clinic/#website",
+            "url": "https://izumo-kampo.clinic/",
+            "name": "出雲漢方クリニック",
+            "inLanguage": "ja",
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": ["MedicalClinic", "Organization"],
+            "@id": "https://izumo-kampo.clinic/#organization",
+            "name": "出雲漢方クリニック",
+            "url": "https://izumo-kampo.clinic/",
+            "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/ba291ea5c7a4e73223d8e6936a806b74.jpg",
+            "description": "島根県出雲市の漢方クリニック。保険診療で、初診からオンライン診療に対応し、全国の患者さんを診療しています。",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "693-0001",
+              "streetAddress": "今市町736-11",
+              "addressLocality": "出雲市",
+              "addressRegion": "島根県",
+              "addressCountry": "JP"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学", "漢方内科", "呼吸器内科", "呼吸器外科", "アレルギー科"],
+            "founder": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "employee": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "isAcceptingNewPatients": true,
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午前）",
+                "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+                "opens": "09:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午後）",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "診療予約・相談",
+              "url": "https://izumo-kampo.clinic/reserve",
+              "availableLanguage": ["ja", "en"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+            "name": "宮本 信宏",
+            "alternateName": "みやもと のぶひろ",
+            "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+            "url": "https://izumo-kampo.clinic/doctor",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+            "sameAs": ["https://twitter.com/wjHhI0T0zPl0TnO"],
+            "worksFor": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "高知医科大学"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "国家資格",
+                "name": "医師免許"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "専門医",
+                "name": "日本外科学会 認定外科専門医"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "認定医",
+                "name": "日本胸部外科学会 胸部外科認定医"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "日本東洋医学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本胸部外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科感染症学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本肺癌学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本がんサポーティブケア学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器外科学会"
+              }
+            ],
+            "award": ["2016年 日本外科感染症学会 最優秀論文賞（炭山賞）", "2018年 日本東洋医学会 中四国支部総会 奨励賞", "2022年 日本東洋医学会 中四国支部総会 学会賞"],
+            "knowsAbout": ["漢方治療", "漢方医学", "東洋医学", "オンライン診療", "胸部外科", "呼吸器外科"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://izumo-kampo.clinic/online#service",
+            "name": "オンライン診療",
+            "url": "https://izumo-kampo.clinic/online",
+            "description": "予約制のオンライン診療です。8:30〜18:00の予約可能な枠で受診いただけます。通常の休診日や上記時間外でも診療できる場合があります。予約システムで空き枠をご確認ください。",
+            "provider": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://izumo-kampo.clinic/online",
+              "availableLanguage": ["ja", "en"]
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
   <div id="main">
     <div id="breadcrumbs">
-      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 花粉症から慢性炎症を考える - 舌診からみるアレルギー疾患
+      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; オールスターブレイクに4月のミネソタ訪問を振り返る
     </div>
 
     <article>
       <section class="blogSec">
-        <h2>花粉症から慢性炎症を考える - 舌診からみるアレルギー疾患</h2>
-        <div class="column_time">[2026.03.09]</div>
+        <h2>オールスターブレイクに4月のミネソタ訪問を振り返る</h2>
+        <div class="column_time">[2026.07.17]</div>
 
         <div class="subpagecontents">
           <p>
-            春や季節の変わり目になると、鼻炎や花粉症の患者さんが増えてきます。<br />
-            原因は花粉だけではありません。
-          </p>
-          <ul>
-            <li>気圧の変化</li>
-            <li>黄砂</li>
-            <li>PM2.5</li>
-            <li>引っ越しや掃除による粉塵</li>
-          </ul>
-          <p>
-            など、さまざまな環境要因が重なって症状が悪化します。<br />
-            こうした体調変化は「気象病」と呼ばれることもあります。
+            メジャーリーグはオールスターブレイク。<br />
+            今年のオールスターゲームはフィラデルフィアで開催されました。私の30球団ボールパーク巡りも、残すところフィラデルフィアのみです。COVID-19感染症が始まった2020年にフィラデルフィアで開催される学会で発表する予定でしたが、渡米の許可はおりず、コンプリートは叶っていません。
           </p>
           <p>
-            診療を続けていると、花粉症は単なる「鼻の病気」ではないことに気づきます。<br />
-            そこには共通する病態があります。<br />
-            それが 慢性炎症 です。
+            試合のないこの2日間に、今年4月のメジャーリーグ訪問を改めて振り返っていました。<br />
+            コロナ禍以降、初めてとなる今回のアメリカ訪問。<br />
+            約7年ぶりに降り立ったミネソタは、私にとって特別な場所です。
           </p>
-          <h3>花粉症・喘息・アトピーに共通する慢性炎症</h3>
+          <h2>留学時代の体調不良と、漢方・鍼灸との出会い</h2>
+          <p>Mayo Clinic留学中、週末になると毎週のようにミネアポリスを訪れ、メジャーリーグやNFLを観戦してアメリカのスポーツ文化に触れていました。当時は生活の一部だった街も、コロナを境に、いつしか遠い国になっていました。</p>
+          <p>留学生活は充実していましたが、一方で私は長年、頭痛や原因のはっきりしない体調不良にも悩まされていました。世界最高峰の医療機関であるMayo Clinicを受診しても症状は改善せず、「これ以上調べるならMRI」というところでお金がないため診察を終了しました。自分自身がこれほど長く体調不良に苦しむとは思ってもいませんでした。</p>
+          <p>帰国後も肥満と頭痛、咳は続き、西洋医学だけでは説明しきれない症状に対して漢方医学を学び始めました。そして漢方治療を続ける中で、肥満と咳は改善、さらに鍼灸と出会い頭痛で悩むことはなくなりました。</p>
+          <p>鍼灸は漢方薬の代わりではなく、漢方薬を補完する相補的な治療だと考えています。それぞれに得意分野があり、組み合わせることで患者さんに提供できる医療の幅は大きく広がります。</p>
+          <h2>鍼灸師・福田紳一郎先生との出会い</h2>
+          <p>その考え方をさらに深めるきっかけとなったのが、鍼灸師の福田紳一郎先生とのご縁です。</p>
+          <p>鍼灸師の福田紳一郎先生は、メジャーリーグ球団であるタンパベイ・レイズで長年コンディショニングに携わり、多くのメジャーリーガーから厚い信頼を得ている鍼灸師です。その取り組みは、トミー・ジョン手術の回避につながった事例としても知られ、近年はテレビや新聞などのメディアで紹介される機会も増え、日本においてもスポーツ鍼灸の第一人者として注目を集めています。</p>
+          <p>昨年、日本東洋医学会島根県部会で特別講演をお願いしたことがご縁となり、今回はターゲットフィールドに招待いただき、再会することができました。</p>
+          <p>ミネソタのクラフトビールを片手に、夜遅くまで医療について語り合った時間は、今回の旅で最も印象に残った出来事の一つです。</p>
           <p>
-            花粉症、喘息、アトピーは臓器は異なりますが、免疫学的には共通した炎症の仕組みを持っています。<br />
-            現在の医学、そして漢方医学でも、鼻と気管支は一つの気道として考えられています。
+            話題の中心になったのは、現在の標準治療やスポーツ医学では十分に答えが出ていない領域についてでした。<br />
+            慢性疲労、コンディショニング、再発予防、体質改善など、患者さんやメジャーリーガーが実際に困っているにもかかわらず、まだ十分なエビデンスが確立されていない分野があります。
           </p>
-          <p>そのため</p>
-          <ul>
-            <li>花粉症</li>
-            <li>アレルギー性鼻炎</li>
-            <li>気管支喘息</li>
-            <li>アトピー性皮膚炎</li>
-          </ul>
-          <p>などは互いに関連することが多く、慢性炎症という共通した病態として理解することができます。</p>
-          <h3>炎症が続くと組織は硬くなる</h3>
+          <p>そのような領域に対して、どのように安全性を担保し、どのように患者さんや選手へ説明し、納得して治療を受けてもらうのか。</p>
+          <h2>「出雲モデル」が目指す統合医療と、多職種連携</h2>
           <p>
-            炎症には急性炎症と慢性炎症があります。炎症の初期では、粘膜は腫れてむくみます。<br />
-            しかし炎症が長く続くと、組織は次第に硬くなっていきます。
+            標準治療を否定するのではなく、その限界を理解した上で、補完的な医療をどのように組み合わせていくのか。<br />
+            私自身も、「出雲モデル」を通じて、西洋医学を基盤としながら、漢方、鍼灸、栄養、運動、睡眠を組み合わせる診療を続けています。
           </p>
-          <p>例えば</p>
-          <ul>
-            <li>喘息では気道の構造が変化する「気道リモデリング」</li>
-            <li>肺では線維化</li>
-            <li>アトピーでは皮膚肥厚</li>
-          </ul>
-          <p>などが起こります。</p>
-          <p>私は呼吸器外科医として長く肺を触ってきました。炎症で柔らかく腫れた肺、そして慢性炎症で硬くなった肺を実際に触診してきた経験があります。</p>
-          <p>この経験から、体の炎症状態は体表にも現れるのではないかと考えるようになりました。</p>
-          <h3>舌は体の状態を映す鏡</h3>
-          <p>その一つが 舌診 です。</p>
-          <p>臨床経験では</p>
-          <ul>
-            <li>むくんだ柔らかい舌</li>
-            <li>紫色で硬い舌</li>
-            <li>乾燥した舌</li>
-          </ul>
-          <p>など、舌の状態は体の炎症の状態と対応していることが多いと感じています。</p>
-          <p>東洋医学では体の状態を</p>
-          <ul>
-            <li>気</li>
-            <li>血</li>
-            <li>水</li>
-          </ul>
-          <p>のバランスとして考えます。</p>
-          <p>炎症の初期では粘膜がむくみます。</p>
-          <p>これは<strong>水毒</strong>と呼ばれる状態です。</p>
+          <p>今回のミネソタ訪問では、その方向性が間違っていないことを改めて確認するとともに、まだ自分たちにできることが数多く残されていることも実感しました。</p>
           <p>
-            炎症が長く続くと血流が悪くなります。<br />
-            これは<strong>瘀血</strong>と呼ばれます。
-          </p>
-          <p>さらに炎症が進むと組織は乾燥し硬くなります。</p>
-          <p>つまり</p>
-          <p>「むくみ（水毒） →うっ血（ 瘀血） → 乾燥（血虚）」</p>
-          <p>という変化です。</p>
-          <h3>舌診から選ぶ漢方治療</h3>
-          <p>当院では舌の状態を参考にしながら漢方薬を選びます。</p>
-          <p>
-            むくみが強い場合<br />
-            → 五苓散
+            エビデンスを積み重ねながら、現場で役立つ医療をつくる。<br />
+            そのためには、医師だけでなく、薬剤師、鍼灸師、トレーナーなど、多職種が連携することが欠かせません。<br />
+            福田先生との出会いは、その可能性を改めて感じさせてくれました。
           </p>
           <p>
-            血流が悪い場合<br />
-            → 桂枝茯苓丸
+            今後も互いに協力しながら、患者さん、そしてスポーツ選手の力になれる医療を一歩ずつ形にしていきたいと思います。<br />
+            オールスターブレイクは、野球を楽しむだけではなく、自分の原点を思い出させてくれる時間にもなりました。
           </p>
-          <p>
-            まだ炎症が残り、湿りを伴う慢性炎症の場合<br />
-            → 補中益気湯
-          </p>
-          <p>
-            炎症が長く続き、乾きや消耗が目立つ場合<br />
-            → 十全大補湯
-          </p>
-          <p>このように体の状態に合わせて治療を行います。</p>
-          <h3>西洋医学と漢方医学</h3>
-          <p>私自身、若い頃は</p>
-          <ul>
-            <li>喘息</li>
-            <li>皮膚炎</li>
-            <li>慢性的な下痢</li>
-          </ul>
-          <p>などがあり、吸入ステロイドやステロイド軟膏、整腸剤など様々な治療を試してみましたが、長く続けられたのは漢方治療で、体調は大きく改善しました。</p>
-          <p>また 米国のMayo Clinic で免疫学を学んだ経験から、アレルギー疾患は局所の問題ではなく、くすぶった炎症「慢性炎症」に介入することで喘息発作や花粉症、下痢などの発作を制御しうると考えるようになりました。</p>
-          <p>現在の外来では</p>
-          <ul>
-            <li>抗アレルギー薬</li>
-            <li>点鼻薬</li>
-            <li>漢方薬</li>
-          </ul>
-          <p>を組み合わせて治療しています。</p>
-          <p>西洋医学と漢方医学の併用で慢性炎症をより安定させることができると考えています。</p>
-          <h3>終わりに</h3>
-          <p>
-            花粉症や鼻炎は、単なる鼻の症状ではなく、体全体の慢性炎症として考えると理解しやすくなります。<br />
-            舌診を通して体の状態を見ながら、その人に合った治療を行うことが大切だと感じています。
-          </p>
-          <p>
-            病院に行ってもよくならないアレルギー疾患は、もしかしたら漢方治療を併用することで改善するかもしれません。<br />
-            初診から全国オンライン診療可能ですので、お気軽にお問合せください
-          </p><div id="blog_prev_next">
+          <p>メジャーリーグは、私にとって学びの場であり、人とのご縁をつないでくれる大切な存在となりました。</p><div id="blog_prev_next">
             <ul>
-              <li class="blog_prev">
-                <a href="/blog/03" rel="prev">前の記事へ</a>
-              </li><li class="blog_next">
-                <a href="/blog/01" rel="next">次の記事へ</a>
-              </li>
+              <li class="blog_prev"><a href="/blog/03" rel="prev">前の記事へ</a></li>
+              <li class="blog_next"><a href="/blog/01" rel="next">次の記事へ</a></li>
             </ul>
           </div>
         </div>

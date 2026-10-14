@@ -1,51 +1,281 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const title = "出雲漢方クリニック｜補うという考え方（院長ブログ）";
+const title = "出雲漢方クリニック｜開院4周年、そして地域への新たな一歩（院長ブログ）";
 ---
 
 <PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://izumo-kampo.clinic/blog/%e9%96%8b%e9%99%a24%e5%91%a8%e5%b9%b4%e3%80%81%e3%81%9d%e3%81%97%e3%81%a6%e5%9c%b0%e5%9f%9f%e3%81%b8%e3%81%ae%e6%96%b0%e3%81%9f%e3%81%aa%e4%b8%80%e6%ad%a9#article",
+            "url": "https://izumo-kampo.clinic/blog/%e9%96%8b%e9%99%a24%e5%91%a8%e5%b9%b4%e3%80%81%e3%81%9d%e3%81%97%e3%81%a6%e5%9c%b0%e5%9f%9f%e3%81%b8%e3%81%ae%e6%96%b0%e3%81%9f%e3%81%aa%e4%b8%80%e6%ad%a9",
+            "mainEntityOfPage": "https://izumo-kampo.clinic/blog/%e9%96%8b%e9%99%a24%e5%91%a8%e5%b9%b4%e3%80%81%e3%81%9d%e3%81%97%e3%81%a6%e5%9c%b0%e5%9f%9f%e3%81%b8%e3%81%ae%e6%96%b0%e3%81%9f%e3%81%aa%e4%b8%80%e6%ad%a9",
+            "headline": "開院4周年、そして地域への新たな一歩",
+            "description": "開院4周年を迎えた出雲漢方クリニックの院長が、オンライン診療を中心としたこれまでの歩み、診療を通じて感じた鍼灸の価値、多職種連携による「出雲モデル」、出雲あんず鍼灸院での保険による訪問鍼灸の開始について綴ります。",
+            "inLanguage": "ja",
+            "datePublished": "2026-05-29",
+            "dateModified": "2026-05-29",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://izumo-kampo.clinic/blog#blog"
+            },
+            "articleSection": "院長ブログ",
+            "breadcrumb": {
+              "@id": "https://izumo-kampo.clinic/blog/%e9%96%8b%e9%99%a24%e5%91%a8%e5%b9%b4%e3%80%81%e3%81%9d%e3%81%97%e3%81%a6%e5%9c%b0%e5%9f%9f%e3%81%b8%e3%81%ae%e6%96%b0%e3%81%9f%e3%81%aa%e4%b8%80%e6%ad%a9#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://izumo-kampo.clinic/blog/%e9%96%8b%e9%99%a24%e5%91%a8%e5%b9%b4%e3%80%81%e3%81%9d%e3%81%97%e3%81%a6%e5%9c%b0%e5%9f%9f%e3%81%b8%e3%81%ae%e6%96%b0%e3%81%9f%e3%81%aa%e4%b8%80%e6%ad%a9#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://izumo-kampo.clinic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "院長ブログ",
+                "item": "https://izumo-kampo.clinic/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "開院4周年、そして地域への新たな一歩",
+                "item": "https://izumo-kampo.clinic/blog/%e9%96%8b%e9%99%a24%e5%91%a8%e5%b9%b4%e3%80%81%e3%81%9d%e3%81%97%e3%81%a6%e5%9c%b0%e5%9f%9f%e3%81%b8%e3%81%ae%e6%96%b0%e3%81%9f%e3%81%aa%e4%b8%80%e6%ad%a9"
+              }
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://izumo-kampo.clinic/blog#blog",
+            "name": "院長ブログ",
+            "url": "https://izumo-kampo.clinic/blog",
+            "inLanguage": "ja",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://izumo-kampo.clinic/#website",
+            "url": "https://izumo-kampo.clinic/",
+            "name": "出雲漢方クリニック",
+            "inLanguage": "ja",
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": ["MedicalClinic", "Organization"],
+            "@id": "https://izumo-kampo.clinic/#organization",
+            "name": "出雲漢方クリニック",
+            "url": "https://izumo-kampo.clinic/",
+            "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/ba291ea5c7a4e73223d8e6936a806b74.jpg",
+            "description": "島根県出雲市の漢方クリニック。保険診療で、初診からオンライン診療に対応し、全国の患者さんを診療しています。",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "693-0001",
+              "streetAddress": "今市町736-11",
+              "addressLocality": "出雲市",
+              "addressRegion": "島根県",
+              "addressCountry": "JP"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学", "漢方内科", "呼吸器内科", "呼吸器外科", "アレルギー科"],
+            "founder": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "employee": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "isAcceptingNewPatients": true,
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午前）",
+                "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+                "opens": "09:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午後）",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "診療予約・相談",
+              "url": "https://izumo-kampo.clinic/reserve",
+              "availableLanguage": ["ja", "en"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+            "name": "宮本 信宏",
+            "alternateName": "みやもと のぶひろ",
+            "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+            "url": "https://izumo-kampo.clinic/doctor",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+            "sameAs": ["https://twitter.com/wjHhI0T0zPl0TnO"],
+            "worksFor": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "高知医科大学"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "国家資格",
+                "name": "医師免許"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "専門医",
+                "name": "日本外科学会 認定外科専門医"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "認定医",
+                "name": "日本胸部外科学会 胸部外科認定医"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "日本東洋医学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本胸部外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科感染症学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本肺癌学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本がんサポーティブケア学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器外科学会"
+              }
+            ],
+            "award": ["2016年 日本外科感染症学会 最優秀論文賞（炭山賞）", "2018年 日本東洋医学会 中四国支部総会 奨励賞", "2022年 日本東洋医学会 中四国支部総会 学会賞"],
+            "knowsAbout": ["漢方治療", "漢方医学", "東洋医学", "オンライン診療", "胸部外科", "呼吸器外科"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://izumo-kampo.clinic/online#service",
+            "name": "オンライン診療",
+            "url": "https://izumo-kampo.clinic/online",
+            "description": "予約制のオンライン診療です。8:30〜18:00の予約可能な枠で受診いただけます。通常の休診日や上記時間外でも診療できる場合があります。予約システムで空き枠をご確認ください。",
+            "provider": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://izumo-kampo.clinic/online",
+              "availableLanguage": ["ja", "en"]
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
   <div id="main">
     <div id="breadcrumbs">
-      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 補うという考え方
+      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 開院4周年、そして地域への新たな一歩
     </div>
 
     <article>
       <section class="blogSec">
-        <h2>補うという考え方</h2>
-        <div class="column_time">[2026.02.02]</div>
+        <h2>開院4周年、そして地域への新たな一歩</h2>
+        <div class="column_time">[2026.05.29]</div>
 
         <div class="subpagecontents">
-          <p>外来をしていると「病気ではないけれど、調子が良いとも言えない」。そうした相談を受けることがよくあります。</p>
-          <p>検査では異常がない。それでも疲れやすい、回復が遅い、集中が続かない。本人にとっては、確かに生活や仕事に影響があります。</p>
-          <p>こうした状態をどう捉えるか。私は、「悪いところを見つけて直す」ことだけでなく、崩れにくい状態をどう作るかという視点が大切だと感じています。</p>
-          <h3>西洋医学と東洋医学について</h3>
-          <p>私は、西洋医学だけ、あるいは東洋医学だけで、すべてが解決すると考えているわけではありません。Mayo Clinic 留学中、炎症免疫反応における補体の第一人者であるDr. Platt のもとで学ぶ機会がありました。その中で印象に残ったのは、「どちらかが常に主役である必要はない」という考え方でした。</p>
-          <p>状況によっては、西洋医学が前に出たほうがよい場面もあります。</p>
-          <p>一方で、体調の揺らぎや回復の遅さ、生活の中で積み重なる不調に対しては、東洋医学の考え方が役に立つことも多い。表面的には「補っている」ように見えても、実際にはどちらかが主となり、もう一方がそれを支えていることもあります。</p>
-          <p>大切なのは、どちらが主役かを固定することではなく、その時々の立場で、結果としてお互いを助けているかどうかだと思っています。</p>
-          <p>その後、漢方医学を学び、私は両者を対立させずに考えるようになりました。</p>
-          <h3>未病という視点</h3>
-          <p>はっきりした病気ではないけれど、放っておくと生活の質が下がっていく状態があります。</p>
-          <ul>
-            <li>疲れが抜けにくい</li>
-            <li>体調の波が大きい</li>
-            <li>仕事の集中力が落ちている</li>
-          </ul>
-          <p>こうした状態は、多くの場合、検査には表れません。</p>
-          <p>漢方では、この段階を「未病」と捉え、問題がはっきりする前に整える、という考え方をします。</p>
-          <h3>相補という関係</h3>
+          <p>おかげさまで出雲漢方クリニックは開院4周年を迎えることができました。この4年間、多くの患者様、ご家族、関係者の皆様に支えていただき、心より感謝申し上げます。</p>
+          <p>当院は開院当初からオンライン診療に力を入れてきました。特にコロナ禍以降は、コロナ後遺症や気象病、自律神経の乱れなどでお困りの患者様から多くのご相談をいただきました。全国どこに住んでいても医療につながることができるオンライン診療の意義を強く感じる日々でした。</p>
+          <p>その後、診療内容も少しずつ広がり、現在では肥満治療や更年期症状、慢性疲労、不眠などのご相談も増えています。これらの症状は検査だけでは異常が見つからないことも多く、患者様ご自身も周囲から理解されにくいことがあります。しかし実際には生活の質を大きく低下させており、日常生活や仕事に影響を及ぼしています。</p>
+          <h3>漢方診療を通じて感じた鍼灸の価値</h3>
+          <p>私はこれまで漢方診療を通じて、多くの患者様の体調改善に関わらせていただきました。漢方薬は体質改善や慢性的な不調の改善に大きな力を発揮します。しかし診療を続ける中で改めて感じることがあります。</p>
+          <p>それは、肩こりや肩の痛み、腰痛、膝痛、首の痛み、筋肉の緊張など、身体の構造や動きに関連する症状については、漢方薬だけではなく鍼灸治療の方が適している場合が少なくないということです。</p>
+          <p>もちろん漢方薬で改善することもあります。しかし実際には、筋肉の緊張をほぐし、血流を改善し、身体を温め、局所へ直接アプローチできる鍼灸の方が早く効果を実感される患者様も多くおられます。</p>
+          <p>また、鍼灸の価値は痛みの治療だけではありません。</p>
+          <p>施術を受けることで身体が温まり、呼吸が深くなり、リラックスし、睡眠が改善する。痛みが軽くなることで外出する意欲が生まれ、人と会う機会が増える。結果として活動量が増え、筋力低下やフレイルの予防にもつながります。</p>
+          <p>私はこれこそが鍼灸の本質的な価値の一つだと考えています。</p>
+          <p>病気だけを診るのではなく、人の生活全体を支えること。</p>
+          <h3>多職種で支える「出雲モデル」と地域への想い</h3>
+          <p>そのためには医師だけでは不十分です。薬剤師、鍼灸師、管理栄養士、運動指導者、介護職など、多くの職種が連携する必要があります。</p>
+          <p>私が以前から構想している「出雲モデル」もまさにその考え方です。</p>
+          <p>医師が診断し、薬剤師が服薬を支え、鍼灸師が身体を整える。さらに運動、食事、睡眠、温泉など地域の資源も活用しながら健康づくりを支援する。病気になった人を治療するだけではなく、病気になりにくい身体づくりや健康寿命の延伸を目指す取り組みです。</p>
+          <p>一方で、私は常々考えていました。</p>
+          <p>「全国の患者様を診ることができるようになった今だからこそ、もっと地域に貢献できることがあるのではないか。」</p>
+          <p>高齢化が進む中、腰痛や膝痛、肩の痛み、手術後の筋力低下などにより、通院そのものが難しくなっている方がたくさんおられます。医療機関へ行きたくても行けない。身体の不調を抱えながら、自宅で不安な毎日を過ごしている方も少なくありません。</p>
+          <h3>訪問鍼灸の開始と、これからの地域医療へ</h3>
+          <p>そこでこのたび、出雲あんず鍼灸院では鍼灸師3名体制となり、保険診療による訪問鍼灸を開始しました。</p>
+          <p>神経痛、リウマチ、五十肩、腰痛症、頸腕症候群などの慢性的な痛みを抱え、歩行困難や通院困難となった方々に対し、医師と鍼灸師が連携しながらご自宅で施術を行います。</p>
+          <p>また自由診療では、慢性疲労、不眠、自律神経の乱れ、更年期症状、美容鍼、スポーツコンディショニングなど幅広いお悩みに対応しています。</p>
+          <p>全国へ広がるオンライン診療。そして地域に根差した訪問鍼灸。</p>
+          <p>この二つは一見異なる取り組みに見えるかもしれません。しかし私の中ではどちらも同じです。</p>
+          <p>「困っている人のもとへ医療を届ける」</p>
+          <p>という考え方です。</p>
           <p>
-            健康は、一人で完結するものではありません。医師、鍼灸師、運動に関わる人、仕組みを作る人。<br />
-            それぞれが自分の役割を持ち、状況に応じて前に出たり、支えたりする。誰かが常に中心に立つのではなく、必要に応じて立場が入れ替わる関係のほうが、無理なく続くと感じています。日々の診療を続ける中で、こうした考えを持つようになりました。
+            これからも医師、薬剤師、鍼灸師が力を合わせ、出雲から新しい地域医療の形を発信していきたいと思います。<br />
+            病気を診るだけでなく、人を支える医療へ。
           </p>
-          <p>それぞれが得意な部分を担当し、足りないところを補う。そのような医療チームを作っていきたいと考えています。</p><div id="blog_prev_next">
+          <p>開院5年目も、その初心を忘れず歩んでまいります。</p><div id="blog_prev_next">
             <ul>
-              <li class="blog_prev">
-                <a href="/blog/05" rel="prev">前の記事へ</a>
-              </li><li class="blog_next">
-                <a href="/blog/03" rel="next">次の記事へ</a>
-              </li>
+              <li class="blog_prev"><a href="/blog/05" rel="prev">前の記事へ</a></li>
+              <li class="blog_next"><a href="/blog/03" rel="next">次の記事へ</a></li>
             </ul>
           </div>
         </div>

@@ -96,26 +96,6 @@ const sources = (await walk("src/pages")).filter((file) =>
 for (const file of sources) {
   const source = await readFile(file, "utf8");
   const blocks = [...source.matchAll(blockPattern)];
-  if (/\/blog\/\d+\.astro$/.test(file)) {
-    assert.equal(
-      blocks.length,
-      0,
-      `${file}: blog article must not contain JSON-LD`,
-    );
-    const built = await readFile(
-      path.join(
-        "dist",
-        path.relative("src/pages", file).replace(/\.astro$/, ".html"),
-      ),
-      "utf8",
-    );
-    assert.equal(
-      [...built.matchAll(blockPattern)].length,
-      0,
-      `${file}: built blog article contains JSON-LD`,
-    );
-    continue;
-  }
   assert.equal(blocks.length, 1, `${file}: expected one JSON-LD block`);
   const schema = JSON.parse(blocks[0][1]);
   assert.equal(schema["@context"], "https://schema.org");

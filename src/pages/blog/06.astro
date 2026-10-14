@@ -1,44 +1,316 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const title = "出雲漢方クリニック｜出雲モデル：薬剤師・鍼灸師の早期介入が医療を変える（院長ブログ）";
+const title = "出雲漢方クリニック｜GLP-1時代のダイエット医療を考える（院長ブログ）";
 ---
 
 <PageLayout title={title} wrapperClass="page_weverysub parent1691 my1691 cat pcat">
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://izumo-kampo.clinic/blog/glp-1%e6%99%82%e4%bb%a3%e3%81%ae%e3%83%80%e3%82%a4%e3%82%a8%e3%83%83%e3%83%88%e5%8c%bb%e7%99%82%e3%82%92%e8%80%83%e3%81%88%e3%82%8b#article",
+            "url": "https://izumo-kampo.clinic/blog/glp-1%e6%99%82%e4%bb%a3%e3%81%ae%e3%83%80%e3%82%a4%e3%82%a8%e3%83%83%e3%83%88%e5%8c%bb%e7%99%82%e3%82%92%e8%80%83%e3%81%88%e3%82%8b",
+            "mainEntityOfPage": "https://izumo-kampo.clinic/blog/glp-1%e6%99%82%e4%bb%a3%e3%81%ae%e3%83%80%e3%82%a4%e3%82%a8%e3%83%83%e3%83%88%e5%8c%bb%e7%99%82%e3%82%92%e8%80%83%e3%81%88%e3%82%8b",
+            "headline": "GLP-1時代のダイエット医療を考える",
+            "description": "GLP-1製剤（リベルサス、マンジャロなど）によるダイエットが広がる中、診療で出会う心身のバランスの乱れ、見落とされやすい副作用、悪循環の問題、そしてダイエット医療における漢方治療の立ち位置について院長が考えます。",
+            "inLanguage": "ja",
+            "datePublished": "2026-02-04",
+            "dateModified": "2026-02-04",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://izumo-kampo.clinic/blog#blog"
+            },
+            "articleSection": "院長ブログ",
+            "breadcrumb": {
+              "@id": "https://izumo-kampo.clinic/blog/glp-1%e6%99%82%e4%bb%a3%e3%81%ae%e3%83%80%e3%82%a4%e3%82%a8%e3%83%83%e3%83%88%e5%8c%bb%e7%99%82%e3%82%92%e8%80%83%e3%81%88%e3%82%8b#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://izumo-kampo.clinic/blog/glp-1%e6%99%82%e4%bb%a3%e3%81%ae%e3%83%80%e3%82%a4%e3%82%a8%e3%83%83%e3%83%88%e5%8c%bb%e7%99%82%e3%82%92%e8%80%83%e3%81%88%e3%82%8b#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://izumo-kampo.clinic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "院長ブログ",
+                "item": "https://izumo-kampo.clinic/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "GLP-1時代のダイエット医療を考える",
+                "item": "https://izumo-kampo.clinic/blog/glp-1%e6%99%82%e4%bb%a3%e3%81%ae%e3%83%80%e3%82%a4%e3%82%a8%e3%83%83%e3%83%88%e5%8c%bb%e7%99%82%e3%82%92%e8%80%83%e3%81%88%e3%82%8b"
+              }
+            ]
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://izumo-kampo.clinic/blog#blog",
+            "name": "院長ブログ",
+            "url": "https://izumo-kampo.clinic/blog",
+            "inLanguage": "ja",
+            "author": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://izumo-kampo.clinic/#website",
+            "url": "https://izumo-kampo.clinic/",
+            "name": "出雲漢方クリニック",
+            "inLanguage": "ja",
+            "publisher": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            }
+          },
+          {
+            "@type": ["MedicalClinic", "Organization"],
+            "@id": "https://izumo-kampo.clinic/#organization",
+            "name": "出雲漢方クリニック",
+            "url": "https://izumo-kampo.clinic/",
+            "logo": "https://izumo-kampo.clinic/wp-content/uploads/2022/04/S__63782986.png",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/ba291ea5c7a4e73223d8e6936a806b74.jpg",
+            "description": "島根県出雲市の漢方クリニック。保険診療で、初診からオンライン診療に対応し、全国の患者さんを診療しています。",
+            "address": {
+              "@type": "PostalAddress",
+              "postalCode": "693-0001",
+              "streetAddress": "今市町736-11",
+              "addressLocality": "出雲市",
+              "addressRegion": "島根県",
+              "addressCountry": "JP"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "knowsAbout": ["漢方治療", "漢方薬", "オンライン診療", "東洋医学", "漢方内科", "呼吸器内科", "呼吸器外科", "アレルギー科"],
+            "founder": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "employee": {
+              "@id": "https://izumo-kampo.clinic/doctor#miyamoto"
+            },
+            "isAcceptingNewPatients": true,
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午前）",
+                "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday"],
+                "opens": "09:00",
+                "closes": "12:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "name": "対面診療（午後）",
+                "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday"],
+                "opens": "14:00",
+                "closes": "17:00"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "診療予約・相談",
+              "url": "https://izumo-kampo.clinic/reserve",
+              "availableLanguage": ["ja", "en"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://izumo-kampo.clinic/doctor#miyamoto",
+            "name": "宮本 信宏",
+            "alternateName": "みやもと のぶひろ",
+            "jobTitle": ["出雲漢方クリニック 院長", "島根大学医学部 漢方医学 臨床教授"],
+            "url": "https://izumo-kampo.clinic/doctor",
+            "image": "https://izumo-kampo.clinic/wp-content/uploads/2022/06/fffb166affaac3a2ac359a84542b712a.jpg",
+            "sameAs": ["https://twitter.com/wjHhI0T0zPl0TnO"],
+            "worksFor": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "高知医科大学"
+            },
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "国家資格",
+                "name": "医師免許"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "専門医",
+                "name": "日本外科学会 認定外科専門医"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "認定医",
+                "name": "日本胸部外科学会 胸部外科認定医"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "日本東洋医学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本胸部外科学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本外科感染症学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本肺癌学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本がんサポーティブケア学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器学会"
+              },
+              {
+                "@type": "Organization",
+                "name": "日本呼吸器外科学会"
+              }
+            ],
+            "award": ["2016年 日本外科感染症学会 最優秀論文賞（炭山賞）", "2018年 日本東洋医学会 中四国支部総会 奨励賞", "2022年 日本東洋医学会 中四国支部総会 学会賞"],
+            "knowsAbout": ["漢方治療", "漢方医学", "東洋医学", "オンライン診療", "胸部外科", "呼吸器外科"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://izumo-kampo.clinic/online#service",
+            "name": "オンライン診療",
+            "url": "https://izumo-kampo.clinic/online",
+            "description": "予約制のオンライン診療です。8:30〜18:00の予約可能な枠で受診いただけます。通常の休診日や上記時間外でも診療できる場合があります。予約システムで空き枠をご確認ください。",
+            "provider": {
+              "@id": "https://izumo-kampo.clinic/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "日本"
+            },
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Tuesday", "https://schema.org/Wednesday", "https://schema.org/Thursday", "https://schema.org/Friday", "https://schema.org/Saturday", "https://schema.org/Sunday"],
+              "opens": "08:30",
+              "closes": "18:00"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceUrl": "https://izumo-kampo.clinic/online",
+              "availableLanguage": ["ja", "en"]
+            }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
   <div id="main">
     <div id="breadcrumbs">
-      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; 出雲モデル：薬剤師・鍼灸師の早期介入が医療を変える
+      <a href="/">ホーム</a> &gt; <a href="/blog">院長ブログ</a> &gt; GLP-1時代のダイエット医療を考える
     </div>
 
     <article>
       <section class="blogSec">
-        <h2>出雲モデル：薬剤師・鍼灸師の早期介入が医療を変える</h2>
-        <div class="column_time">[2025.12.02]</div>
+        <h2>GLP-1時代のダイエット医療を考える</h2>
+        <div class="column_time">[2026.02.04]</div>
 
         <div class="subpagecontents">
-          <p data-start="118" data-end="213">11 月30日、出雲にて日本東洋医学会島根県部会を開催しました。</p>
-          <p data-start="118" data-end="213">会長講演を務めるにあたり、腸内環境と漢方薬の反応性、そして治療を支える「人の縁」について改めて整理する機会となりました。</p>
-          <h3 data-start="215" data-end="236">腸内環境が左右する漢方薬の効き方</h3>
-          <p data-start="237" data-end="509">近年、腸内細菌が漢方薬の効き具合に影響することが明らかになっています。</p>
-          <p data-start="237" data-end="509">名古屋大学教授横山先生の研究では、茵蔯蒿湯（いんちんこうとう）がよく効く人は、「腸内細菌によるジェニポシド→ジェニピンへの変換（ジェニピン産生能）が高い」ことが示されました。</p>
-          <p data-start="237" data-end="509">つまり、腸内環境そのものが「漢方の効き方」を左右する要因になっているわけです。</p>
-          <p data-start="237" data-end="509">肥満、むくみ、慢性疲労、不眠や不安といった症状は、腸内環境を整えることで改善スピードが明らかに変わります。</p>
-          <p data-start="237" data-end="509">腸活、食事指導、鍼灸、そして軽い筋トレなどの運動を組み合わせることで、漢方がより効いてくることを実感しています。</p>
-          <h3 data-start="511" data-end="534">出雲モデル：薬剤師・鍼灸師の早期介入</h3>
-          <p data-start="535" data-end="883">そして、今回の講演で私が特に強調したのが、薬剤師・鍼灸師が初期症状の段階で関わる「出雲モデル」です。</p>
-          <p data-start="535" data-end="883">患者さんが「なんとなく体調が悪い」「少し不安がある」という段階で、まず薬局や鍼灸院にアクセスできる体制は、医療の早期介入を可能にし、結果的に重症化予防にもつながります。必要に応じて医師がオンライン診療で関わることで、地域全体として無理のない医療連携が成立します。</p>
-          <p data-start="535" data-end="883">これは、特別講演いただいたMLBタンパベイレイズの福田慎一郎先生がおっしゃる「医学的エビデンスをトップアスリートに落とし込むのはコミュニケーションと信頼関係」という言葉とも一致します。</p>
-          <p data-start="535" data-end="883">専門分野が違っても、患者さんが安心して相談できる「最初の窓口」があるかどうか——ここが治療において非常に大きな意味を持ちます。</p>
-          <h3 data-start="885" data-end="909">終わりに</h3>
-          <p data-start="910" data-end="1058">結局のところ、腸内環境のパターン（証）と、医療者との信頼関係が整ってこそ、治療は力を発揮します。</p>
-          <p data-start="910" data-end="1058">そして、それを可能にするのが、薬剤師・鍼灸師・医師が相補的に関わることだと感じています。</p>
-          <p data-start="910" data-end="1058">これからも縁結びの地・出雲から、患者さんにとって最適な医療の形「出雲モデル」を提案していきたいと思います。</p><div id="blog_prev_next">
+          <p>
+            近年、「痩せたい」という相談の中で、<strong>GLP-1製剤（リベルサス、マンジャロなど）</strong>をすでに使っている、あるいは使おうとしている患者さんと出会うことが増えました。
+          </p>
+          <p>GLP-1は美容医療や自由診療の現場では、「短期間で体重が落ちる薬」として広く知られています。</p>
+          <p>しかし、診療を続ける中で感じるのは、体重が減ったあとに、心や体のバランスを大きく崩してクリニックに受診される方が少なくないという事実です。</p>
+          <h3>精神状態が不安定だから行くのか、飲むから不安定になるのか</h3>
+          <p>よく聞かれるのが、</p>
+          <p>「精神状態が不安定だから自費診療に行くのか」</p>
+          <p>もしくは、</p>
+          <p>「GLP-1を飲むから精神状態が不安定になるのか」</p>
+          <p>という点です。</p>
+          <p>結論から言えば、どちらも起こりえます。そして臨床では、その二つが相互に影響し合い、悪循環を作ってしまうことが少なくありません。</p>
+          <h3>見落とされやすい副作用の問題</h3>
+          <p>
+            GLP-1製剤で特に注意が必要なのが<strong>低血糖発作</strong>です。動悸、冷汗、手の震え、不安感、めまい、時に意識消失。これらは単なる副作用ではなく、強い身体的恐怖体験として記憶に残ります。
+          </p>
+          <p>一度でも低血糖発作を経験すると、「また起きるのではないか」という予期不安が生じ、不眠やパニック様症状につながることもあります。外来でお話を聞いていると、低血糖発作を境に、心身の調子が一段階崩れてしまったと感じる方は少なくありません。</p>
+          <p>
+            また、他にもあまり語られない重要な問題があります。それが<strong>低栄養による骨粗しょう症のリスク</strong>です。
+          </p>
+          <p>GLP-1製剤により食事量が大きく減ると、</p>
+          <ul>
+            <li>たんぱく質</li>
+            <li>カルシウム</li>
+            <li>ビタミンD</li>
+          </ul>
+          <p>といった骨に必要な栄養素が、知らないうちに不足しがちになります。</p>
+          <p>特に、</p>
+          <ul>
+            <li>更年期前後の女性</li>
+            <li>もともと小柄・低体重傾向の方</li>
+            <li>月経異常や無月経の既往がある方</li>
+          </ul>
+          <p>
+            では、<strong>「痩せた結果、骨が弱くなる」</strong>という現象が起こりえます。体重は減ったとしても、転倒や腰背部痛をきっかけに、骨密度低下が見つかるケースもあります。
+          </p>
+          <h3>いちばんの問題は「悪循環」</h3>
+          <p>実際の診療でよく見る流れは、次のようなものです。</p>
+          <ol>
+            <li>体型や体重への不安を背景に自由診療へ</li>
+            <li>GLP-1開始で体重は減少</li>
+            <li>食事量低下 → 低血糖・低栄養</li>
+            <li>不安・不眠・気分低下が出現</li>
+            <li>中止後にリバウンドと自己嫌悪</li>
+            <li>心身ともにさらに不安定になる</li>
+          </ol>
+          <p>この段階では、「痩せたい気持ち」と「体を守る必要性」が衝突している状態とも言えます。</p>
+          <h3>漢方治療の立ち位置</h3>
+          <p>当クリニックではダイエットを望む患者さんに漢方治療を行っています。</p>
+          <p>漢方治療は、体重を急激に落とす治療ではありません。むくみ、便秘、月経前症状、睡眠、自律神経――。体全体のバランスを整えながら、結果として体調や体型が落ち着いていくことを目指します。</p>
+          <ul>
+            <li>低血糖を起こしにくい</li>
+            <li>低栄養に陥りにくい</li>
+            <li>中止後の反動が少ない</li>
+          </ul>
+          <p>こうした点は、長期的な健康を考えるうえで大きな利点になると思っています。</p>
+          <h3>最後に</h3>
+          <p>GLP-1製剤がすべて悪いわけではありません。</p>
+          <p>適切な評価とフォローがあれば、有効な治療となる場合もあります。ただし、低血糖発作や低栄養による骨粗しょう症という「見えにくいリスク」を抱えたまま使われている例があることも、事実です。</p>
+          <p>体重を減らす前に、</p>
+          <ul>
+            <li>きちんと食べられているか</li>
+            <li>ふらつきや動悸はないか</li>
+            <li>骨や筋肉は守られているか</li>
+          </ul>
+          <p>こうした視点を持つことが、本当の意味での「健康的なダイエット」につながるのではないかと感じています。</p><div id="blog_prev_next">
             <ul>
-              <li class="blog_prev">
-                <a href="/blog/07" rel="prev">前の記事へ</a>
-              </li><li class="blog_next">
-                <a href="/blog/05" rel="next">次の記事へ</a>
-              </li>
+              <li class="blog_prev"><a href="/blog/07" rel="prev">前の記事へ</a></li>
+              <li class="blog_next"><a href="/blog/05" rel="next">次の記事へ</a></li>
             </ul>
           </div>
         </div>
